@@ -1,0 +1,36 @@
+---
+# tasks file for oracle
+- name: Create deploy directory
+  file: dest={{ deployDirectory }} mode=755 state=directory
+  register: createdir
+
+- name: Copy war file to directory
+  copy: src={{ deploymentFile }} dest={{ deployDirectory }} mode=644
+  when: createdir|success
+  register: copywar
+
+- name: Change directory 
+  shell: "{{ item }}"
+  with_items:
+            - sh setDomainEnv.sh
+  args: 
+    chdir: /u01/app/weblogic/Oracle/Middleware/user_projects/domains/ADF_Domain_DEV/bin 
+
+- name: Copy deploy script
+  template: src=deploy.j2 dest={{ deployDirectory }}/deploy.py mode=755
+  when: copywar|success
+  register: copyscript
+
+- name: Run deploy command
+  shell: /u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin/wlst.sh {{ deployDirectory }}/deploy.py
+  when: copyscript|success
+  register: deployout
+  notify: Deploy Finish
+
+- name: Deploy Output
+  debug: msg= "{{ deployout.stdout_lines }}"
+
+- name: Deploy Error
+  debug: msg= "{{ deployout.stderr }}"
+
+

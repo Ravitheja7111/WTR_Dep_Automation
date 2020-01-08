@@ -1,0 +1,7 @@
+---
+ - hosts: ORACLE
+   roles:
+      - ear_deploy
+   become: yes
+   become_user: weblogic
+   become_method: sudo

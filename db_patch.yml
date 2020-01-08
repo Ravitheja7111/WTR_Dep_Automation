@@ -1,0 +1,31 @@
+---
+ - hosts: localhost
+   gather_facts: false
+   tasks:
+     - name: check if patch directory exists
+       file:
+         path: /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/30014677
+         state: directory
+         mode: 0777
+         remote_src: yes
+
+     - name: unzip the file
+       unarchive:
+          src: /u02/app/oretail/RMS_BATCH/staging/p30014677_141000_Generic.zip
+          dest: /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/30014677
+          remote_src: yes
+          mode: 0777
+
+     - name: apply patch
+       command: orpatch apply -s /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/30014677/
+       args:
+         chdir: /u02/app/oretail/RMS_BATCH/orpatch/bin
+
+     - name: copying orpatch to staging path
+       copy:
+         src: /u02/app/oretail/RMS_BATCH/orpatch
+         dest: /staging/deploys/Monthly_Release/AprilA/Deploy/Patch
+         remote_src: yes
+   become: yes
+   become_user: oretail
+   become_method: sudo

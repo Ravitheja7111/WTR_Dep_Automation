@@ -1,0 +1,11 @@
+---
+# vars file for oracle
+username: 'Administrator'
+password: 'WrBR2#lg7fm'
+adminUrl: 't3://udojscam01.johnlewis.co.uk:7301'
+deploymentName: 'ORUM_wlst'
+deploymentFile: 'ORUM.ear'
+wlstHome: '/u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin'
+domainHome: '/u01/app/weblogic/Oracle/Middleware/user_projects/domains/ADF_Domain_DEV'
+deploymentTarget: 'jsc-server-wlscl-dev'
+deployDirectory: '{{ domainHome }}/servers/adf-rpm-server-dev01/stage'

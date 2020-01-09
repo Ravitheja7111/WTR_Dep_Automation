@@ -1,4 +1,9 @@
 ---
 # handlers file for oracle
+ - name: MDS Update Finish
+   shell: echo "MDS entries have been updated in adf-config.xml" >> {{ deployDirectory }}/res.txt
+
  - name: Deploy Finish
-   shell: echo "task finished" > {{ deployDirectory }}/res.txt
+   shell: echo "task finished" >> {{ deployDirectory }}/res.txt
+
+

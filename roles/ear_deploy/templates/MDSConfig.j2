@@ -1,0 +1,7 @@
+import re
+
+
+archive = getMDSArchiveConfig(fromLocation="{{ fileLocation }}/{{ deploymentFile }}")
+
+archive.setAppMetadataRepository(repository="{{ repository }}",partition="{{ partition }}",jndi="{{ jndi }}")
+archive.save()

@@ -13,9 +13,14 @@
   when: filedir|success
   register: copypyscript
 
-- name: Copy ear file to deployEAR directory
-  copy: src={{ deploymentFile }} dest={{ fileLocation }} mode=644
-  register: copyear
+#- name: Copy ear file to deployEAR directory
+ # copy: src={{ deploymentFile }} dest={{ fileLocation }} mode=644
+  #register: copyear
+  
+- name: download ear package and put it in deployEAR directory
+  command: wget -O ${artifactID}-${version}.${classifier} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
+  args:
+    chdir: /home/weblogic/deployEAR
 
 - name: Update adf-config.xml file with MDS entries
   shell: /u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin/wlst.sh {{ fileLocation }}/MDSConfig.py

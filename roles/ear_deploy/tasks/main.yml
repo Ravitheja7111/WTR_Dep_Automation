@@ -4,7 +4,7 @@
   file: dest={{ deployDirectory }} mode=755 state=directory
   register: deploydir
 
-- name: Create MDS Config fileLocation directory
+- name: Create config/fileLocation directory
   file: dest={{ fileLocation }} mode=755 state=directory
   register: filedir
 
@@ -12,6 +12,7 @@
   template: src=MDSConfig.j2 dest={{ fileLocation }}/MDSConfig.py mode=755
   when: filedir|success
   register: copypyscript
+  tags: mua
 
 #- name: Copy ear file to deployEAR directory
  # copy: src={{ deploymentFile }} dest={{ fileLocation }} mode=644
@@ -26,7 +27,8 @@
   shell: /u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin/wlst.sh {{ fileLocation }}/MDSConfig.py
   when: copypyscript|success
   notify: MDS Update Finish
-
+  tags: mua
+  
 - name: Copy ear file to directory
   command: cp -R "{{ fileLocation }}/{{ deploymentFile }}" "{{ deployDirectory }}"
   when: deploydir|success
@@ -55,5 +57,3 @@
 
 - name: Deploy Error
   debug: msg= "{{ deployout.stderr }}"
-
-

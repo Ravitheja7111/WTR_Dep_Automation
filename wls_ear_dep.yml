@@ -1,5 +1,5 @@
 ---
- - hosts: ORACLE
+ - hosts: DEV_ORACLE
    roles:
       - ear_deploy
    become: yes

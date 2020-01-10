@@ -10,7 +10,7 @@
 
 - name: Copy MDS config file to deployEAR directory
   template: src=MDSConfig.j2 dest={{ fileLocation }}/MDSConfig.py mode=755
-  when: filedir|success
+  when: filedir is success
   register: copypyscript
   tags: mua
 
@@ -25,13 +25,13 @@
 
 - name: Update adf-config.xml file with MDS entries
   shell: /u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin/wlst.sh {{ fileLocation }}/MDSConfig.py
-  when: copypyscript|success
+  when: copypyscript is success
   notify: MDS Update Finish
   tags: mua
   
 - name: Copy ear file to directory
   command: cp -R "{{ fileLocation }}/{{ deploymentFile }}" "{{ deployDirectory }}"
-  when: deploydir|success
+  when: deploydir is success
   register: copyear
 
 - name: Change directory 
@@ -43,12 +43,12 @@
 
 - name: Copy deploy script
   template: src=deploy.j2 dest={{ deployDirectory }}/deploy.py mode=755
-  when: copyear|success
+  when: copyear is success
   register: copyscript
 
 - name: Run deploy command
   shell: /u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin/wlst.sh {{ deployDirectory }}/deploy.py
-  when: copyscript|success
+  when: copyscript is success
   register: deployout
   notify: Deploy Finish
 

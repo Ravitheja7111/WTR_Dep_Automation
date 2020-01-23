@@ -6,5 +6,7 @@ udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [oretail]
 udojscdm01      ansible_connection=ssh  ansible_user=ansiblepioneer
+
+[LOCALHOST]
 localhost        ansible_connection=local ansible_user=oretail
 

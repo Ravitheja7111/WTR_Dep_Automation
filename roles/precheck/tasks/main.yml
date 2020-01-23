@@ -26,7 +26,7 @@
    mail:
      host: mcms.johnlewis.co.uk
      port: 25
-     subject: Ansible-report
+     subject: Verify RIB topics & MF Queues
      body: Hello, This is an alert to verify the RIB topics and MF Queues status, Please find the attachment and take necessary action..
      from: ramana-alladu.reddy@johnlewis.co.uk
      to:

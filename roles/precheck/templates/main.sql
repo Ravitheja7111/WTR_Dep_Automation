@@ -1,4 +1,4 @@
-spool  /tmp/db.txt append ;
+spool {{ destDir }}/output.txt append ;
 select SYSTIMESTAMP from dual;
 show user;
 select * from global_name;

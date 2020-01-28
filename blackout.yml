@@ -14,7 +14,7 @@
       args:
         chdir: /coroem01/agent_inst/bin
       tags: startBlackout
-	  
+      
 	- name: Stop Blackouts on OEM
       command: "{{ item }}"
       with_items:

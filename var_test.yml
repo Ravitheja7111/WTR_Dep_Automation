@@ -8,6 +8,6 @@
     - name: ver test thru jenkins
       command: "{{ item }}"
       with_items:
-                - touch "{{ filename }}"
+                - touch "{{ filename }}" "{{ file2 }}" "{{ file3 }}"
       args:
         chdir: /home/weblogic

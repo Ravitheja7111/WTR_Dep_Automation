@@ -1,6 +1,3 @@
-[DEV01_STEP]
-udvjicap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-
 [DEV_ORACLE]
 udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
@@ -10,3 +7,5 @@ udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 [LOCALHOST]
 localhost        ansible_connection=local ansible_user=oretail
 
+[OAT-NODE1]
+upojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer

@@ -9,8 +9,8 @@
       command: "{{ item }}"
       with_items:
                 - ./emctl status agent
-                - ./emctl start blackout test_ansible_BO /Farm_PRI_RIB_Domain_OAT/RIB_Domain_OAT/rib-riha-oat01:weblogic_j2eeserver -d 00:30
-                - ./emctl status blackout /Farm_PRI_RIB_Domain_OAT/RIB_Domain_OAT/rib-riha-oat01:weblogic_j2eeserver
+                - ./emctl start blackout {{ Blackout_Name }} {{ Target_Name }}:{{ Target_Type }}
+                - ./emctl status blackout {{ Target_Name }}:{{ Target_Type }}
       args:
         chdir: /coroem01/agent_inst/bin
       tags: startBlackout
@@ -19,8 +19,8 @@
       command: "{{ item }}"
       with_items:
                 - ./emctl status agent
-                - ./emctl status blackout /Farm_PRI_RIB_Domain_OAT/RIB_Domain_OAT/rib-riha-oat01:weblogic_j2eeserver
-				- ./emctl stop blackout test_ansible_BO
+                - ./emctl status blackout {{ Target_Name }}:{{ Target_Type }}
+				- ./emctl stop blackout {{ Blackout_Name }}
       args:
         chdir: /coroem01/agent_inst/bin
       tags: stopBlackout

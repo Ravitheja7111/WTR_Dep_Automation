@@ -18,8 +18,6 @@
     - name: Stop Blackouts on OEM
       command: "{{ item }}"
       with_items:
-                - ./emctl status agent
-                - ./emctl status blackout {{ Target_Name }}:{{ Target_Type }}
                 - ./emctl stop blackout {{ Blackout_Name }}
       args:
         chdir: /coroem01/agent_inst/bin

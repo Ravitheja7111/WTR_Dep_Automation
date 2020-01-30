@@ -7,7 +7,7 @@
    tasks:
     - name: blackout targtes file read
       slurp:
-        src: {{ targets_file }}
+        src: {{ Target_Name }}
       register: blackout_targets
       tags: startBlackout
 

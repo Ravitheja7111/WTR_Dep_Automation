@@ -5,21 +5,12 @@
    become_user: oracle
    become_method: sudo
    tasks:
-    - name: blackout targtes file read
-      slurp:
-        src: {{ targets_file }}
-      register: blackout_targets
-      tags: startBlackout
-
-    - debug:
-         msg: "{{ blackout_targets['content'] | b64decode }}"
-
     - name: Start Blackouts on OEM
-      shell: "{{ item }}"
+      command: "{{ item }}"
       with_items:
                 - ./emctl status agent
-                - ./emctl start blackout {{ Blackout_Name }} {{ blackout_targets['content'] | b64decode }}
-              # - ./emctl status blackout {{ Target_Name }}:{{ Target_Type }}
+                - ./emctl start blackout {{ Blackout_Name }} {{ Target_Name }}:{{ Target_Type }}
+                - ./emctl status blackout {{ Target_Name }}:{{ Target_Type }}
       args:
         chdir: /coroem01/agent_inst/bin
       tags: startBlackout
@@ -31,4 +22,3 @@
       args:
         chdir: /coroem01/agent_inst/bin
       tags: stopBlackout
-

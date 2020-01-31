@@ -1,7 +1,7 @@
 ---
 # vars file for oracle
-username: 'Administrator'
-password: 'WrBR2#lg7fm'
+username: ''
+password: ''
 adminUrl: 't3://udojscam01.johnlewis.co.uk:7301'
 deploymentName: 'MassUploadApps'
 deploymentFile: 'MassUploadUI.ear'

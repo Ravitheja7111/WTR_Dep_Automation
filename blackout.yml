@@ -5,21 +5,13 @@
    become_user: oracle
    become_method: sudo
    tasks:
-    - name: blackout targtes file read
-      slurp:
-        src: "{{ Target_Name }}"
-        #src: /var/jenkins/workspace/JL_Pioneer_Oracle/DEV/Start_Blackout/targets.txt
-      register: blackout_targets
-      tags: startBlackout
-
-    - debug:
-         msg: "{{ blackout_targets['content'] | b64decode }}"
-
+    
     - name: Start Blackouts on OEM
       shell: "{{ item }}"
       with_items:
                 - ./emctl status agent
-                - ./emctl start blackout {{ Blackout_Name }} {{ blackout_targets['content'] | b64decode }}
+                #- ./emctl start blackout {{ Blackout_Name }} {{ blackout_targets['content'] | b64decode }}
+                - ./emctl start blackout {{ Target_Name }}
               # - ./emctl status blackout {{ Target_Name }}:{{ Target_Type }}
       args:
         chdir: /coroem01/agent_inst/bin

@@ -11,7 +11,7 @@
       with_items:
                 - ./emctl status agent
                 #- ./emctl start blackout {{ Blackout_Name }} {{ blackout_targets['content'] | b64decode }}
-                - ./emctl start blackout {{ Target_Name }}
+                - ./emctl start blackout {{ Blackout_Name }} {{ Target_Name }}
               # - ./emctl status blackout {{ Target_Name }}:{{ Target_Type }}
       args:
         chdir: /coroem01/agent_inst/bin

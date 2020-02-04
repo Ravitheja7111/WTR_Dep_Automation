@@ -1,0 +1,9 @@
+---
+Staging: '/tmp/devops/test'
+repositoryID: 'JLP-Pioneer-Snapshots'
+groupID: 'com.jlp.oracleretail'
+artifactID: 'dbobjects'
+version: '1.0.0-SNAPSHOT'
+classifier: 'zip'
+
+

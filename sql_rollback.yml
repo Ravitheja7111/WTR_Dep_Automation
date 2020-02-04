@@ -1,0 +1,9 @@
+---
+- hosts: oretail 
+  gather_facts: no
+  roles:
+    - sql_deploy 
+  become: yes
+  become_user: oretail
+  become_method: sudo
+ 

@@ -7,8 +7,8 @@
    tasks:
     - name: blackout targtes file read
       slurp:
-        #src: "{{ Target_Name }}"
-        src: /var/jenkins/workspace/JL_Pioneer_Oracle/DEV/Start_Blackout/targets.txt
+        src: "{{ Target_Name }}"
+        #src: /var/jenkins/workspace/JL_Pioneer_Oracle/DEV/Start_Blackout/targets.txt
       register: blackout_targets
       tags: startBlackout
 

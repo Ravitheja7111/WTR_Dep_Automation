@@ -5,22 +5,29 @@
    become_user: oracle
    become_method: sudo
    tasks:
+    - name: blackout targtes file read
+      slurp:
+        src: "{{ Target_Name }}"
+      register: blackout_targets
+      tags: startBlackout
+
+    - debug:
+         msg: "{{ blackout_targets['content'] | b64decode }}"
+
     - name: Start Blackouts on OEM
-      command: "{{ item }}"
+      shell: "{{ item }}"
       with_items:
                 - ./emctl status agent
-                - ./emctl start blackout test_ansible_BO /Farm_PRI_RIB_Domain_OAT/RIB_Domain_OAT/rib-riha-oat01:weblogic_j2eeserver -d 00:30
-                - ./emctl status blackout /Farm_PRI_RIB_Domain_OAT/RIB_Domain_OAT/rib-riha-oat01:weblogic_j2eeserver
+                - ./emctl start blackout {{ Blackout_Name }} {{ blackout_targets['content'] | b64decode }}
+              # - ./emctl status blackout {{ Target_Name }}:{{ Target_Type }}
       args:
         chdir: /coroem01/agent_inst/bin
       tags: startBlackout
-	  
-	- name: Stop Blackouts on OEM
+
+    - name: Stop Blackouts on OEM
       command: "{{ item }}"
       with_items:
-                - ./emctl status agent
-                - ./emctl status blackout /Farm_PRI_RIB_Domain_OAT/RIB_Domain_OAT/rib-riha-oat01:weblogic_j2eeserver
-				- ./emctl stop blackout test_ansible_BO
+                - ./emctl stop blackout {{ Blackout_Name }}
       args:
         chdir: /coroem01/agent_inst/bin
       tags: stopBlackout

@@ -1,9 +1,9 @@
 ---
- - name: connecto sql db
+ - name: connecting to sql db
    shell: source /home/oretail/.profile && /home/oretail/sql_deploy.ksh
    tags: deploy
    
- - name: connecto sql db
+ - name: connecting to sql db
    shell: source /home/oretail/.profile && /home/oretail/sql_rollback.ksh
    tags: rollback
    

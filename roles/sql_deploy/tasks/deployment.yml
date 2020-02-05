@@ -35,6 +35,6 @@
      to:
      - ravindra.reddy@johnlewis.co.uk
      attach:
-     - /tmp/logs/rms_deploy.log
-     - /tmp/logs/intr_Stg_deploy.log
+     - /tmp/logs/rms_rollback.log
+     - /tmp/logs/intr_stg_rollback.log
    tags: rollback

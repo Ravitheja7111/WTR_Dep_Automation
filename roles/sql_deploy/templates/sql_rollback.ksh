@@ -11,7 +11,7 @@ show user;
 @{{ Staging }}/jl_rollback_rebate_codehead_detail.sql
 exit;
 EOF
-sqlplus INTERFACES_STAGING/"1Nt3rF43ces!" @RMS_RMSPRE01 << EOF >/tmp/logs/internal_Staging_rollback.log
+sqlplus INTERFACES_STAGING/"1Nt3rF43ces!" @RMS_RMSPRE01 << EOF >/tmp/logs/intr_stg_rollback.log
 set verify off;
 show user;
 @{{ Staging }}/jl_marketing_rebate_interface_rollback.sql
@@ -24,7 +24,7 @@ show user;
 @{{ Staging }}/jl_arch_prg_general_dtl_rollback_cod2998.sql
 exit;
 EOF
-sqlplus INTERFACES_STAGING/"1Nt3rF43ces!" @RMS_RMSPRE01 << EOF >>/tmp/logs/internal_Staging_rollback.log
+sqlplus INTERFACES_STAGING/"1Nt3rF43ces!" @RMS_RMSPRE01 << EOF >>/tmp/logs/intr_stg_rollback.log
 set verify off;
 show user;
 @{{ Staging }}/jl_mr_intf_rollback.sql

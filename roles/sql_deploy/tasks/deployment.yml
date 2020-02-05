@@ -1,13 +1,36 @@
 ---
- - name: connecting to sql db
+ - name: connecto sql db
    shell: source /home/oretail/.profile && /home/oretail/sql_deploy.ksh
-   register: db_deploy_result
+   register: deploy_result
    tags: deploy
- - debug: var=db_deploy_result.stdout_lines
+ - debug: var=deploy_result.stdout_lines  
    
+ - name: Send e-mail to a bunch of users, attaching files
+   mail:
+     host: mcms.johnlewis.co.uk
+     port: 25
+     subject: Verify the hotfix has been applied or not
+     body: Hello, This is an alert to verify the hotfix status, Please find the attachment and take necessary action..
+     from: ramana-alladu.reddy@johnlewis.co.uk
+     to:
+     - ravindra.reddy@johnlewis.co.uk
+     attach: /tmp/logs/rms_deploy.log
+   tags: deploy
    
- - name: connecting to sql db
+ - name: connecto sql db
    shell: source /home/oretail/.profile && /home/oretail/sql_rollback.ksh
-   register: db_rollback_result
+   register: deploy_result
    tags: rollback
- - debug: var=db_rollback_result.stdout_lines   
+ - debug: var=deploy_result.stdout_lines
+   
+ - name: Send e-mail to a bunch of users, attaching files
+   mail:
+     host: mcms.johnlewis.co.uk
+     port: 25
+     subject: Verify the hotfix has been applied or not
+     body: Hello, This is an alert to verify the hotfix status, Please find the attachment and take necessary action..
+     from: ramana-alladu.reddy@johnlewis.co.uk
+     to:
+     - ravindra.reddy@johnlewis.co.uk
+     attach: /tmp/logs/intr_Stg_deploy.log
+   tags: rollback

@@ -1,5 +1,5 @@
 ---
- - name: connecto sql db
+ - name: connecting to sql db
    shell: source /home/oretail/.profile && /home/oretail/sql_deploy.ksh
    register: deploy_result
    tags: deploy
@@ -9,15 +9,17 @@
    mail:
      host: mcms.johnlewis.co.uk
      port: 25
-     subject: Verify the hotfix has been applied or not
-     body: Hello, This is an alert to verify the hotfix status, Please find the attachment and take necessary action..
+     subject: Verify the logs of DB objects - Execution
+     body: Hello, This is an alert to verify the logs, Please find the attachment and take necessary action..
      from: ramana-alladu.reddy@johnlewis.co.uk
      to:
      - ravindra.reddy@johnlewis.co.uk
-     attach: /tmp/logs/rms_deploy.log
+     attach: 
+     - /tmp/logs/rms_deploy.log
+     - /tmp/logs/intr_Stg_deploy.log
    tags: deploy
    
- - name: connecto sql db
+ - name: connecting to sql db
    shell: source /home/oretail/.profile && /home/oretail/sql_rollback.ksh
    register: deploy_result
    tags: rollback
@@ -27,10 +29,12 @@
    mail:
      host: mcms.johnlewis.co.uk
      port: 25
-     subject: Verify the hotfix has been applied or not
-     body: Hello, This is an alert to verify the hotfix status, Please find the attachment and take necessary action..
+     subject: Verify the logs of DB Objects - Rollback
+     body: Hello, This is an alert to verify the logs, Please find the attachment and take necessary action..
      from: ramana-alladu.reddy@johnlewis.co.uk
      to:
      - ravindra.reddy@johnlewis.co.uk
-     attach: /tmp/logs/intr_Stg_deploy.log
+     attach:
+     - /tmp/logs/rms_deploy.log
+     - /tmp/logs/intr_Stg_deploy.log
    tags: rollback

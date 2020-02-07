@@ -1,0 +1,5 @@
+---
+ - name: connecting to sql db
+   shell: sh /home/oretail/sql_rollback.ksh
+   register: rollback_result
+ - debug: var=rollback_result.stdout_lines

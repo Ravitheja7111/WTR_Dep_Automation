@@ -43,9 +43,10 @@
    tags: deploy
   
  - name: Copy deploy script to home directory
-   template: src=sql_deploy.ksh dest=/home/oretail mode=744
+   template: src=sql_deploy.ksh dest=/home/oretail mode=777
    tags: deploy
-   
- - name: Copy rollback script to home directory
-   template: src=sql_rollback.ksh dest=/home/oretail mode=744
+
+ - name: Copy Rollback script to home directory
+   template: src=sql_rollback.ksh dest=/home/oretail mode=777
    tags: deploy
+

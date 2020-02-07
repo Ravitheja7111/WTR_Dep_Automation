@@ -1,6 +1,6 @@
 #!/bin/ksh
 source /home/oretail/.profile
-sqlplus /@RMS_rmsdev01  << EOF >/tmp/logs/rms_deploy.log
+sqlplus /@RMS_rmsdev01  << EOF
 set verify off;
 show user;
 @{{ Staging }}/batch_jlsellingretailau.ksh
@@ -14,7 +14,7 @@ show user;
 @{{ Staging }}/jl_marketing_rebates_sql_b.pls
 exit;
 EOF
-sqlplus INTERFACES_STAGING/"1Nt3rF43ces!" @RMS_RMSPRE01 << EOF >/tmp/logs/intr_Stg_deploy.log
+sqlplus INTERFACES_STAGING/"1Nt3rF43ces!" @RMS_RMSPRE01 << EOF
 set verify off;
 show user;
 @{{ Staging }}/jl_marketing_rebate_interface_cre.sql
@@ -22,7 +22,7 @@ show user;
 @{{ Staging }}/jl_mr_project_intf_cre.sql
 exit;
 EOF
-sqlplus /@RMS_rmsdev01  << EOF >>/tmp/logs/rms_deploy.log
+sqlplus /@RMS_rmsdev01  << EOF
 set verify off;
 show user;
 @{{ Staging }}/jl_rebate_config_cre.sql

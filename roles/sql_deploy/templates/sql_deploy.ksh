@@ -1,4 +1,5 @@
 #!/bin/ksh
+source /home/oretail/.profile
 sqlplus /@RMS_rmsdev01  << EOF >/tmp/logs/rms_deploy.log
 set verify off;
 show user;

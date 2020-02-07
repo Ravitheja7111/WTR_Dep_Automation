@@ -1,6 +1,6 @@
 #!/bin/ksh
 source /home/oretail/.profile
-sqlplus /@RMS_rmsdev01  << EOF >/tmp/logs/rms_rollback.log
+sqlplus /@RMS_rmsdev01  << EOF
 set verify off;
 show user;
 @{{ Staging }}/jl_rollback_3749.sql

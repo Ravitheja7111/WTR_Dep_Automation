@@ -1,0 +1,6 @@
+---
+# tasks file for forms-
+ - include: pkg_download.yml
+ - include: invalid_objects.yml
+ - include: forms_backup.yml
+ - include: forms_deploy.yml

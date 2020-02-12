@@ -1,0 +1,25 @@
+---
+ - name: Create directory if not exists
+   file:
+     path: {{ form_file_path }}
+     state: directory
+     mode: 0755
+   register: createdir
+
+ - name: download package
+   shell: wget -O {{ artifactID }}-{{ version }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
+   args:
+     chdir: {{ form_file_path }}
+   when: createdir is success
+   register: formspkg
+   
+ - name: Extarcting forms pacakge
+   shell: "{{ item }}"
+   with_items:
+             - unzip -Z1 {{ artifactID }}-{{ version }}.{{ classifier }} > ora_forms.txt
+             - unzip -o {{ artifactID }}-{{ version }}.{{ classifier }}
+   args:
+     chdir: {{ form_file_path }} 
+   when: formspkg is success
+ 
+ 

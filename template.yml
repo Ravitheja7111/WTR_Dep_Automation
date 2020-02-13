@@ -7,8 +7,8 @@
        args:
          chdir: /tmp
          
-    - name: unzip the archive and copy template files to destination dir
-      unarchive:
+     - name: unzip the archive and copy template files to destination dir
+       unarchive:
           src: /tmp/{{ artifactID }}-{{ version }}.{{ classifier }}
           dest: /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
           remote_src: yes

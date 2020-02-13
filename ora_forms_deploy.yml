@@ -1,5 +1,5 @@
 ---
- - hosts: ORACLE
+ - hosts: DEV_ORACLE
    gather_facts: no
    roles:
      - forms_deploy

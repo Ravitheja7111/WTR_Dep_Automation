@@ -1,0 +1,4 @@
+---
+# vars file for forms
+staging_base: /JL_Automation_Staging/ora_forms_dep
+form_file_path: '{{ staging_base }}/forms_dep_files'

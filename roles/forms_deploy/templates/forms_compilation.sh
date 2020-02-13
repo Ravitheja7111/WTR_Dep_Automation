@@ -7,7 +7,7 @@ sed -i 's/\r//g' $forms_file
 cd /u01/app/rmsapp
 . ./forms_exec_profile
 
-db_name=$ORACLE_SID
+db_name=`echo $ORACLE_SID`
 export PATH
 ORACLE_TERM=vt220
 export ORACLE_TERM
@@ -28,7 +28,8 @@ do
         form_log="$form_name".log
         frm_name=`echo $form_name | cut -d '.' -f1`
         cp -p $forms_dep_files/$form_name $ORACLE_PATH
-        frmcmp_batch.sh userid=$UP batch=no module=$ORACLE_PATH/$form_name output_file=$ORACLE_PATH/"$frm_name".fmx  module_type=form compile_all=yes window_state=minimize
+        echo "copied $form_name to $ORACLE_PATH ========================================================="
+        $ORACLE_PATH/frmcmp_batch.sh userid=$UP batch=no module=$ORACLE_PATH/$form_name output_file=$ORACLE_PATH/"$frm_name".fmx  module_type=form compile_all=yes window_state=minimize
     form_com="$frm_name".fmx
     #Check if compiled form .fmx file available in src and ready to move to bin
     if [ -e $ORACLE_PATH/$form_com ];then

@@ -7,11 +7,11 @@
        do
          VAR=$(echo $form_name | grep ".fmb\$")
          if [ "$VAR" != "$form_name" ];then
-			echo "$form_name is invalid file.Please check the file list in $file1"
+            echo "$form_name is invalid file.Please check the file list in $file1"
             exit -1
          fi
        done
     args:
-      chdir: {{ form_file_path }}
+      chdir: "{{ form_file_path }}"
 
 

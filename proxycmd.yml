@@ -1,0 +1,9 @@
+---
+ - hosts: PERF_STEP
+   gather_facts: no
+   tasks:
+     - name: create directory
+       shell: mkdir /home/weblogic/test321
+   become: yes
+   become_user: weblogic
+   become_method: sudo

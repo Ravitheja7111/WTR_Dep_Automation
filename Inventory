@@ -10,10 +10,6 @@ localhost        ansible_connection=local ansible_user=oretail
 [OAT-NODE1]
 upojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
-[PERF_STEP]
-udojscam01 ansible_connection=ssh  ansible_ssh_user=cogramreddy ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q udojscut01"'
-
-
 [RMSDB]	
 usojscdm01.johnlewis.co.uk
 utojscdm01.johnlewis.co.uk
@@ -97,7 +93,7 @@ utojscam01.johnlewis.co.uk
 utojscap01.johnlewis.co.uk
 utojscai01.johnlewis.co.uk
 
-[SIT]
+[SYS2]
 umojscdm01.johnlewis.co.uk
 utajosdd01.johnlewis.co.uk
 umojscam01.johnlewis.co.uk
@@ -125,7 +121,7 @@ udojscam01.johnlewis.co.uk
 [ALLLAYERS:children]
 SYS4
 SYS5
-SIT
+SYS2
 CNVDEV2
 CNVDEV1
 DEV

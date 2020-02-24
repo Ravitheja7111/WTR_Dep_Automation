@@ -2,7 +2,7 @@
 # vars file for oracle
 username: ''
 password: ''
-adminUrl: 't3://udojscam01.johnlewis.co.uk:7301'
+adminUrl: 't3://{{ var_host }}.johnlewis.co.uk:{{ port }}'
 deploymentName: 'MassUploadApps'
 deploymentFile: 'MassUploadUI.ear'
 mdsFile: 'MDSConfig.py'

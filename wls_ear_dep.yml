@@ -1,5 +1,5 @@
 ---
- - hosts: DEV_ORACLE
+ - hosts: {{ var_host }}
    roles:
       - ear_deploy
    become: yes

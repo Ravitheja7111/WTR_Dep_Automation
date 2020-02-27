@@ -1,5 +1,5 @@
 ---
- - hosts: "{{ var_host }}"
+ - hosts: all
    gather_facts: no
    roles:
      - batch_deploy

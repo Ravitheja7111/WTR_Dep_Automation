@@ -1,0 +1,16 @@
+---
+  - name : find invalid objects if found exit from here
+    shell: |
+       file1={{ batch_file_path }}/batches.txt
+       sed -i 's/\r//g' $file1
+       for bat_name in `cat "$file1"`
+       do
+         VAR=$(echo $bat_name | egrep "(.ksh|.sh|.pc|.mk)$")
+         if [ "$VAR" != "$bat_name" ];then
+            echo "$bat_name is invalid file.Please check the file list in $file1"
+            exit -1
+         fi
+       done
+    args:
+      chdir: "{{ batch_file_path }}"
+

@@ -1,0 +1,22 @@
+---
+ - name: create backup directory
+   shell: mkdir -p "{{ staging_base}}"/bat_bkp_`date '+%Y-%m-%d'`
+
+ - name: Taking backup before deployment
+   shell: |
+      if [ -f "batches.txt" ];then
+      for i in `cat batches.txt`
+      do
+      file=`echo $i`
+      file_ext=`echo $i | cut -d "." -f 2`
+      if [ $file_ext == 'sh' ] || [ $file_ext == 'ksh' ];then
+            find /u02/app/oretail/RMS_BATCH/oracle/proc/bin -iname $i -exec cp -p {} "{{ staging_base}}"/bat_bkp_`date '+%Y-%m-%d'` \;
+        else [$file_ext == 'pc' ] || [ $file_ext == 'mk' ]
+               find /u02/app/oretail/RMS_BATCH/oracle/proc/src -iname $i -exec cp -p {} "{{ staging_base}}"/bat_bkp_`date '+%Y-%m-%d'` \;
+      fi
+      done
+      fi  
+   args:
+     chdir: "{{ batch_file_path }}"
+   register: backupfiles
+ - debug: var=backupfiles.stdout_lines

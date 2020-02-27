@@ -1,0 +1,10 @@
+---
+# vars file for batch_rollback
+staging_base: /JL_Automation_Staging/ora_bat_dep
+batch_file_path: '{{ staging_base }}/bat_dep_files'
+repositoryID: ''
+groupID: 'com.jlp.oracleretail'
+artifactID: 'rms'
+version: ''
+classifier: 'zip'
+

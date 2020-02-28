@@ -11,21 +11,21 @@ localhost        ansible_connection=local ansible_user=oretail
 upojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [RMSDB]	
-usojscdm01.johnlewis.co.uk
+usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-umojscdm01.johnlewis.co.uk
-uhojscdm04.johnlewis.co.uk
-uhojscdm01.johnlewis.co.uk
+umojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+uhojscdm04.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+uhojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 
 [RIBDB]
-usojscdm01.johnlewis.co.uk
-utojscdm01.johnlewis.co.uk
-umojscdm01.johnlewis.co.uk
-uhojscdm04.johnlewis.co.uk
-uhojscdm01.johnlewis.co.uk
-udojscdm01.johnlewis.co.uk
+usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer 
+uhojscdm04.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+uhojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [RMSDASDB]	
 usojscdm01.johnlewis.co.uk
@@ -38,33 +38,33 @@ usojscdt01.johnlewis.co.uk
 utojscdt01.johnlewis.co.uk
 
 [ORDSDB]
-usajosdd01.johnlewis.co.uk
-usajosdd01.johnlewis.co.uk
-utajosdd01.johnlewis.co.uk
+usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [RMSAPP]	
-usojscaa01.johnlewis.co.uk
-utojscam01.johnlewis.co.uk
-umojscam01.johnlewis.co.uk
-uhojscam02.johnlewis.co.uk
-uhojscam01.johnlewis.co.uk
-udojscam01.johnlewis.co.uk
+usojscaa01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+uhojscam02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+uhojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [RPMAPP]
-usojscap01.johnlewis.co.uk
-utojscap01.johnlewis.co.uk
-umojscap01.johnlewis.co.uk
-uhojscap02.johnlewis.co.uk
-uhojscap01.johnlewis.co.uk
-udojscam01.johnlewis.co.uk
+usojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+uhojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+uhojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [RIBAPP]
-usojscai01.johnlewis.co.uk
-utojscai01.johnlewis.co.uk
-umojscai01.johnlewis.co.uk
-uhojscai02.johnlewis.co.uk
-uhojscai01.johnlewis.co.uk
-udojscam01.johnlewis.co.uk
+usojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+uhojscai02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+uhojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [ALLAPPLICATIONS:children]
 
@@ -78,27 +78,27 @@ RPMAPP
 RIBAPP
 
 [SYS4]
-usojscdm01.johnlewis.co.uk
-usojscdt01.johnlewis.co.uk
-usajosdd01.johnlewis.co.uk
-usojscaa01.johnlewis.co.uk
-usojscap01.johnlewis.co.uk
-usojscai01.johnlewis.co.uk
+usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usojscaa01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [SYS5]
 utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-utojscdt01.johnlewis.co.uk
-usajosdd01.johnlewis.co.uk
-utojscam01.johnlewis.co.uk
-utojscap01.johnlewis.co.uk
-utojscai01.johnlewis.co.uk
+utojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [SYS2]
-umojscdm01.johnlewis.co.uk
-utajosdd01.johnlewis.co.uk
-umojscam01.johnlewis.co.uk
-umojscap01.johnlewis.co.uk
-umojscai01.johnlewis.co.uk
+umojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [CNVDEV2]
 uhojscdm04.johnlewis.co.uk

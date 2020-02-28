@@ -12,7 +12,7 @@ upojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [RMSDB]	
 usojscdm01.johnlewis.co.uk
-utojscdm01.johnlewis.co.uk
+utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscdm01.johnlewis.co.uk
 uhojscdm04.johnlewis.co.uk
 uhojscdm01.johnlewis.co.uk
@@ -86,7 +86,7 @@ usojscap01.johnlewis.co.uk
 usojscai01.johnlewis.co.uk
 
 [SYS5]
-utojscdm01.johnlewis.co.uk
+utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscdt01.johnlewis.co.uk
 usajosdd01.johnlewis.co.uk
 utojscam01.johnlewis.co.uk

@@ -1,5 +1,14 @@
-[all:vars]
-ansible_connection=ssh  ansible_ssh_user=ansiblepioneer
+[DEV_ORACLE]
+udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+
+[oretail]
+udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+
+[LOCALHOST]
+localhost        ansible_connection=local ansible_user=oretail
+
+[OAT-NODE1]
+upojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [RMSDB]	
 usojscdm01.johnlewis.co.uk
@@ -7,7 +16,7 @@ utojscdm01.johnlewis.co.uk
 umojscdm01.johnlewis.co.uk
 uhojscdm04.johnlewis.co.uk
 uhojscdm01.johnlewis.co.uk
-udojscdm01.johnlewis.co.uk
+udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 
 [RIBDB]
@@ -105,7 +114,7 @@ uhojscap01.johnlewis.co.uk
 uhojscai01.johnlewis.co.uk
 
 [DEV]
-udojscdm01.johnlewis.co.uk
+udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 udojscam01.johnlewis.co.uk
 
 

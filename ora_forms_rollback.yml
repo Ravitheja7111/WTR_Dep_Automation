@@ -1,5 +1,5 @@
 ---
- - hosts: DEV_ORACLE
+ - hosts: all
    gather_facts: no
    roles:
      - forms_rollback

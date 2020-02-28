@@ -1,41 +1,46 @@
 #!/bin/ksh
 source /home/oretail/.profile
-sqlplus INTERFACES_STAGING/"esb0rds!123"@RMS_RMSTST01  @{{ Staging }}/CRE_TAB_JL_SUPPLIER_DISSECTION.sql > output.txt
+sqlplus INTERFACES_STAGING/"esb0rds!123"@RMS_RMSTST01  @{{ Staging }}/CRE_TAB_JL_SUPPLIER_DISSECTION.sql << EOF > output.txt
 RETVAL=`egrep 'unknown command || ERROR at || ORA-*' output.txt | wc -l`
 if [ $RETVAL -gt 1 ];then
 echo "1st SQLPLUS FAILED : $RETVAL"
    exit 1
 fi
 exit;
+EOF
 
-sqlplus /@RMS_RMSTST01  @{{ Staging }}/insert_rtk_errors.sql > output.txt
+sqlplus /@RMS_RMSTST01  @{{ Staging }}/insert_rtk_errors.sql << EOF > output.txt
 RETVAL=`egrep 'unknown command || ERROR at || ORA-*' output.txt | wc -l`
 if [ $RETVAL -gt 1 ];then
 echo "2nd SQLPLUS FAILED : $RETVAL"
    exit 1
 fi
 exit;
+EOF
 
-sqlplus /@RMS_RMSTST01  @{{ Staging }}/jl_rms_msup_supplier_validate.pkb > output.txt
+sqlplus /@RMS_RMSTST01  @{{ Staging }}/jl_rms_msup_supplier_validate.pkb << EOF > output.txt
 RETVAL=`egrep 'unknown command || ERROR at || ORA-*' output.txt | wc -l`
 if [ $RETVAL -gt 1 ];then
 echo "3rd SQLPLUS FAILED: $RETVAL"
    exit 1
 fi
 exit;
+EOF
 
-sqlplus /@RMS_RMSTST01  @{{ Staging }}/JL_SUPP_DISSECTION_VALIDATE.pks > output.txt
+sqlplus /@RMS_RMSTST01  @{{ Staging }}/JL_SUPP_DISSECTION_VALIDATE.pks << EOF > output.txt
 RETVAL=`egrep 'unknown command || ERROR at || ORA-*' output.txt | wc -l`
 if [ $RETVAL -gt 1 ];then
 echo "nth SQLPLUS FAILED : $RETVAL"
    exit 1
 fi
 exit;
+EOF
 
-sqlplus /@RMS_RMSTST01  @{{ Staging }}/JL_SUPP_DISSECTION_VALIDATE.pkb > output.txt
+sqlplus /@RMS_RMSTST01  @{{ Staging }}/JL_SUPP_DISSECTION_VALIDATE.pkb << EOF > output.txt
 RETVAL=`egrep 'unknown command || ERROR at || ORA-*' output.txt | wc -l`
 if [ $RETVAL -gt 1 ];then
 echo "nth SQLPLUS FAILED : $RETVAL"
    exit 1
 fi
 exit;
+EOF

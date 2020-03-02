@@ -1,15 +1,5 @@
 #!/bin/ksh
 source /home/oretail/.profile
-sqlplus INTERFACES_STAGING/"esb0rds!123"@RMS_RMSTST01 << EOF > output.txt
-@{{ Staging }}/CRE_TAB_JL_SUPPLIER_DISSECTION.sql
-exit;
-EOF
-RETVAL=`grep -E "unknown command|ERROR at|ORA-*" output.txt | wc -l`
-if [ $RETVAL -gt 1 ];then
-echo "1st SQLPLUS FAILED : $RETVAL"
-   exit 1
-fi
-
 sqlplus /@RMS_RMSTST01 << EOF > output.txt
  @{{ Staging }}/insert_rtk_errors.sql
 exit;

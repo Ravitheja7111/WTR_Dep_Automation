@@ -4,8 +4,8 @@
 
  - name: Taking backup before deployment
    shell: |
-      if [ -f "ora_forms.txt" ];then
-      for i in `cat ora_forms.txt`
+      if [ -f "forms.txt" ];then
+      for i in `cat forms.txt`
       do
       file=`echo $i`
       find /u01/app/rmsapp/rmsforms/base/forms/src -iname $i -exec cp {} "{{ staging_base }}"/Forms_bkp_`date '+%Y-%m-%d'` \;

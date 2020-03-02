@@ -10,7 +10,7 @@
    shell: rm -rf *.*
    args:
      chdir: "{{ form_file_path }}"
-	 
+
  - name: Copy files_extract script to dest dir
    template: src=files_extract.sh dest={{ form_file_path }} mode=755
    register: scriptcopy

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-forms_file={{ form_file_path }}/ora_forms.txt
+forms_file={{ form_file_path }}/forms.txt
 sed -i 's/\r//g' $forms_file
 
 #Exporting variables

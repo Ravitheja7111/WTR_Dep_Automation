@@ -5,7 +5,7 @@ sed -i 's/\r//g' $forms_file
 
 #Exporting variables
 cd /u01/app/rmsapp
-#. ./forms_exec_profile
+. ./forms_exec_profile
 
 db_name=`echo $ORACLE_SID`
 export PATH
@@ -13,7 +13,7 @@ ORACLE_TERM=vt220
 export ORACLE_TERM
 TERM=vt220
 export TERM
-ORACLE_PATH=/u01/app/retail_home/RMS_FORMS/base/forms/src
+ORACLE_PATH=/u01/app/rmsapp/rmsforms/base/forms/src
 cd $ORACLE_PATH
 echo "UP is $UP"
 echo "All variables have been exported successfully"

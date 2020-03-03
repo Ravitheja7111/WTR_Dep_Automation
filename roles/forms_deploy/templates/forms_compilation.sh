@@ -5,7 +5,7 @@ sed -i 's/\r//g' $forms_file
 
 #Exporting variables
 cd /u01/app/rmsapp
-. ./forms_exec_profile
+#. ./forms_exec_profile
 
 db_name=`echo $ORACLE_SID`
 export PATH

@@ -20,7 +20,7 @@ fi
 echo $file_name
 echo $con_string
 
-sqlplus $con_string << EOF > output.txt
+sqlplus $con_string << EOF >> output.txt
 @{{ Staging }}/$file_name
 exit;
 EOF

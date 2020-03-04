@@ -1,27 +1,19 @@
 #!/bin/ksh
 source /home/oretail/.profile
 
-read -r -d '' VAR <<- EOM
-    dml_code_detail_cod-5718.sql~RMS
-    jl_suprebateboxi.sql~RMS
-    jl_suprebateextract.sql~RMS
-    jl_suprebatetdmarx.sql~RMS
-EOM
+VAR="dml_code_detail_cod-5718.sql~RMS
+jl_suprebateboxi.sql~RMS
+jl_suprebateextract.sql~RMS
+jl_suprebatetdmarx.sql~RMS"
 
-for object in $VAR
-do
-file_name=${object%~*}
-echo "file_name:$file_name"
-schema=${object#*~}
-echo "schema:$schema"
-if [ "$schema" == "RMS" ];then
-	con_string="/@RMS_RMSTST01"
-	else
+while IFS= read -r line; do
+    file_name=${line%~*}
+    schema=${line#*~}
+     if [ "$schema" == "RMS" ];then
+	   con_string="/@RMS_RMSTST01"
+	   else
   		con_string="INTERFACES_STAGING/"esb0rds!123"@RMS_RMSTST01"
-fi
-echo $file_name
-echo $con_string
-
+    fi
 sqlplus $con_string << EOF >> output.txt
 @{{ Staging }}/$file_name
 exit;
@@ -30,5 +22,8 @@ RETVAL=`grep -E "unknown command|ERROR at|ORA-*" output.txt | wc -l`
 if [ $RETVAL -gt 1 ];then
 echo "1st SQLPLUS FAILED : $RETVAL"
    exit 1
-fi
-done
+fi         
+done <<< "$VAR"
+
+
+

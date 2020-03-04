@@ -2,8 +2,10 @@
 source /home/oretail/.profile
 
 read -r -d '' VAR <<- EOM
-    CRE_TAB_JL_SUPPLIER_DISSECTION.sql~INTERFACE_STAGING
-    insert_rtk_errors.sql~RMS
+    dml_code_detail_cod-5718.sql~RMS
+    jl_suprebateboxi.sql~RMS
+    jl_suprebateextract.sql~RMS
+    jl_suprebatetdmarx.sql~RMS
 EOM
 
 for object in $VAR

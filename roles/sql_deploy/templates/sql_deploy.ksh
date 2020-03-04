@@ -9,15 +9,17 @@ EOM
 for object in $VAR
 do
 file_name=${object%~*}
+echo "file_name:$file_name"
 schema=${object#*~}
-if [$schema="RMS"]
-then  
-  con_string="/@RMS_RMSTST01"
-else 
-  con_string="INTERFACES_STAGING/"esb0rds!123"@RMS_RMSTST01"   
-fi   
+echo "schema:$schema"
+if [ "$schema" == "RMS" ];then
+	con_string="/@RMS_RMSTST01"
+	else
+  		con_string="INTERFACES_STAGING/"esb0rds!123"@RMS_RMSTST01"
+fi
 echo $file_name
 echo $con_string
+
 sqlplus $con_string << EOF > output.txt
 @{{ Staging }}/$file_name
 exit;

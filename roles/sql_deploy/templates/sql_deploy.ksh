@@ -15,7 +15,7 @@ sqlplus $con_string << EOF >> output.txt
 @{{ Staging }}/$file_name
 exit;
 EOF
-RETVAL=`grep -E "unknown command|ERROR at|ORA-*" output.txt | wc -l`
+RETVAL=`grep -E "unknown command|unable to open file|ERROR at|ORA-*" output.txt | wc -l`
 if [ $RETVAL -gt 1 ];then
 echo "1st SQLPLUS FAILED : $RETVAL"
    exit 1

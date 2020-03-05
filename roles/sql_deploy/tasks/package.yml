@@ -51,6 +51,6 @@
    tags: deploy
    
  - name: Copy Rollback script to home directory
-   template: src=deploy_list dest=/home/oretail mode=755
+   template: src=deploy_list.txt dest=/home/oretail mode=755
    tags: deploy
 

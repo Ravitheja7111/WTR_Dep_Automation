@@ -1,10 +1,7 @@
 #!/bin/ksh
 source /home/oretail/.profile
 
-VAR="dml_code_detail_cod-5718.sql~RMS
-jl_suprebateboxi.sql~RMS
-jl_suprebateextract.sql~RMS
-jl_suprebatetdmarx.sql~RMS"
+VAR="jl_suprebatetdmarx.sql~RMS"
 
 while IFS= read -r line; do
     file_name=${line%~*}

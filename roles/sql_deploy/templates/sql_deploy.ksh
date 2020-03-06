@@ -1,7 +1,7 @@
 #!/bin/ksh
 source /home/oretail/.profile
 
-VAR=`cat deploy_list.txt`
+VAR="JL_PROCESS_XITEMUDACRE_MSG.PKB~RMS"
 
 echo "var:$VAR"
 echo "line:"

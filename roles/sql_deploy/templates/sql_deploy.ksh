@@ -5,7 +5,8 @@ VAR="JL_PROCESS_XITEMUDACRE_MSG.PKB~RMS"
 
 echo "var:$VAR"
 echo "line:"
-log_file_name=output_`date + %Y-%m-%d`.log
+log_file_name=output_`date +%Y%m%d`.log
+echo "logfilename=$log_file_name"
 while IFS= read -r line; do
     echo "Line: $line"
     file_name=${line%~*}

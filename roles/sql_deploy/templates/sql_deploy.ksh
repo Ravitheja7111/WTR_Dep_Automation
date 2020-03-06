@@ -1,8 +1,7 @@
 #!/bin/ksh
 source /home/oretail/.profile
 
-VAR="jl_table_partition_through_onetime.sql~RMS
-	CORESVC_SALES_UPLOAD_SQL_OraPatch_28369039.pls~RMS"
+VAR="CORESVC_SALES_UPLOAD_SQL_OraPatch_28369039.pls~RMS"
 
 while IFS= read -r line; do
     file_name=${line%~*}

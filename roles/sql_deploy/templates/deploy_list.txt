@@ -1,2 +1,2 @@
-create_view_JL_VIEW_SUPPLIER.sql~RMS
+jl_insert_restart_jldealact.sql~RMS
 JL_VALUE_SEC_DATA_SQL.pkb~RMS

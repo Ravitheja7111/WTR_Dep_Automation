@@ -19,7 +19,7 @@ while IFS= read -r line; do
     fi
     echo $file_name
     echo $con_string
-    echo sqlplus $con_string << EOF >> $log_file_name
+    echo "sqlplus $con_string << EOF >> $log_file_name"
 sqlplus $con_string << EOF >> $log_file_name
 @{{ Staging }}/$file_name
 exit;

@@ -6,6 +6,7 @@ VAR=`cat /home/oretail/deploy_list.txt`
 echo "var:$VAR"
 echo "line:"
 log_file_name=output_`date +%Y-%m-%d`.log
+rm $log_file_name
 while IFS= read -r line; do
     echo "Line: $line"
     file_name=${line%~*}

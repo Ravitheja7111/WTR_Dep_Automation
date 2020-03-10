@@ -14,7 +14,7 @@ while IFS= read -r line; do
     schema=${line#*~}
     echo "schema:$schema"
     if [ "$schema" == "RMS" ];then
-	   con_string="/@RMS_RMSTST01"
+	   con_string="/@RMS_rmsdev01"
 	   else
   		con_string="INTERFACES_STAGING/"esb0rds!123"@RMS_RMSTST01"
     fi

@@ -1,7 +1,7 @@
 #!/bin/ksh
 source /home/oretail/.profile
 
-VAR=`cat deploy_list.txt`
+VAR=`cat /home/oretail/deploy_list.txt`
 
 echo "var:$VAR"
 echo "line:"

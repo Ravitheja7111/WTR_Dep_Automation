@@ -13,7 +13,7 @@ while IFS= read -r line; do
     schema=${line#*~}
     echo "schema:$schema"
     if [ "$schema" == "RMS" ];then
-	   con_string="/@RMS_rmsdev01"
+	   con_string="/@RMS_RMSTST01"
 	   else
   		con_string="INTERFACES_STAGING/"esb0rds!123"@RMS_RMSTST01"
     fi
@@ -21,7 +21,8 @@ while IFS= read -r line; do
     echo $con_string
     echo "sqlplus $con_string << EOF >> $log_file_name"
 sqlplus $con_string << EOF >> $log_file_name
-@{{ Staging }}/$file_name
+@{{ Staging }}/$file_name;
+commit;
 exit;
 EOF
 RETVAL=`grep -E "unknown command|unable to open file|ERROR at|ORA-*" $log_file_name | wc -l`

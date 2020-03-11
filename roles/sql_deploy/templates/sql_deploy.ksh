@@ -13,9 +13,9 @@ while IFS= read -r line; do
     schema=${line#*~}
     echo "schema:$schema"
     if [ "$schema" == "RMS" ];then
-	   con_string="/@RMS_RMSTST01"
+	   con_string={{ rms_schema }}
 	   else
-  		con_string="INTERFACES_STAGING/"esb0rds!123"@RMS_RMSTST01"
+  		con_string={{ intr_schema }}
     fi
     echo $file_name
     echo $con_string

@@ -50,7 +50,7 @@
    template: src=sql_rollback.ksh dest=/home/oretail mode=777
    tags: deploy
    
- - name: Copy Rollback script to home directory
+ - name: Copy  deploy_list.txt to home directory
    template: src=deploy_list.txt dest=/home/oretail mode=755
    tags: deploy
 

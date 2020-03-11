@@ -5,5 +5,5 @@ groupID: 'com.jlp.oracleretail'
 artifactID: 'dbobjects'
 version: '1.0.0-SNAPSHOT'
 classifier: 'zip'
-
-
+rms_schema: ''
+intr_schema: ''

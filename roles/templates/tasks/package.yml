@@ -28,7 +28,7 @@
    register: scriptcopy
 
  - name: download package into
-   shell: wget -O {{ artifactID }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
+   shell: wget -O {{ artifactID }}-{{ version }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
    args:
      chdir: "{{ Staging }}"
 

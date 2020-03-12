@@ -5,7 +5,7 @@ for i in `cat release.txt`
 do
 	#file=`echo $i | cut -d '.' -f1`
 	ext=`echo $i | cut -d '.' -f2`
-	file_ext=`echo $ext | tr '[:upper:]' '[:lower:]'` 
+	file_ext=`echo $ext | tr '[:upper:]' '[:lower:]'`
 	if [ $file_ext == 'sql' ] || [ $file_ext == 'pkb' ] || [ $file_ext == 'pks' ] || [ $file_ext == 'pls' ];then
 		includefile=`echo $i|awk -F"/" '{print $NF}'`
 		echo $includefile >> dbobjects.txt

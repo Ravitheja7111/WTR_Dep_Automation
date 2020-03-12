@@ -1,0 +1,7 @@
+---
+Staging: '/tmp/JL_Automation_Staging/template_files'
+repositoryID: 'JLP-Pioneer-Snapshots'
+groupID: 'com.jlp.oracleretail'
+artifactID: 'rms'
+version: '1.0-SNAPSHOT'
+classifier: 'zip'

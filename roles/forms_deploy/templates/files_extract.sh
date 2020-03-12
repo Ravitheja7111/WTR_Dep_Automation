@@ -4,7 +4,8 @@ rm -f dbobjects.txt batches.txt forms.txt templates.txt
 for i in `cat release.txt`
 do
 	#file=`echo $i | cut -d '.' -f1`
-	file_ext=`echo $i | cut -d '.' -f2` 
+	ext=`echo $i | cut -d '.' -f2`
+	file_ext=`echo $ext | tr '[:upper:]' '[:lower:]'` 
 	if [ $file_ext == 'sql' ] || [ $file_ext == 'pkb' ] || [ $file_ext == 'pks' ] || [ $file_ext == 'pls' ];then
 		includefile=`echo $i|awk -F"/" '{print $NF}'`
 		echo $includefile >> dbobjects.txt

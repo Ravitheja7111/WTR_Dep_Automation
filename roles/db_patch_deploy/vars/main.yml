@@ -1,0 +1,14 @@
+---
+# vars file for db_patch_deploy
+basedir: '/staging/deploys/Monthly_Release'
+monthdir: "{{ basedir }}/{{ month }}"
+patchdir: "{{ monthdir }}/Deploy/Patch/{{ patch_num }}"
+retail_home: '/u02/app/oretail/RMS_BATCH/orpatch/bin/'
+repositoryID: 'JLP-Pioneer-Releases'
+groupID: 'com.jlp.oracleretail'
+artifactID: 'patches'
+version: '1.0.0'
+classifier: 'zip'
+staging_base: '/home/oretail/JL_Automation_staging/db_patch'
+month: 'AprilA'
+patch_num: 'p30014677'

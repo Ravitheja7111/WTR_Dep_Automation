@@ -32,7 +32,7 @@
    args:
      chdir: "{{ Staging }}"
 
-- name: Extarcting release pacakge
+ - name: Extarcting release pacakge
    shell: "{{ item }}"
    with_items:
              - unzip -Z1 {{ artifactID }}-{{ version }}.{{ classifier }}  > release.txt

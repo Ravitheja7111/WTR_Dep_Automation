@@ -6,8 +6,10 @@
       do
       file=`echo $i`
       cp $file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
+      done
+      fi
    args:
      chdir: "{{ Staging }}"
-   register: batresult
+   register: templateresult
    
- - debug: var=batresult.stdout_lines
+ - debug: var=templateresult.stdout_lines

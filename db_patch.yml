@@ -2,12 +2,13 @@
  - hosts: all
    gather_facts: false
    tasks:
-     - name: check if patch directory exists
+     - name: create if directory not exist
        file:
          path: /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/p30014677
          state: directory
          mode: 0777
-         remote_src: yes
+       register: createdir
+         
      - name: download package
        command: wget -O {{ artifactID }}-{{ version }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
        args:

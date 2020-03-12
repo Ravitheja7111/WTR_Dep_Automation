@@ -4,23 +4,33 @@
    tasks:
      - name: check if patch directory exists
        file:
-         path: /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/30014677
+         path: /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/p30014677
          state: directory
          mode: 0777
          remote_src: yes
+     - name: download package
+       command: wget -O {{ artifactID }}-{{ version }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
+       args:
+         chdir: /tmp
 
      - name: unzip the file
        unarchive:
-          src: /u02/app/oretail/RMS_BATCH/staging/p30014677_141000_Generic.zip
-          dest: /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/30014677
+          src: tmp/{{ artifactID }}-{{ version }}.{{ classifier }}
+          dest: /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/p30014677
           remote_src: yes
           mode: 0777
+        
+     - name: create backup directory
+       shell: mkdir -p /home/oretail/JL_Automation_Staging/db_patch/DBPatch_bkp_`date '+%Y-%m-%d'`
+
+     - name: Take backup before DB vendor patch apply
+       shell: tar -pcvf /home/oretail/JL_Automation_Staging/db_patch/DBPatch_bkp_`date '+%Y-%m-%d'`/rmsbatch_{{ month }}.tar /u02/app/oretail/RMS_BATCH --exclude='./RMS_BATCH/JLCUSTOM'
 
      - name: apply patch
-       command: orpatch apply -s /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/30014677/
+       ommand: orpatch apply -s /staging/deploys/Monthly_Release/AprilA/Deploy/Patch/p30014677/
        args:
          chdir: /u02/app/oretail/RMS_BATCH/orpatch/bin
-
+ 
      - name: copying orpatch to staging path
        copy:
          src: /u02/app/oretail/RMS_BATCH/orpatch

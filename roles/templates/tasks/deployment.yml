@@ -5,7 +5,7 @@
       for i in `cat templates.txt`
       do
       file=`echo $i`
-      cp $file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
+      cp -p $file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
       done
       fi
    args:

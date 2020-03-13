@@ -35,4 +35,4 @@
     register: orpatch
   - debug:
       msg: "patch has been applied succesfully"
-    when: orpatch.rc == 
+    when: orpatch.rc == 0

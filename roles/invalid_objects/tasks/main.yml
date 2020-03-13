@@ -1,0 +1,33 @@
+---
+ - name: create directory 
+   file: dest={{ destDir }} mode=755 state=directory
+   register: createdir
+
+ - name: Copy sql files to staging directory
+   template: src=main.sql dest={{ destDir }}/main.sql mode=755
+   when: createdir is success
+   register: copyfile
+
+   
+ - name: Copy sql files to staging directory
+   template: src=all_objects_pub.sql dest={{ destDir }}/all_objects_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy sql files to staging directory
+   template: src=dba_objects_pub.sql dest={{ destDir }}/dba_objects_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy sql files to staging directory
+   template: src=dba_objects_not_pub.sql dest={{ destDir }}/dba_objects_not_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy sql files to staging directory
+   template: src=all_objects_not_pub.sql dest={{ destDir }}/all_objects_not_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: connect to sql db
+   shell: source /home/oretail/.profile && sqlplus $UP @{{ destDir }}/main.sql

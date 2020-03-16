@@ -30,7 +30,6 @@
      body: Hello, This is an alert to verify the RIB topics and MF Queues status, Please find the attachment and take necessary action..
      from: ramana-alladu.reddy@johnlewis.co.uk
      to:
-     - mohammed.abdul.mujeeb@johnlewis.co.uk
      - ravindra.reddy@johnlewis.co.uk
      attach: /home/oretail/pre_check_scripts/table_count.log
 

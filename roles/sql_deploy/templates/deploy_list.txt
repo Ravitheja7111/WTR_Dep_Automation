@@ -1,3 +1,2 @@
-create_function_convert_boolean_add_deals.sql~RMS
-create_table_jl_deal_component.sql~RMS
-jl_create_loc_list.sql~RMS
+JL_NEXT_INVOICE_DATE.SQL~RMS
+CORESVC_SALES_UPLOAD_SQL_OraPatch_28369039.pls~RMS

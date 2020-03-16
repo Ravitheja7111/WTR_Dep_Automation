@@ -1,20 +1,3 @@
-jl_insert_restart_jldealinc.sql~RMS
-JL_VALUE_SEC_DATA_SQL.pkb~RMS
-CORESVC_SALES_UPLOAD_SQL_OraPatch_28369039.pls ~RMS
-deal_location_list.sql~RMS
-jl_view_deal_to_st_count.sql~RMS
-jl_view_deal_to_cl_count.sql~RMS
-jl_view_dealsummary_count_create_ddl.sql~RMS
-create_jl_view_supplier_site_custom.sql~RMS
-create_jl_view_supplier_custom.sql~RMS
-jl_deal_statustype_view_creation.sql~RMS
-create_view_jl_view_dealtype.sql~RMS
-create_jl_view_supplier.sql~RMS
-insert_into_jl_sec_adf_action_role.sql~RMS
-create_jl_view_supplier_dept_link.sql~RMS
-create_jl_view_supplier_site.sql~RMS
-create_view_jl_view_w_deal_to_st_count.sql~RMS
-jl_code_head_detail_insert_script.sql~RMS
 create_function_convert_number.sql~RMS
 insert_into_deal_comp_type.sql~RMS
 create_function_convert_boolean_next_inv_date.sql~RMS

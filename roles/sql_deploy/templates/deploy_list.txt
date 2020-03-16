@@ -1,4 +1,3 @@
-create_function_convert_boolean_next_inv_date.sql~RMS
 create_function_convert_boolean_add_deals.sql~RMS
 create_table_jl_deal_component.sql~RMS
 jl_create_loc_list.sql~RMS

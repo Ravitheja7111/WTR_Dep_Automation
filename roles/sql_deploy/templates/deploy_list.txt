@@ -1,4 +1,3 @@
-jl_deal_component_insert.sql~RMS
 create_table_jl_daily_deal_inc.sql~RMS
 create_table_jl_soa_deal_queue.sql~RMS
 create_table_jl_deal_tran_data_temp.sql~RMS

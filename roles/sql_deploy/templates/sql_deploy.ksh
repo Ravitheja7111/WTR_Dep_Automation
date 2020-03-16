@@ -6,6 +6,10 @@ VAR=`cat /home/oretail/deploy_list.txt`
 echo "var:$VAR"
 echo "line:"
 log_file_name=output_`date +%Y-%m-%d`.log
+log_time=_`date +%X`
+if [ -f "$log_file_name" ]; then
+ `mv $log_file_name "$log_file_name$log_time"`
+fi 
 while IFS= read -r line; do
     echo "Line: $line"
     file_name=${line%~*}
@@ -26,7 +30,7 @@ commit;
 exit;
 EOF
 RETVAL=`grep -E "unknown command|unable to open file|ERROR at|ORA-*|*error*" $log_file_name | wc -l`
-if [ $RETVAL -gt 1 ];then
+if [ $RETVAL -gt 0 ];then
 echo "1st SQLPLUS FAILED : $RETVAL"
    exit 1
 fi 	

@@ -1,23 +1,23 @@
 ---
 # vars file for oracle
-username: ''
-password: ''
-adminUrl: 't3://{{ host_name }}.johnlewis.co.uk:{{ port }}'
-deploymentName: ''
-deploymentFile: ''
-mdsFile: 'MDSConfig.py'
-fileLocation: '/home/{{ appuser }}/deployEAR'
-#wlstHome: '/u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin'
-oracleBase: '/u01/app/{{ appuser }}/Oracle/Middleware'
-domainHome: '/u01/app/{{ appuser }}/Oracle/Middleware/user_projects/domains
-domainName: '{{ domainHome }}/{{ domain_name }}'
-deploymentTarget: '{{ cluster_name }}'
-deployDirectory: '{{ domain_name }}/servers/{{ server_name }}/stage'
-repository: ' '
-partition: ''
-jndi: ''
-repositoryID: 'JLP-Pioneer-Snapshots'
-groupID: 'com.jlp.mua'
-artifactID: 'MassUploadUI'
-version: '1.0-SNAPSHOT'
-classifier: 'ear'
+username: ""
+password: ""
+adminUrl: "t3://{{ host_name }}.johnlewis.co.uk:{{ port }}"
+deploymentName: ""
+deploymentFile: ""
+mdsFile: "MDSConfig.py"
+fileLocation: "/home/{{ appuser }}/deployEAR"
+#wlstHome: "/u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin"
+oracleBase: "/u01/app/{{ appuser }}/Oracle/Middleware"
+domainHome: "/u01/app/{{ appuser }}/Oracle/Middleware/user_projects/domains""
+domainName: "{{ domainHome }}/{{ domain_name }}"
+deploymentTarget: "{{ cluster_name }}"
+deployDirectory: "{{ domain_name }}/servers/{{ server_name }}/stage"
+repository: " "
+partition: ""
+jndi: ""
+repositoryID: "JLP-Pioneer-Snapshots"
+groupID: "com.jlp.mua"
+artifactID: "MassUploadUI"
+version: "1.0-SNAPSHOT"
+classifier: "ear"

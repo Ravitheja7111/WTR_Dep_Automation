@@ -24,7 +24,7 @@
     chdir: /home/weblogic/deployEAR
 
 - name: Update adf-config.xml file with MDS entries
-  shell: /u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin/wlst.sh {{ fileLocation }}/MDSConfig.py
+  shell: {{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ fileLocation }}/MDSConfig.py
   when: copypyscript is success
   notify: MDS Update Finish
   tags: mua
@@ -39,7 +39,7 @@
   with_items:
             - sh setDomainEnv.sh
   args: 
-    chdir: /u01/app/weblogic/Oracle/Middleware/user_projects/domains/ADF_Domain_DEV/bin 
+    chdir: "{{ domainName }}/bin"
 
 - name: Copy deploy script
   template: src=deploy.j2 dest={{ deployDirectory }}/deploy.py mode=755
@@ -47,7 +47,7 @@
   register: copyscript
 
 - name: Run deploy command
-  shell: /u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin/wlst.sh {{ deployDirectory }}/deploy.py
+  shell: {{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ deployDirectory }}/deploy.py
   when: copyscript is success
   register: deployout
   notify: Deploy Finish

@@ -47,7 +47,7 @@
   register: copyscript
 
 - name: Run deploy command
-  shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh" "{{ deployDirectory }}/deploy.py"
+  shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ deployDirectory }}/deploy.py"
   when: copyscript is success
   register: deployout
   notify: Deploy Finish

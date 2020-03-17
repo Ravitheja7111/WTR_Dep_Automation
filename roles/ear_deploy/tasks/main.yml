@@ -24,13 +24,13 @@
     chdir: /home/weblogic/deployEAR
 
 - name: Update adf-config.xml file with MDS entries
-  shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh" "{{ fileLocation }}/MDSConfig.py"
+  shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ fileLocation }}/MDSConfig.py"
   when: copypyscript is success
   notify: MDS Update Finish
   tags: mua
   
 - name: Copy ear file to directory
-  command: cp -R "{{ fileLocation }}/{{ deploymentFile }}" "{{ deployDirectory }}"
+  command: cp -R "{{ fileLocation }}/{{ deploymentFile }} {{ deployDirectory }}"
   when: deploydir is success
   register: copyear
 

@@ -6,7 +6,7 @@ adminUrl: 't3://{{ host_name }}.johnlewis.co.uk:{{ port }}'
 deploymentName: ''
 deploymentFile: ''
 mdsFile: 'MDSConfig.py'
-fileLocation: '/home/{{ user }}/deployEAR'
+fileLocation: '/home/{{ appuser }}/deployEAR'
 #wlstHome: '/u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin'
 oracleBase: '/u01/app/{{ appuser }}/Oracle/Middleware'
 domainHome: '/u01/app/{{ appuser }}/Oracle/Middleware/user_projects/domains

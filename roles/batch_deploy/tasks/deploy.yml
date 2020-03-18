@@ -1,6 +1,7 @@
 ---
  - name: Copying Batches to respective dir on the target server
    shell: |
+      source /home/oretail/.profile
       if [ -f "batches.txt" ];then
       for i in `cat batches.txt`
       do

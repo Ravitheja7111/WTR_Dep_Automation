@@ -34,4 +34,4 @@
      chdir: "{{ batch_file_path }}"
    register: batresult
    
- - debug: var=batresult.stdout_lines
+ - debug: var=batresult

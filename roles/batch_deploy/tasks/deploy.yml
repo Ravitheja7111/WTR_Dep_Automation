@@ -4,7 +4,7 @@
       source /home/oretail/.profile
       set -x
       if [ -f "{{ batch_file_path }}/batches.txt" ];then
-      for i in `cat batches.txt`
+      for i in `cat {{ batch_file_path }}/batches.txt`
       do
       file=`echo $i`
       file_ext=`echo $i | cut -d "." -f 2`

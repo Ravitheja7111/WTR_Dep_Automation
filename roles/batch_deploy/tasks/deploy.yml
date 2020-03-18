@@ -3,7 +3,7 @@
    shell: |
       source /home/oretail/.profile
       set -x
-      if [ -f "batches.txt" ];then
+      if [ -f "{{ batch_file_path }}/batches.txt" ];then
       for i in `cat batches.txt`
       do
       file=`echo $i`

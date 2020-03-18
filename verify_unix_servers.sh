@@ -1,13 +1,14 @@
 #!/bin/bash
 
-date
-cat servers_list.txt |  while read -ra output
+date 
+#!/bin/bash
+input=servers_list.txt
+while IFS= read -r line
 do
-    ping -c 1 "$output" > /dev/null
+    ping -c 1 "$line" > /dev/null
     if [ $? -eq 0 ]; then
-    echo "Server :$output is Reachable"
+    echo "Server :$line is Reachable"
     else
-    echo "Server :$output is Unreachable"
+    echo "Server :$line is Unreachable"
     fi
-done
-
+done < "$input"

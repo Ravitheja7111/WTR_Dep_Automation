@@ -1,7 +1,4 @@
 #!/bin/bash
-
-date 
-#!/bin/bash
 input=servers_list.txt
 while IFS= read -r line
 do

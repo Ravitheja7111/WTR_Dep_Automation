@@ -34,6 +34,8 @@
       fi
    args:
      chdir: "{{ batch_file_path }}"
+   environment:
+     TERM: vt100
    register: batresult
    
  - debug: var=batresult

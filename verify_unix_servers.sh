@@ -1,7 +1,7 @@
 #!/bin/bash
 
 date
-cat servers_list.txt |  while read output
+cat servers_list.txt |  while read -r output
 do
     ping -c 1 "$output" > /dev/null
     if [ $? -eq 0 ]; then

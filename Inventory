@@ -1,15 +1,3 @@
-[DEV_ORACLE]
-udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-
-[oretail]
-udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-
-[LOCALHOST]
-localhost        ansible_connection=local ansible_user=oretail
-
-[OAT-NODE1]
-upojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-
 [RMSDB]	
 usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -28,14 +16,14 @@ uhojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [RMSDASDB]	
-usojscdm01.johnlewis.co.uk
-utojscdm01.johnlewis.co.uk
-umojscdm01.johnlewis.co.uk		
-udojscdm01.johnlewis.co.uk
+usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [INFRADB]
-usojscdt01.johnlewis.co.uk
-utojscdt01.johnlewis.co.uk
+usojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [ORDSDB]
 usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -100,18 +88,6 @@ umojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
-[CNVDEV2]
-uhojscdm04.johnlewis.co.uk
-udojscdm01.johnlewis.co.uk
-uhojscam02.johnlewis.co.uk
-uhojscap02.johnlewis.co.uk
-uhojscai02.johnlewis.co.uk
-
-[CNVDEV1]
-uhojscdm01.johnlewis.co.uk
-uhojscam01.johnlewis.co.uk
-uhojscap01.johnlewis.co.uk
-uhojscai01.johnlewis.co.uk
 
 [DEV]
 udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -122,6 +98,4 @@ udojscam01.johnlewis.co.uk
 SYS4
 SYS5
 SYS2
-CNVDEV2
-CNVDEV1
 DEV

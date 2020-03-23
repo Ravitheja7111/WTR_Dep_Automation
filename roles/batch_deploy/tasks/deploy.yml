@@ -2,7 +2,6 @@
  - name: Copying Batches to respective dir on the target server
    shell: |
       source /home/oretail/.profile
-      set -x
       if [ -f "{{ batch_file_path }}/batches.txt" ];then
       for i in `cat {{ batch_file_path }}/batches.txt`
       do
@@ -34,8 +33,8 @@
       fi
    args:
      chdir: "{{ batch_file_path }}"
-   environment:
-     TERM: vt100
+   #environment:
+     #TERM: vt100
    register: batresult
    
  - debug: var=batresult

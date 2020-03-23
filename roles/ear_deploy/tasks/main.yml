@@ -52,9 +52,3 @@
   register: deployout
   notify: Deploy Finish
 - debug: var=deployout.stdout_lines
-
-- name: Deploy Output
-  debug: msg= "{{ deployout.stdout_lines }}"
-
-- name: Deploy Error
-  debug: msg= "{{ deployout.stderr }}"

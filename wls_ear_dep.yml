@@ -4,5 +4,5 @@
    roles:
       - ear_deploy
    become: yes
-   become_user: weblogic
+   become_user: {{ appuser }}
    become_method: sudo

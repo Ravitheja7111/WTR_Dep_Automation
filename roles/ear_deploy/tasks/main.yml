@@ -50,6 +50,7 @@
   shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ deployDirectory }}/deploy.py"
   when: copyscript is success
   register: deployout
-  failed_when: deployout.rc != 0
+  #failed_when: deployout.rc != 0
+  failed_when: "'Deployment State : failed' in deployout.stderr"
   #notify: Deploy Finish
 - debug: var=deployout.stdout_lines

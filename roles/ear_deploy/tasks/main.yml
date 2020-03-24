@@ -52,3 +52,8 @@
   register: deployout
   notify: Deploy Finish
 - debug: var=deployout.stdout_lines
+
+- name: If deploy script fails
+  fail:
+    msg: 'The deployment has been failed.'
+  when: "deployout.rc != 0"

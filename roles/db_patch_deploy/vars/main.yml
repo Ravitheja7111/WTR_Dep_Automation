@@ -11,4 +11,4 @@ version: '1.0.0'
 classifier: 'zip'
 staging_base: '/home/oretail/JL_Automation_staging/db_patch'
 month: 'AprilA'
-patch_num: 'p30014677'
+patch_num: 'p30014677,

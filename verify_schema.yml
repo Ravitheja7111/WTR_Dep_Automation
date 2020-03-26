@@ -15,6 +15,7 @@
             echo "There is some issue to connect to DB.."
          fi
       register: schema_out
+      failed_when: "'issue' in schema_out.stdout"
       args:
         chdir: /home/oretail
     - debug: var=schema_out.stdout_lines

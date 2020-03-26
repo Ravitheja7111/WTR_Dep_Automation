@@ -25,11 +25,8 @@
     shell: mkdir -p "{{ staging_base}}"/DBPatch_bkp_`date '+%Y-%m-%d'`
 
   - name: Take backup before DB vendor patch apply
-    command: tar -cvf rmsbatch_{{ month }}.tar /u02/app/oretail/RMS_BATCH --exclude='./RMS_BATCH/JLCUSTOM'
-    args:
-      chdir: "{{ staging_base}}/DBPatch_bkp_`date '+%Y-%m-%d'`"
-      creates: "{{ staging_base}}/DBPatch_bkp_`date '+%Y-%m-%d'`"
-   
+    command: tar -pcvf /home/oretail/JL_Automation_staging/db_patch/DBPatch_bkp_`date '+%Y-%m-%d'`/rmsbatch_{{ month }}.tar /u02/app/oretail/RMS_BATCH --exclude='./RMS_BATCH/JLCUSTOM'
+       
   - name: apply patch
     shell: orpatch apply -s "{{ patchdir }}"
     args: 

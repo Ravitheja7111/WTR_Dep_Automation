@@ -27,7 +27,7 @@
   - name: Take backup before DB vendor patch apply
     command: tar -cvf rmsbatch_{{ month }}.tar /u02/app/oretail/RMS_BATCH --exclude='./RMS_BATCH/JLCUSTOM'
     args:
-      chdir: "{{ staging_base}}"/DBPatch_bkp_`date '+%Y-%m-%d'`
+      chdir: "{{ staging_base}}/DBPatch_bkp_`date '+%Y-%m-%d'`"
    
   - name: apply patch
     shell: orpatch apply -s "{{ patchdir }}"

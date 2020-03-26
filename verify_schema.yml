@@ -8,7 +8,7 @@
     - name: Checking the DB connection and schema availability
       shell: |
          source /home/oretail/.profile
-         echo "exit" | /u01/app/oradev/product/12.1.0.2/db/bin/sqlplus -L $UP | grep Connected > /dev/null
+         echo "exit" | sqlplus -L $UP | grep Connected > /dev/null
          if [ $? -eq 0 ];then
             echo "DB Connected Successfully...."
          else

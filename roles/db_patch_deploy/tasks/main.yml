@@ -28,7 +28,7 @@
     #shell: tar -pcvf /home/oretail/JL_Automation_staging/db_patch/DBPatch_bkp_`date '+%Y-%m-%d'`/rmsbatch_AprilA.tar /u02/app/oretail/RMS_BATCH --exclude='./RMS_BATCH/JLCUSTOM'
     shell: tar -pcvf /rmsbatch_{{ month }}.tar /u02/app/oretail/RMS_BATCH --exclude='./RMS_BATCH/JLCUSTOM'
     args:
-      chdir: "{{ staging_base}}"/DBPatch_bkp_`date '+%Y-%m-%d'`
+      chdir: "{{ staging_base}}/DBPatch_bkp_`date '+%Y-%m-%d'`"
   - name: apply patch
     shell: orpatch apply -s "{{ patchdir }}"
     args: 

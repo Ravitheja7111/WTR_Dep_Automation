@@ -22,7 +22,10 @@
     when: patchpkg is success
  
   - name: create backup directory
-    shell: mkdir -p /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`
+    shell: "{{ item }}"
+    with_items:
+         - rm -rf /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`/*.tar
+         - mkdir -p /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`
 
   - name: Take backup before DB vendor patch apply
     shell: tar -pcf /u02/app/oretail/RMS_BATCH_BACKUP//DBPatch_bkp_`date '+%Y-%m-%d'`/rmsbatch_{{ month }}.tar /u02/app/oretail/RMS_BATCH --exclude='/u02/app/oretail/RMS_BATCH/JLCUSTOM'

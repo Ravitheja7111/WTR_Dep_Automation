@@ -31,7 +31,7 @@ exit;
 EOF
 RETVAL=`grep -E "unknown command|unable to open file|ERROR at|ORA-*" $log_file_name | wc -l`
 if [ $RETVAL -gt 0 ];then
-echo "1st SQLPLUS FAILED : $RETVAL"
+echo "$filename : SQLPLUS FAILED : $RETVAL"
    exit 1
 fi 	
 done <<< "$VAR"

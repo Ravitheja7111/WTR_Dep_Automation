@@ -29,7 +29,7 @@ sqlplus $con_string << EOF >> $log_file_name
 commit;
 exit;
 EOF
-RETVAL=`grep -E "unknown command|unable to open file|ORA-*" $log_file_name | wc -l`
+RETVAL=`grep -E "unknown command|unable to open file" $log_file_name | wc -l`
 if [ $RETVAL -gt 0 ];then
 echo "$filename : SQLPLUS FAILED : $RETVAL"
    exit 1

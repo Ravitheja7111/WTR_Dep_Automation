@@ -28,8 +28,10 @@
      port: 25
      subject: Verify RIB topics & MF Queues
      body: Hello, This is an alert to verify the RIB topics and MF Queues status, Please find the attachment and take necessary action..
-     from: ramana-alladu.reddy@johnlewis.co.uk
+     from: gayathri.modi@johnlewis.co.uk
      to:
-     - ravindra.reddy@johnlewis.co.uk
+     - monosij.maitra@johnlewis.co.uk
+     - gayathri.modi@johnlewis.co.uk
+     - suman.ghorui@johnlewis.co.uk
      attach: /home/oretail/pre_check_scripts/table_count.log
 

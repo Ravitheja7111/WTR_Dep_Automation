@@ -31,7 +31,7 @@
     #shell: tar -pcf /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`/rmsbatch_{{ month }}.tar RMS_BATCH --exclude='/u02/app/oretail/RMS_BATCH/JLCUSTOM'
     #args:
       #chdir: /u02/app/oretail
-  - name: command mode
+  - name: commandlinemode
     commnad: pwd
   - name: cmd
     shell:

@@ -37,6 +37,4 @@
       chdir: "{{ retail_home }}"
       creates: "{{ retail_home }}"
     register: orpatch
-  - debug:
-      msg: "patch has been applied succesfully"
-    when: orpatch.rc == 0
+  - debug: var=orpatch

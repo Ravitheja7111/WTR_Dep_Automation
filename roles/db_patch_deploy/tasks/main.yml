@@ -44,11 +44,9 @@
   - name: List the installed patches and its status
     shell: "{{ item }}"
     with_items:
-         - source /home/oretail/.profile
-         - echo $RETAIL_HOME
-         - /u02/app/oretail/RMS_BATCH/orpatch/bin/orpatch -lsinventory
-    #args:
-      #chdir: "{{ retail_home }}"
-      #creates: "{{ retail_home }}"
+         - orpatch lsinventory
+    args:
+      chdir: "{{ retail_home }}"
+      creates: "{{ retail_home }}"
     register: orpatch_status
   - debug: var=orpatch_status

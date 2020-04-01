@@ -34,8 +34,7 @@
   - name: apply patch
     shell: "{{ item }}"
     with_items:
-         - pwd
-         - whoami
+         - source /home/oretail/.profile
          - orpatch apply -s "{{ patchdir }}"
     args: 
       chdir: "{{ retail_home }}"

@@ -35,6 +35,11 @@
     shell: orpatch apply -s "{{ patchdir }}"
     args: 
       chdir: "{{ retail_home }}"
-      creates: "{{ retail_home }}"
+      #creates: "{{ retail_home }}"
     register: orpatch
   - debug: var=orpatch
+  
+  - name: List the installed patches and its status
+    shell: orpatch -lsinventory
+    args:
+      chdir: "{{ retail_home }}"

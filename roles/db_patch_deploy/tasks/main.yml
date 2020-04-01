@@ -47,4 +47,4 @@
       chdir: "{{ retail_home }}"
       creates: "{{ retail_home }}"
     register: orpatch_status
-  - debug: var=orpatch_status.stdout_lines
+  - debug: var=orpatch_status

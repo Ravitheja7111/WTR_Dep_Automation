@@ -34,7 +34,7 @@
   - name: apply patch
     shell: "{{ item }}"
     with_items:
-         - source /home/oretail/.profile
+         - source /home/oretail/batch.profile
          - /u02/app/oretail/RMS_BATCH/orpatch/bin/orpatch apply -s "{{ patchdir }}"
     args: 
       chdir: "{{ retail_home }}"

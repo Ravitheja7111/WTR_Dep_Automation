@@ -35,7 +35,7 @@
     commnad: pwd
   - name: cmd
     shell:
-      cmd:whoami
+      cmd: whoami
   - name: apply patch
     shell: "{{ item }}"
     with_items:

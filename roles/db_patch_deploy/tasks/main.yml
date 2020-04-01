@@ -32,7 +32,10 @@
     #args:
       #chdir: /u02/app/oretail
   - name: apply patch
-    shell: orpatch apply -s "{{ patchdir }}"
+    shell: "{{ item }}"
+    with_items:
+         - source /home/oretail/.profile
+         - orpatch apply -s "{{ patchdir }}"
     args: 
       chdir: "{{ retail_home }}"
       #creates: "{{ retail_home }}"

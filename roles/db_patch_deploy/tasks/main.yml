@@ -35,9 +35,9 @@
     shell: "{{ item }}"
     with_items:
          - source /home/oretail/.profile
-         - orpatch apply -s "{{ patchdir }}"
-    args: 
-      chdir: "{{ retail_home }}"
+         - $RETAIL_HOME/orpatch/bin/orpatch apply -s "{{ patchdir }}"
+    #args: 
+      #chdir: "{{ retail_home }}"
       #creates: "{{ retail_home }}"
     register: orpatch
   - debug: var=orpatch

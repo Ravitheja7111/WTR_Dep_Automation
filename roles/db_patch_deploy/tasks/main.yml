@@ -32,7 +32,7 @@
     #args:
       #chdir: /u02/app/oretail
   - name: commandlinemode
-    commnad: pwd
+    commnad: ls -ltr
   - name: cmd
     shell:
       cmd: whoami

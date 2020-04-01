@@ -42,9 +42,9 @@
   - debug: var=orpatch
   
   - name: List the installed patches and its status
-    shell: orpatch -lsinventory
-    args:
-      chdir: "{{ retail_home }}"
-      creates: "{{ retail_home }}"
+    shell: /u02/app/oretail/RMS_BATCH/orpatch/bin/orpatch -lsinventory
+    #args:
+      #chdir: "{{ retail_home }}"
+      #creates: "{{ retail_home }}"
     register: orpatch_status
   - debug: var=orpatch_status

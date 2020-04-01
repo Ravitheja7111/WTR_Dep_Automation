@@ -37,7 +37,7 @@
          - orpatch apply -s "{{ patchdir }}"
     args: 
       chdir: "{{ retail_home }}"
-      creates: "{{ retail_home }}"
+      #creates: "{{ retail_home }}"
     register: orpatch
   - debug: var=orpatch
   
@@ -47,6 +47,6 @@
          - orpatch lsinventory
     args:
       chdir: "{{ retail_home }}"
-      creates: "{{ retail_home }}"
+      #creates: "{{ retail_home }}"
     register: orpatch_status
   - debug: var=orpatch_status

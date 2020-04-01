@@ -45,3 +45,4 @@
     shell: orpatch -lsinventory
     args:
       chdir: "{{ retail_home }}"
+      creates: "{{ retail_home }}"

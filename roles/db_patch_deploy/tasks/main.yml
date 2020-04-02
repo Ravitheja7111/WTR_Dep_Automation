@@ -32,7 +32,7 @@
     #args:
       #chdir: /u02/app/oretail
   - name: apply patch
-    shell: source /home/oretail/batch.profile && /u02/app/oretail/RMS_BATCH/orpatch/bin/orpatch apply -s "{{ patchdir }}"
+    shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
     args: 
       chdir: "{{ retail_home }}"
       #creates: "{{ retail_home }}"
@@ -40,7 +40,7 @@
   - debug: var=orpatch.stdout_lines
   
   - name: List the installed patches and its status
-    shell: source /home/oretail/batch.profile && /u02/app/oretail/RMS_BATCH/orpatch/bin/orpatch lsinventory
+    shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch lsinventory
     args:
       chdir: "{{ retail_home }}"
       #creates: "{{ retail_home }}"

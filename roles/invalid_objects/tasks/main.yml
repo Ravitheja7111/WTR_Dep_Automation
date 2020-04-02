@@ -3,29 +3,68 @@
    file: dest={{ destDir }} mode=755 state=directory
    register: createdir
 
- - name: Copy sql files to staging directory
+ - name: Copy main sql file to staging directory
    template: src=main.sql dest={{ destDir }}/main.sql mode=755
    when: createdir is success
    register: copyfile
-
    
- - name: Copy sql files to staging directory
+ - name: Copy all_objects_pub.sql file to staging directory
    template: src=all_objects_pub.sql dest={{ destDir }}/all_objects_pub.sql mode=755
    when: createdir is success
    register: copyfile
    
- - name: Copy sql files to staging directory
+ - name: Copy dba_objects_pub.sql file to staging directory
    template: src=dba_objects_pub.sql dest={{ destDir }}/dba_objects_pub.sql mode=755
    when: createdir is success
    register: copyfile
    
- - name: Copy sql files to staging directory
+ - name: Copy dba_objects_not_pub.sql file to staging directory
    template: src=dba_objects_not_pub.sql dest={{ destDir }}/dba_objects_not_pub.sql mode=755
    when: createdir is success
    register: copyfile
    
- - name: Copy sql files to staging directory
+ - name: Copy all_objects_not_pub.sql file to staging directory
    template: src=all_objects_not_pub.sql dest={{ destDir }}/all_objects_not_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy dba_objects_cmp_pkg_pub.sql file to staging directory
+   template: src=dba_objects_cmp_pkg_pub.sql dest={{ destDir }}/dba_objects_cmp_pkg_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy dba_objects_cmp_pkg_not_pub.sql file to staging directory
+   template: src=dba_objects_cmp_pkg_not_pub.sql dest={{ destDir }}/dba_objects_cmp_pkg_not_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+  
+ - name: Copy dba_objects_cmp_body_pub.sql file to staging directory
+   template: src=dba_objects_cmp_body_pub.sql dest={{ destDir }}/dba_objects_cmp_body_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy dba_objects_cmp_body_not_pub.sql file to staging directory
+   template: src=dba_objects_cmp_body_not_pub.sql dest={{ destDir }}/dba_objects_cmp_body_not_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy all_objects_cmp_pkg_pub.sql file to staging directory
+   template: src=all_objects_cmp_pkg_pub.sql dest={{ destDir }}/all_objects_cmp_pkg_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy all_objects_cmp_pkg_not_pub.sql file to staging directory
+   template: src=all_objects_cmp_pkg_not_pub.sql dest={{ destDir }}/all_objects_cmp_pkg_not_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy all_objects_cmp_body_pub.sql file to staging directory
+   template: src=all_objects_cmp_body_pub.sql dest={{ destDir }}/all_objects_cmp_body_pub.sql mode=755
+   when: createdir is success
+   register: copyfile
+   
+ - name: Copy all_objects_cmp_body_not_pub.sql file to staging directory
+   template: src=all_objects_cmp_body_not_pub.sql dest={{ destDir }}/all_objects_cmp_body_not_pub.sql mode=755
    when: createdir is success
    register: copyfile
    

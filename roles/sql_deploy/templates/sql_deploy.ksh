@@ -9,6 +9,7 @@ log_time=_`date +%X`
 if [ -f "$log_file_name" ]; then
  `mv $log_file_name "$log_file_name$log_time"`
 fi 
+set -x
 while IFS= read -r line; do
     echo "Line: $line"
     file_name=${line%~*}

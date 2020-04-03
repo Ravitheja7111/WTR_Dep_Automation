@@ -2,5 +2,5 @@
  - name: connecting to sql db
    shell: sh -x /home/oretail/sql_deploy.ksh
    register: deploy_result
- - debug: var=deploy_result.stdout_lines  
+ #- debug: var=deploy_result.stdout_lines  
   

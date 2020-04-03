@@ -2,7 +2,7 @@
 source /home/oretail/.profile
 
 VAR=`cat /home/oretail/deploy_list.txt`
-
+echo pwd
 echo "var:$VAR"
 echo "line:"
 log_file_name=output_`date +%Y-%m-%d`.log
@@ -35,3 +35,4 @@ echo "1st SQLPLUS FAILED : $RETVAL"
    exit 1
 fi 	
 done <<< "$VAR"
+view $log_file_name

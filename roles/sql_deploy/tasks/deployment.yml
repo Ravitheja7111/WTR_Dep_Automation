@@ -1,6 +1,6 @@
 ---
- - name: connecting to sql db
-   shell: sql_deploy.ksh >> somelog.txt
+ - name: Connecting to sql DB and executing sql_deploy.sh file.
+   shell: sql_deploy.sh >> somelog.txt
    args:
      chdir: /home/oretail
    register: deploy_result

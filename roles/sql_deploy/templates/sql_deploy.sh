@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/bin/sh
 source /home/oretail/.profile
 
 VAR=`cat /home/oretail/deploy_list.txt`

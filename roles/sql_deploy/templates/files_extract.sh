@@ -6,7 +6,7 @@ do
 	#file=`echo $i | cut -d '.' -f1`
 	ext=`echo $i | cut -d '.' -f2`
 	file_ext=`echo $ext | tr '[:upper:]' '[:lower:]'` 
-	if [ $file_ext == 'sql' ] || [ $file_ext == 'pkb' ] || [ $file_ext == 'pks' ] || [ $file_ext == 'pls' ];then
+	if [ $file_ext == 'sql' ] || [ $file_ext == 'pkb' ] || [ $file_ext == 'pks' ] || [ $file_ext == 'pls' ] || [ $file_ext == 'plb' ];then
 		includefile=`echo $i|awk -F"/" '{print $NF}'`
 		echo $includefile >> dbobjects.txt
 		elif [ $file_ext == 'pc' ] || [ $file_ext == 'mk' ];then

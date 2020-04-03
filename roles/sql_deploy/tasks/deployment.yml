@@ -1,6 +1,8 @@
 ---
  - name: connecting to sql db
-   shell: /home/oretail/sql_deploy.ksh >> somelog.txt
+   shell: sql_deploy.ksh >> somelog.txt
+   args:
+     chdir: /home/oretail
    register: deploy_result
  #- debug: var=deploy_result.stdout_lines  
   

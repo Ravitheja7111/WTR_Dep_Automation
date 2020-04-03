@@ -4,5 +4,5 @@
    args:
      chdir: /home/oretail
    register: deploy_result
- #- debug: var=deploy_result.stdout_lines  
+ - debug: var=deploy_result.stdout_lines  
   

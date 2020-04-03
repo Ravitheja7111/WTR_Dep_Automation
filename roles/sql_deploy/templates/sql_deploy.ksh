@@ -34,6 +34,3 @@ echo "1st SQLPLUS FAILED : $RETVAL"
    exit 1
 fi 	
 done <<< "$VAR"
-pwd=`pwd`
-echo $pwd
-view $log_file_name

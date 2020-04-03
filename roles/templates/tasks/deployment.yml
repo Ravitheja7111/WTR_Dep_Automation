@@ -6,7 +6,7 @@
       do
       file=`echo $i`
       chmod 755 $file
-      cp -p $file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
+      cp -pf $file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
       done
       fi
    args:

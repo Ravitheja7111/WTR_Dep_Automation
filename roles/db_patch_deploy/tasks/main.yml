@@ -93,7 +93,7 @@
       chdir: "{{ retail_home }}"
     register: orpatch_2nd
     when: result.stat.exists == false
-    tags: RMSAPP
+    tags: RPMAPP
   - debug: var=orpatch_2nd.stdout_lines
   
   - name: List the installed patches and its status
@@ -111,5 +111,5 @@
       chdir: "{{ retail_home }}"
       #creates: "{{ retail_home }}"
     register: orpatch_status
-    tags: RMSAPP
+    tags: RPMAPP
   - debug: var=orpatch_status.stdout_lines

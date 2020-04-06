@@ -40,7 +40,7 @@
     args:
       chdir: /u02/app/oretail
     register: dbpatch_bkp
-    tag: {{ application }}
+    tag: "{{ application }}"
   - debug: var=dbpatch_bkp.stderr_lines
   
   - name: Take rpmbat backup before apply DB vendor patch 
@@ -48,7 +48,7 @@
     args:
       chdir: /u01/app/rpmapp
     register: dbpatch_bkp
-    tag: {{ application }}
+    tag: "{{ application }}"
   - debug: var=dbpatch_bkp.stderr_lines
   
   - name: check if manifest.csv file exists

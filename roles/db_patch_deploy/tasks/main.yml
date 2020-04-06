@@ -102,7 +102,7 @@
     tags: RPMAPP
   - debug: 
       var: orpatch_2nd.stdout_lines
-    tag: RPMAPP
+    tags: RPMAPP
   
   - name: List the RMS installed patches in RMS and its status
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch lsinventory

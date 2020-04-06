@@ -21,26 +21,26 @@
       mode: 0777
     when: patchpkg is success
 
-  - name: create RMS BATCH backup directory
+  - name: create RMS_BATCH backup directory
     shell: "{{ item }}"
     with_items:
          - rm -rf /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`/*.tar
          - mkdir -p /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`
-    tag: RMSDB
+    tags: RMSDB
     
-  - name: create RPM BAT backup directory
+  - name: create RPM_BAT backup directory
     shell: "{{ item }}"
     with_items:
          - rm -rf /u01/app/rpmapp/RPMBAT_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`/*.tar
          - mkdir -p /u01/app/rpmapp/RPMBAT_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`
-    tag: RPMAPP
+    tags: RPMAPP
 
   - name: Take RMS_BATCH backup before apply DB vendor patch 
     shell: tar --exclude='RMS_BATCH/JLCUSTOM' -pcvf /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`/rmsbatch_{{ month }}.tar RMS_BATCH
     args:
       chdir: /u02/app/oretail
     register: dbpatch_bkp
-    tag: RMSDB
+    tags: RMSDB
   - debug: var=dbpatch_bkp.stderr_lines
   
   - name: Take rpmbat backup before apply DB vendor patch 
@@ -48,7 +48,7 @@
     args:
       chdir: /u01/app/rpmapp
     register: dbpatch_bkp
-    tag: RPMAPP
+    tags: RPMAPP
   - debug: var=dbpatch_bkp.stderr_lines
   
   - name: check if manifest.csv file exists

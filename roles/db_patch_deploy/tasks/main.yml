@@ -67,7 +67,8 @@
     register: orpatch_1st
     when: result.stat.exists == true
     tags: RMSDB
-  - debug: var=orpatch_1st.stdout_lines
+  - debug: 
+      var: orpatch_1st.stdout_lines
     tags: RMSDB
   
   - name: Apply RPM patch from level 1st directory
@@ -77,7 +78,8 @@
     register: orpatch_1st
     when: result.stat.exists == true
     tags: RPMAPP
-  - debug: var=orpatch_1st.stdout_lines
+  - debug: 
+      var: orpatch_1st.stdout_lines
     tags: RPMAPP
   
   - name: Apply RMS patch from level 2nd directory
@@ -87,7 +89,8 @@
     register: orpatch_2nd
     when: result.stat.exists == false
     tags: RMSDB
-  - debug: var=orpatch_2nd.stdout_lines
+  - debug: 
+      var: orpatch_2nd.stdout_lines
     tags: RMSDB
   
   - name: Apply RPM patch from level 2nd directory
@@ -97,7 +100,8 @@
     register: orpatch_2nd
     when: result.stat.exists == false
     tags: RPMAPP
-  - debug: var=orpatch_2nd.stdout_lines
+  - debug: 
+      var: orpatch_2nd.stdout_lines
     tag: RPMAPP
   
   - name: List the RMS installed patches in RMS and its status
@@ -107,7 +111,8 @@
       #creates: "{{ retail_home }}"
     register: orpatch_status
     tags: RMSDB
-  - debug: var=orpatch_status.stdout_lines
+  - debug: 
+      var: orpatch_status.stdout_lines
     tags: RMSDB
   
   - name: List the RPM installed patches in RPM and its status
@@ -117,5 +122,6 @@
       #creates: "{{ retail_home }}"
     register: orpatch_status
     tags: RPMAPP
-  - debug: var=orpatch_status.stdout_lines
+  - debug: 
+      var: orpatch_status.stdout_lines
     tags: RPMAPP

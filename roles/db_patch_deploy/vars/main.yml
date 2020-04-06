@@ -10,5 +10,5 @@ artifactID: 'patches'
 version: '1.0.0'
 classifier: 'zip'
 staging_base: "/home/{{ appuser }}/JL_Automation_Staging/db_patch"
-month: 'AprilA'
-patch_num: 'p30014677'
+month: ''
+patch_num: ''

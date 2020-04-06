@@ -60,7 +60,7 @@
     register: result
     tags: "{{ application }}"
   
-  - name: apply patch from level 1st directory
+  - name: Apply RMS patch from level 1st directory
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
     args: 
       chdir: "{{ retail_home }}"
@@ -69,7 +69,7 @@
     tags: RMSDB
   - debug: var=orpatch_1st.stdout_lines
   
-  - name: apply patch from level 1st directory
+  - name: Apply RPM patch from level 1st directory
     shell: source /u01/app/rpmapp/rpmbat/rpm_batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
     args: 
       chdir: "{{ retail_home }}"
@@ -78,7 +78,7 @@
     tags: RPMAPP
   - debug: var=orpatch_1st.stdout_lines
   
-  - name: apply patch from level 2nd directory
+  - name: Apply RMS patch from level 2nd directory
     shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
     args: 
       chdir: "{{ retail_home }}"
@@ -87,7 +87,7 @@
     tags: RMSDB
   - debug: var=orpatch_2nd.stdout_lines
   
-  - name: apply patch from level 2nd directory
+  - name: Apply RPM patch from level 2nd directory
     shell: source /u01/app/rpmapp/rpmbat/rpm_batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
     args: 
       chdir: "{{ retail_home }}"
@@ -96,7 +96,7 @@
     tags: RPMAPP
   - debug: var=orpatch_2nd.stdout_lines
   
-  - name: List the installed patches and its status
+  - name: List the RMS installed patches in RMS and its status
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch lsinventory
     args:
       chdir: "{{ retail_home }}"
@@ -105,7 +105,7 @@
     tags: RMSDB
   - debug: var=orpatch_status.stdout_lines
   
-  - name: List the installed patches and its status
+  - name: List the RPM installed patches in RPM and its status
     shell: source /u01/app/rpmapp/rpmbat/rpm_batch.profile && {{ retail_home }}/orpatch lsinventory
     args:
       chdir: "{{ retail_home }}"

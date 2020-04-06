@@ -5,6 +5,7 @@
       state: directory
       mode: 0777
     register: createdir
+    tags: "{{ application }}"
 
   - name: download package
     shell: wget -O {{ artifactID }}-{{ version }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
@@ -12,6 +13,7 @@
       chdir: /tmp
     when: createdir is success
     register: patchpkg
+    tags: "{{ application }}"
 
   - name: unzip the file
     unarchive:
@@ -20,6 +22,7 @@
       remote_src: yes
       mode: 0777
     when: patchpkg is success
+    tags: "{{ application }}"
 
   - name: create RMS_BATCH backup directory
     shell: "{{ item }}"
@@ -55,27 +58,31 @@
     stat: 
       path: "{{ patchdir }}/manifest.csv"
     register: result
+    tags: "{{ application }}"
   
   - name: apply patch from level 1st directory
-    shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
+    shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
     args: 
       chdir: "{{ retail_home }}"
     register: orpatch_1st
     when: result.stat.exists == true
+    tags: "{{ application }}"
   - debug: var=orpatch_1st.stdout_lines
   
   - name: apply patch from level 2nd directory
-    shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
+    shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
     args: 
       chdir: "{{ retail_home }}"
     register: orpatch_2nd
     when: result.stat.exists == false
+    tags: "{{ application }}"
   - debug: var=orpatch_2nd.stdout_lines
   
   - name: List the installed patches and its status
-    shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch lsinventory
+    shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch lsinventory
     args:
       chdir: "{{ retail_home }}"
       #creates: "{{ retail_home }}"
     register: orpatch_status
+    tags: "{{ application }}"
   - debug: var=orpatch_status.stdout_lines

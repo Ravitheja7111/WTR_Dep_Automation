@@ -68,6 +68,7 @@
     when: result.stat.exists == true
     tags: RMSDB
   - debug: var=orpatch_1st.stdout_lines
+    tags: RMSDB
   
   - name: Apply RPM patch from level 1st directory
     shell: source /u01/app/rpmapp/rpmbat/rpm_batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
@@ -77,6 +78,7 @@
     when: result.stat.exists == true
     tags: RPMAPP
   - debug: var=orpatch_1st.stdout_lines
+    tags: RPMAPP
   
   - name: Apply RMS patch from level 2nd directory
     shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
@@ -86,6 +88,7 @@
     when: result.stat.exists == false
     tags: RMSDB
   - debug: var=orpatch_2nd.stdout_lines
+    tags: RMSDB
   
   - name: Apply RPM patch from level 2nd directory
     shell: source /u01/app/rpmapp/rpmbat/rpm_batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
@@ -95,6 +98,7 @@
     when: result.stat.exists == false
     tags: RPMAPP
   - debug: var=orpatch_2nd.stdout_lines
+    tag: RPMAPP
   
   - name: List the RMS installed patches in RMS and its status
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch lsinventory
@@ -104,6 +108,7 @@
     register: orpatch_status
     tags: RMSDB
   - debug: var=orpatch_status.stdout_lines
+    tags: RMSDB
   
   - name: List the RPM installed patches in RPM and its status
     shell: source /u01/app/rpmapp/rpmbat/rpm_batch.profile && {{ retail_home }}/orpatch lsinventory
@@ -113,3 +118,4 @@
     register: orpatch_status
     tags: RPMAPP
   - debug: var=orpatch_status.stdout_lines
+    tags: RPMAPP

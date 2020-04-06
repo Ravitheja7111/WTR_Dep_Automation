@@ -66,16 +66,34 @@
       chdir: "{{ retail_home }}"
     register: orpatch_1st
     when: result.stat.exists == true
-    tags: "{{ application }}"
+    tags: RMSDB
+  - debug: var=orpatch_1st.stdout_lines
+  
+  - name: apply patch from level 1st directory
+    shell: source /u01/app/rpmapp/rpmbat/rpm_batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
+    args: 
+      chdir: "{{ retail_home }}"
+    register: orpatch_1st
+    when: result.stat.exists == true
+    tags: RMSAPP
   - debug: var=orpatch_1st.stdout_lines
   
   - name: apply patch from level 2nd directory
-    shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
+    shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
     args: 
       chdir: "{{ retail_home }}"
     register: orpatch_2nd
     when: result.stat.exists == false
-    tags: "{{ application }}"
+    tags: RMSDB
+  - debug: var=orpatch_2nd.stdout_lines
+  
+  - name: apply patch from level 2nd directory
+    shell: source /u01/app/rpmapp/rpmbat/rpm_batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
+    args: 
+      chdir: "{{ retail_home }}"
+    register: orpatch_2nd
+    when: result.stat.exists == false
+    tags: RMSAPP
   - debug: var=orpatch_2nd.stdout_lines
   
   - name: List the installed patches and its status
@@ -84,5 +102,14 @@
       chdir: "{{ retail_home }}"
       #creates: "{{ retail_home }}"
     register: orpatch_status
-    tags: "{{ application }}"
+    tags: RMSDB
+  - debug: var=orpatch_status.stdout_lines
+  
+  - name: List the installed patches and its status
+    shell: source /u01/app/rpmapp/rpmbat/rpm_batch.profile && {{ retail_home }}/orpatch lsinventory
+    args:
+      chdir: "{{ retail_home }}"
+      #creates: "{{ retail_home }}"
+    register: orpatch_status
+    tags: RMSAPP
   - debug: var=orpatch_status.stdout_lines

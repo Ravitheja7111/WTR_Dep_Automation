@@ -1,9 +1,9 @@
 ---
 # vars file for db_patch_deploy
-basedir: "/{{ dir }}/app/{{ appuser }}/{{ appdir }}/staging"
+basedir: "/{{ appdir }}/app/{{ appuser }}/{{ batchdir }}/staging"
 #monthdir: "{{ basedir }}/{{ month }}"
 patchdir: "{{ basedir }}/{{ patch_num }}"
-retail_home: "/{{ dir }}/app/{{ appuser }}/{{ appdir }}/orpatch/bin"
+retail_home: "/{{ appdir }}/app/{{ appuser }}/{{ batchdir }}/orpatch/bin"
 repositoryID: 'JLP-Pioneer-Releases'
 groupID: 'com.jlp.oracleretail'
 artifactID: 'patches'

@@ -34,13 +34,26 @@
     register: dbpatch_bkp
   - debug: var=dbpatch_bkp.stderr_lines
   
-  - name: apply patch
+  - name: check if manifest.csv file exists
+    stat: 
+      path: {{ patchdir }}/manifest.csv
+    register: result
+  
+  - name: apply patch from level 1st directory
     shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
     args: 
       chdir: "{{ retail_home }}"
-      #creates: "{{ retail_home }}"
-    register: orpatch
-  - debug: var=orpatch.stdout_lines
+    register: orpatch_1st
+    when: result.stat.exists == true
+  - debug: var=orpatch_1st.stdout_lines
+  
+  - name: apply patch from level 2nd directory
+    shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
+    args: 
+      chdir: "{{ retail_home }}"
+    register: orpatch_2nd
+    when: result.stat.exists == false
+  - debug: var=orpatch_2nd.stdout_lines
   
   - name: List the installed patches and its status
     shell: source /home/oretail/batch.profile && {{ retail_home }}/orpatch lsinventory

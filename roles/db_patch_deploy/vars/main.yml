@@ -1,14 +1,14 @@
 ---
 # vars file for db_patch_deploy
-basedir: "/u02/app/{{ appuser }}/{{ appdir }}/staging"
+basedir: "/{{ dir }}/app/{{ appuser }}/{{ appdir }}/staging"
 #monthdir: "{{ basedir }}/{{ month }}"
 patchdir: "{{ basedir }}/{{ patch_num }}"
-retail_home: '/u02/app/oretail/RMS_BATCH/orpatch/bin'
+retail_home: "/{{ dir }}/app/{{ appuser }}/{{ appdir }}/orpatch/bin"
 repositoryID: 'JLP-Pioneer-Releases'
 groupID: 'com.jlp.oracleretail'
 artifactID: 'patches'
 version: '1.0.0'
 classifier: 'zip'
-staging_base: '/home/oretail/JL_Automation_Staging/db_patch'
+staging_base: "/home/{{ appuser }}/JL_Automation_Staging/db_patch"
 month: 'AprilA'
 patch_num: 'p30014677'

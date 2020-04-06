@@ -20,7 +20,7 @@
       remote_src: yes
       mode: 0777
     when: patchpkg is success
- 
+
   - name: create RMS BATCH backup directory
     shell: "{{ item }}"
     with_items:

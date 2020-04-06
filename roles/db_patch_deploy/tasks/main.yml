@@ -26,21 +26,21 @@
     with_items:
          - rm -rf /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`/*.tar
          - mkdir -p /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`
-    tag: rmsapp
+    tag: RMSDB
     
   - name: create RPM BAT backup directory
     shell: "{{ item }}"
     with_items:
          - rm -rf /u01/app/rpmapp/RPMBAT_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`/*.tar
          - mkdir -p /u01/app/rpmapp/RPMBAT_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`
-    tag: rpmapp
+    tag: RPMAPP
 
   - name: Take RMS_BATCH backup before apply DB vendor patch 
     shell: tar --exclude='RMS_BATCH/JLCUSTOM' -pcvf /u02/app/oretail/RMS_BATCH_BACKUP/DBPatch_bkp_`date '+%Y-%m-%d'`/rmsbatch_{{ month }}.tar RMS_BATCH
     args:
       chdir: /u02/app/oretail
     register: dbpatch_bkp
-    tag: "{{ application }}"
+    tag: RMSDB
   - debug: var=dbpatch_bkp.stderr_lines
   
   - name: Take rpmbat backup before apply DB vendor patch 
@@ -48,7 +48,7 @@
     args:
       chdir: /u01/app/rpmapp
     register: dbpatch_bkp
-    tag: "{{ application }}"
+    tag: RPMAPP
   - debug: var=dbpatch_bkp.stderr_lines
   
   - name: check if manifest.csv file exists

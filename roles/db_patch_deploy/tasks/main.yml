@@ -75,7 +75,7 @@
       chdir: "{{ retail_home }}"
     register: orpatch_1st
     when: result.stat.exists == true
-    tags: RMSAPP
+    tags: RPMAPP
   - debug: var=orpatch_1st.stdout_lines
   
   - name: apply patch from level 2nd directory

@@ -36,7 +36,7 @@
   
   - name: check if manifest.csv file exists
     stat: 
-      path: {{ patchdir }}/manifest.csv
+      path: "{{ patchdir }}/manifest.csv"
     register: result
   
   - name: apply patch from level 1st directory

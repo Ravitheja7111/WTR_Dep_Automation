@@ -8,7 +8,7 @@
     - name: Checking the DB connection and schema availability
       shell: |
          source /home/oretail/.profile
-         echo "exit" | sqlplus -L {{ schema_cred }} | grep Connected > /dev/null
+         echo "exit" | sqlplus -L {{ schema_cred }} | grep "Connected to:" > /dev/null
          if [ $? -eq 0 ];then
             echo "DB Connected Successfully...."
          else

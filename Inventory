@@ -36,6 +36,7 @@ utojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+upajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 uaajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 uaajosdd02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ulajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'

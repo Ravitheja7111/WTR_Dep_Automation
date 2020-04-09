@@ -27,22 +27,22 @@
   - name: create RMS_BATCH backup directory
     shell: "{{ item }}"
     with_items:
-         - rm -rf /staging/deploys/Monthly_Release/2020/{{ month }}/*.tar
-         - mkdir -p /staging/deploys/Monthly_Release/2020/{{ month }}
+         - rm -rf /staging/deploys/Monthly_Release/patches/`date '+%Y-%m-%d'`/*.tar
+         - mkdir -p /staging/deploys/Monthly_Release/patches/`date '+%Y-%m-%d'`
     tags: RMSDB
     
   - name: create RPM_BAT backup directory
     shell: "{{ item }}"
     with_items:
-         - rm -rf /staging/deploys/Monthly_Release/2020/{{ month }}/*.tar
-         - mkdir -p /staging/deploys/Monthly_Release/2020/{{ month }}
+         - rm -rf /staging/deploys/Monthly_Release/patches/`date '+%Y-%m-%d'`/*.tar
+         - mkdir -p /staging/deploys/Monthly_Release/patches/`date '+%Y-%m-%d'`
     tags: RPMAPP
 
   - name: Take RMS_BATCH backup before apply DB vendor patch 
     shell: "{{ item }}"
     with_items:
-         - tar --exclude='RMS_BATCH/JLCUSTOM' -pcvf /staging/deploys/Monthly_Release/2020/{{ month }}/rmsbatch.tar RMS_BATCH
-         - chmod -R 777 /staging/deploys/Monthly_Release/2020/{{ month }}
+         - tar --exclude='RMS_BATCH/JLCUSTOM' -pcvf /staging/deploys/Monthly_Release/patches/`date '+%Y-%m-%d'`/rmsbatch.tar RMS_BATCH
+         - chmod -R 777 /staging/deploys/Monthly_Release/patches
     args:
       chdir: /u02/app/oretail
     register: dbpatch_bkp
@@ -52,8 +52,8 @@
   - name: Take rpmbat backup before apply DB vendor patch
     shell: "{{ item }}"
     with_items:
-         - tar -pcvf /staging/deploys/Monthly_Release/2020/{{ month }}/rpmbat.tar rpmbat
-         - chmod -R 777 /staging/deploys/Monthly_Release/2020/{{ month }}
+         - tar -pcvf /staging/deploys/Monthly_Release/patches/`date '+%Y-%m-%d'`/rpmbat.tar rpmbat
+         - chmod -R 777 /staging/deploys/Monthly_Release/patches
     args:
       chdir: /u01/app/rpmapp
     register: dbpatch_bkp

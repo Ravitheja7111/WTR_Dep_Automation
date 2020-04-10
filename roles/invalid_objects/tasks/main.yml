@@ -70,3 +70,5 @@
    
  - name: connect to sql db
    shell: source /home/oretail/.profile && sqlplus $UP @{{ destDir }}/main.sql
+   register: sql_result
+ - debug: var=sql_result.stdout_lines

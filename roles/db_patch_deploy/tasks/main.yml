@@ -29,14 +29,14 @@
     with_items:
          - rm -rf /staging/deploys/Monthly_Release/RMS_patches/`date '+%Y-%m-%d'`/*.tar
          - mkdir -p /staging/deploys/Monthly_Release/RMS_patches/`date '+%Y-%m-%d'`
-    tags: RMSDB
+    tags: [ RMSDB, live_env ]
     
   - name: create RPM_BAT backup directory
     shell: "{{ item }}"
     with_items:
          - rm -rf /staging/deploys/Monthly_Release/RPM_patches/`date '+%Y-%m-%d'`/*.tar
          - mkdir -p /staging/deploys/Monthly_Release/RPM_patches/`date '+%Y-%m-%d'`
-    tags: RPMAPP
+    tags: [ RPMAPP, live_env ]
 
   - name: Take RMS_BATCH backup before apply DB vendor patch 
     shell: "{{ item }}"
@@ -46,7 +46,7 @@
     args:
       chdir: /u02/app/oretail
     register: dbpatch_bkp
-    tags: RMSDB
+    tags: [ RMSDB, live_env ]
   - debug: var=dbpatch_bkp.stderr_lines
   
   - name: Take rpmbat backup before apply DB vendor patch
@@ -57,7 +57,7 @@
     args:
       chdir: /u01/app/rpmapp
     register: dbpatch_bkp
-    tags: RPMAPP
+    tags: [ RPMAPP, live_env ]
   - debug: var=dbpatch_bkp.stderr_lines
   
   - name: check if manifest.csv file exists

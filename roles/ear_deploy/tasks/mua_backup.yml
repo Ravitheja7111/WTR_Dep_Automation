@@ -5,6 +5,7 @@
   with_items:
        - rm -rf /staging/deploys/Monthly_Release/MUA/`date '+%Y-%m-%d'`/*.tar
        - mkdir -p /staging/deploys/Monthly_Release/MUA/`date '+%Y-%m-%d'`
+  tags: live_env
 
 - name: Take Middleware dir backup before MUA deployment
   shell: "{{ item }}"
@@ -14,4 +15,7 @@
   args:
     chdir: /u01/app/{{ appuser }}/Oracle
   register: mua_bkp
-- debug: var=mua_bkp.stdout_lines
+  tags: live_env
+- debug: 
+    var: mua_bkp.stdout_lines
+  tags: live_env

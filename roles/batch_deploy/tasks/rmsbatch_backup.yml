@@ -4,6 +4,7 @@
    with_items:
         - rm -rf /staging/deploys/Monthly_Release/batches/`date '+%Y-%m-%d'`/*.tar
         - mkdir -p /staging/deploys/Monthly_Release/batches/`date '+%Y-%m-%d'`
+   tags: live_env
 
  - name: Take RMS_BATCH dir backup before batches execution
    shell: "{{ item }}"
@@ -13,4 +14,7 @@
    args:
      chdir: /u02/app/oretail
    register: rmsbatch_bkp
- - debug: var=rmsbatch_bkp.stdout_lines
+   tags: live_env
+ - debug: 
+     var: rmsbatch_bkp.stdout_lines
+   tags: live_env

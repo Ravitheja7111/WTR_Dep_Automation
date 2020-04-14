@@ -26,7 +26,7 @@
 - name: Update adf-config.xml file with MDS entries
   shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ fileLocation }}/MDSConfig.py"
   when: copypyscript is success
-  notify: MDS Update Finish
+  #notify: MDS Update Finish
   tags: mua
   
 #- name: Copy ear file to directory

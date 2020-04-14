@@ -1,8 +1,8 @@
 ---
 # tasks file for oracle
-- name: Create deploy directory
-  file: dest={{ deployDirectory }} mode=755 state=directory
-  register: deploydir
+#- name: Create deploy directory
+  #file: dest={{ deployDirectory }} mode=755 state=directory
+  #register: deploydir
 
 - name: Create config/fileLocation directory
   file: dest={{ fileLocation }} mode=755 state=directory
@@ -29,10 +29,10 @@
   notify: MDS Update Finish
   tags: mua
   
-- name: Copy ear file to directory
-  command: cp -R {{ fileLocation }}/{{ deploymentFile }} {{ deployDirectory }}
-  when: deploydir is success
-  register: copyear
+#- name: Copy ear file to directory
+  #command: cp -R {{ fileLocation }}/{{ deploymentFile }} {{ deployDirectory }}
+  #when: deploydir is success
+  #register: copyear
 
 - name: Change directory 
   shell: "{{ item }}"
@@ -42,12 +42,12 @@
     chdir: "{{ domainName }}/bin"
 
 - name: Copy deploy script
-  template: src=deploy.j2 dest={{ deployDirectory }}/deploy.py mode=755
-  when: copyear is success
+  template: src=deploy.j2 dest={{ fileLocation }}/deploy.py mode=755
+  when: filedir is success
   register: copyscript
 
 - name: Run deploy command
-  shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ deployDirectory }}/deploy.py"
+  shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ fileLocation }}/deploy.py"
   when: copyscript is success
   register: deployout
   #failed_when: deployout.rc != 0

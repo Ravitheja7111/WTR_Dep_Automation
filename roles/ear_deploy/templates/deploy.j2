@@ -74,7 +74,7 @@ if __name__ == '__main__' or __name__ == 'main':
     print('==============================================================================')
     print('Starting Deployment...')
     print('==============================================================================')
-    deployUndeployMain("{{ deploymentName }}", "{{ deploymentTarget }}", "/home/weblogic/deployEAR/{{ deploymentFile }}")
+    deployUndeployMain("{{ deploymentName }}", "{{ deploymentTarget }}", "{{ fileLocation }}/{{ deploymentFile }}")
 
     print('==============================================================================')
     print('Execution completed...')

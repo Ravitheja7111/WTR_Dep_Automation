@@ -5,6 +5,8 @@ usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+upojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+upojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ukojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ulojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
@@ -15,6 +17,8 @@ udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+upojscdi01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+upojscdi02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscdi01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscdi02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscdi01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
@@ -31,6 +35,8 @@ umojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 [INFRADB]
 usojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+upojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+upojscdt02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [ORDSDB]
 usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer

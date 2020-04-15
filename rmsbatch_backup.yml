@@ -2,16 +2,16 @@
  - hosts: all
    gather_facts: no
    tasks:
-     - name: create batch backup directory
+     - name: create RMS_BATCH backup directory
        shell: "{{ item }}"
        with_items:
-            - rm -rf /staging/deploys/Monthly_Release/batches/`date '+%Y-%m-%d'`/*.tar
-            - mkdir -p /staging/deploys/Monthly_Release/batches/`date '+%Y-%m-%d'`
-     - name: Take RMS_BATCH dir backup before batches execution
+            - rm -rf /staging/deploys/Monthly_Release/RMS_BATCH/`date '+%Y-%m-%d'`/*.tar
+            - mkdir -p /staging/deploys/Monthly_Release/RMS_BATCH/`date '+%Y-%m-%d'`
+     - name: Take RMS_BATCH dir backup before RMS_BATCH execution
        shell: "{{ item }}"
        with_items:
-            - tar --exclude='RMS_BATCH/JLCUSTOM' -pcvf /staging/deploys/Monthly_Release/batches/`date '+%Y-%m-%d'`/rmsbatch.tar RMS_BATCH
-            - chmod -R 777 /staging/deploys/Monthly_Release/batches
+            - tar --exclude='RMS_BATCH/JLCUSTOM' -pcvf /staging/deploys/Monthly_Release/RMS_BATCH/`date '+%Y-%m-%d'`/rmsbatch.tar RMS_BATCH
+            - chmod -R 777 /staging/deploys/Monthly_Release/RMS_BATCH
        args:
          chdir: /u02/app/oretail
        register: rmsbatch_bkp

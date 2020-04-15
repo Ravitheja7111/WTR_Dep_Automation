@@ -5,7 +5,7 @@
     - name: Create MUA backup directory
       shell: "{{ item }}"
       with_items:
-           - rm -rf /staging/deploys/Monthly_Release/MW/`date '+%Y-%m-%d'`/*.tar
+           #- rm -rf /staging/deploys/Monthly_Release/MW/`date '+%Y-%m-%d'`/*.tar
            - mkdir -p /staging/deploys/Monthly_Release/MW/`date '+%Y-%m-%d'`
 
     - name: Take Middleware dir backup before MUA/ORUM deployment

@@ -1,3 +1,4 @@
+# RMS DB servers in all environments
 [RMSDB]	
 udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -12,6 +13,7 @@ ukojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansi
 ulojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 ulojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 
+# RIB DB servers in all environments
 [RIBDB]
 udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -26,6 +28,7 @@ ukojscdi02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansi
 ulojscdi01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 ulojscdi02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 
+# RMSDAS DB servers in all environments
 [RMSDASDB]	
 udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -38,6 +41,7 @@ utojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscdt02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
+# ORDS DB servers in all environments
 [ORDSDB]
 usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -48,37 +52,40 @@ uaajosdd02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansi
 ulajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 ulajosdd02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 
+# RMS APP servers in all environments
 [RMSAPP]	
 udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usojscaa01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscaa01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-upojscaa02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+#upojscaa02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscaa01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ukojscaa02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ulojscaa01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 ulojscaa02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 
+# RPM APP servers in all environments
 [RPMAPP]
 udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-upojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+#upojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ukojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ulojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 ulojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 
+# RIB APP servers in all environments
 [RIBAPP]
 udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-upojscai02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+#upojscai02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ukojscai02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ulojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
@@ -95,6 +102,7 @@ RMSAPP
 RPMAPP
 RIBAPP
 
+# All servers in SYS4 environment
 [SYS4]
 usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -103,6 +111,7 @@ usojscaa01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
+# All servers in SYS5 environment
 [SYS5]
 utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscdt01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -111,6 +120,7 @@ utojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
+# All servers in SYS2 environment
 [SYS2]
 umojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 utajosdd01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -118,10 +128,12 @@ umojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 umojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
+# All servers in DEV environment
 [DEV]
 udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
-udojscam01.johnlewis.co.uk
+udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
+# All servers in PERF/OAT environment
 [PERF]
 upojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
@@ -139,6 +151,7 @@ upojscai02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscaw01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 upojscaw02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
+# All servers in PRE PROD environment
 [PREPRD]
 ukojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ukojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
@@ -155,6 +168,7 @@ ukojscai02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansi
 ukvjicap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ukvjicap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 
+# All servers in PROD environment
 [PRD]
 ulojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 ulojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'

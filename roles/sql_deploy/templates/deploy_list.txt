@@ -1,2 +1,1 @@
-jl_item_loc_ranging_sql.pkb~RMS
-jl_merch_retail_api_sql.pkb~INTR
+JL_ACTION_DAILY_PURGE.pkb~RMS

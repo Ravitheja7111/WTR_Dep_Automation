@@ -1,6 +1,6 @@
 ---
 # tasks file for batch_deploy
-- include: mua_backup.yml
+#- include: mua_backup.yml
 - include: deploy.yml
 
 

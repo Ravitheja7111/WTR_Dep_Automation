@@ -5,5 +5,5 @@
      - name: Hosting Maintenance Page
        script: /usr/local/bin/OHS_PRE-BATCH_Restart.sh
    become: yes
-   become_user: {{ appuser }}
+   become_user: "{{ appuser }}"
    become_method: sudo

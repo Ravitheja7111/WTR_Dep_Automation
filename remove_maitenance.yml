@@ -1,9 +1,0 @@
----
- - hosts: all
-   gather_facts: no
-   tasks:
-     - name: Remove Maintenance Page
-       script: /usr/local/bin/OHS_POST-BATCH_Restart.sh
-   become: yes
-   become_user: "{{ appuser }}"
-   become_method: sudo

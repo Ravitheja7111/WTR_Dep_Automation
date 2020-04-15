@@ -1,0 +1,23 @@
+---
+ - hosts: all
+   gather_facts: no
+   tasks:
+     - name: create batch backup directory
+       shell: "{{ item }}"
+       with_items:
+            - rm -rf /staging/deploys/Monthly_Release/batches/`date '+%Y-%m-%d'`/*.tar
+            - mkdir -p /staging/deploys/Monthly_Release/batches/`date '+%Y-%m-%d'`
+     - name: Take RMS_BATCH dir backup before batches execution
+       shell: "{{ item }}"
+       with_items:
+            - tar --exclude='RMS_BATCH/JLCUSTOM' -pcvf /staging/deploys/Monthly_Release/batches/`date '+%Y-%m-%d'`/rmsbatch.tar RMS_BATCH
+            - chmod -R 777 /staging/deploys/Monthly_Release/batches
+       args:
+         chdir: /u02/app/oretail
+       register: rmsbatch_bkp
+     - debug: 
+         var: rmsbatch_bkp.stdout_lines
+
+   become: yes
+   become_user: oretail
+   become_method: sudo

@@ -51,6 +51,8 @@
   when: copyscript is success
   register: deployout
   #failed_when: deployout.rc != 0
-  failed_when: "'Error' in deployout.stdout"
+  failed_when:
+    - "'Error' in deployout.stdout"
+    - "'failed' in deployout.stdout"
   #notify: Deploy Finish
 - debug: var=deployout.stdout_lines

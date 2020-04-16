@@ -1,7 +1,2 @@
-alter_sequence_deal_sequence.sql~RMS
-jl_send_mail_with_attachment.sql~RMS
-jl_dealitem_maint.sql~RMS
-jl_general_system_alert.pls~RMS
-jl_general_system_alert.plb~RMS
 insert_jl_deal_alert_config.sql~RMS
 jl_gather_table_stat_config_insert_onetime.sql~RMS

@@ -1,4 +1,3 @@
-create_table_jl_gather_table_stat_config.sql~RMS
 alter_sequence_deal_sequence.sql~RMS
 jl_send_mail_with_attachment.sql~RMS
 jl_dealitem_maint.sql~RMS

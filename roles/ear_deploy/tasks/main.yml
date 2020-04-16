@@ -1,54 +1,6 @@
 ---
-# tasks file for oracle
-- name: Create deploy directory
-  file: dest={{ deployDirectory }} mode=755 state=directory
-  register: deploydir
-
-- name: Create MDS Config fileLocation directory
-  file: dest={{ fileLocation }} mode=755 state=directory
-  register: filedir
-
-- name: Copy MDS config file to deployEAR directory
-  template: src=MDSConfig.j2 dest={{ fileLocation }}/MDSConfig.py mode=755
-  when: filedir|success
-  register: copypyscript
-
-- name: Copy ear file to deployEAR directory
-  copy: src={{ deploymentFile }} dest={{ fileLocation }} mode=644
-  register: copyear
-
-- name: Update adf-config.xml file with MDS entries
-  shell: /u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin/wlst.sh {{ fileLocation }}/MDSConfig.py
-  when: copypyscript|success
-  notify: MDS Update Finish
-
-- name: Copy ear file to directory
-  command: cp -R "{{ fileLocation }}/{{ deploymentFile }}" "{{ deployDirectory }}"
-  when: deploydir|success
-  register: copyear
-
-- name: Change directory 
-  shell: "{{ item }}"
-  with_items:
-            - sh setDomainEnv.sh
-  args: 
-    chdir: /u01/app/weblogic/Oracle/Middleware/user_projects/domains/ADF_Domain_DEV/bin 
-
-- name: Copy deploy script
-  template: src=deploy.j2 dest={{ deployDirectory }}/deploy.py mode=755
-  when: copyear|success
-  register: copyscript
-
-- name: Run deploy command
-  shell: /u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin/wlst.sh {{ deployDirectory }}/deploy.py
-  when: copyscript|success
-  register: deployout
-  notify: Deploy Finish
-
-- name: Deploy Output
-  debug: msg= "{{ deployout.stdout_lines }}"
-
-- name: Deploy Error
-  debug: msg= "{{ deployout.stderr }}"
+# tasks file for batch_deploy
+#- include: mua_backup.yml
+- include: deploy.yml
 
 

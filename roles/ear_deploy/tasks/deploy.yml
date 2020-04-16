@@ -1,0 +1,56 @@
+---
+# tasks file for oracle
+#- name: Create deploy directory
+  #file: dest={{ deployDirectory }} mode=755 state=directory
+  #register: deploydir
+
+- name: Create config/fileLocation directory
+  file: dest={{ fileLocation }} mode=755 state=directory
+  register: filedir
+
+- name: Copy MDS config file to deployEAR directory
+  template: src=MDSConfig.j2 dest={{ fileLocation }}/MDSConfig.py mode=755
+  when: filedir is success
+  register: copypyscript
+  tags: mua
+
+#- name: Copy ear file to deployEAR directory
+ # copy: src={{ deploymentFile }} dest={{ fileLocation }} mode=644
+  #register: copyear
+  
+- name: download ear package and put it in deployEAR directory
+  command: wget -O {{ artifactID }}-{{ version }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
+  args:
+    chdir: /home/{{ appuser }}/deployEAR
+
+- name: Update adf-config.xml file with MDS entries
+  shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ fileLocation }}/MDSConfig.py"
+  when: copypyscript is success
+  #notify: MDS Update Finish
+  tags: mua
+  
+#- name: Copy ear file to directory
+  #command: cp -R {{ fileLocation }}/{{ deploymentFile }} {{ deployDirectory }}
+  #when: deploydir is success
+  #register: copyear
+
+- name: Change directory 
+  shell: "{{ item }}"
+  with_items:
+            - sh setDomainEnv.sh
+  args: 
+    chdir: "{{ domainName }}/bin"
+
+- name: Copy deploy script
+  template: src=deploy.j2 dest={{ fileLocation }}/deploy.py mode=755
+  when: filedir is success
+  register: copyscript
+
+- name: Run deploy command
+  shell: "{{ oracleBase }}/oracle_common/common/bin/wlst.sh {{ fileLocation }}/deploy.py"
+  when: copyscript is success
+  register: deployout
+  #failed_when: deployout.rc != 0
+  failed_when: "'Error' in deployout.stdout"
+  #notify: Deploy Finish
+- debug: var=deployout.stdout_lines

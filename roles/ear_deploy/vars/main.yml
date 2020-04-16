@@ -1,16 +1,23 @@
 ---
 # vars file for oracle
-username: 'Administrator'
-password: 'WrBR2#lg7fm'
-adminUrl: 't3://udojscam01.johnlewis.co.uk:7301'
-deploymentName: 'MassUploadApps'
-deploymentFile: 'MassUploadUI.ear'
-mdsFile: 'MDSConfig.py'
-fileLocation: '/home/weblogic/deployEAR'
-wlstHome: '/u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin'
-domainHome: '/u01/app/weblogic/Oracle/Middleware/user_projects/domains/ADF_Domain_DEV'
-deploymentTarget: 'jsc-server-wlscl-dev'
-deployDirectory: '{{ domainHome }}/servers/adf-rpm-server-dev01/stage'
-repository: 'mds_DEVMSUP_MDS'
-partition: 'MassUploadApplication'
-jndi: 'jdbc/mds/DEVMSUP_MDS'
+username: ""
+password: ""
+adminUrl: "t3://{{ host_name }}.johnlewis.co.uk:{{ port }}"
+deploymentName: ""
+deploymentFile: ""
+mdsFile: "MDSConfig.py"
+fileLocation: "/home/{{ appuser }}/deployEAR"
+#wlstHome: "/u01/app/weblogic/Oracle/Middleware/oracle_common/common/bin"
+oracleBase: "/u01/app/{{ appuser }}/Oracle/Middleware"
+domainHome: "/u01/app/{{ appuser }}/Oracle/Middleware/user_projects/domains"
+domainName: "{{ domainHome }}/{{ domain_name }}"
+deploymentTarget: "{{ cluster_name }}"
+#deployDirectory: "{{ domainName }}/servers/{{ server_name }}/stage"
+repository: " "
+partition: ""
+jndi: ""
+repositoryID: "JLP-Pioneer-Snapshots"
+groupID: "com.jlp.mua"
+artifactID: "MassUploadUI"
+version: "1.0-SNAPSHOT"
+classifier: "ear"

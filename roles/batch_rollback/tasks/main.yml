@@ -1,0 +1,4 @@
+---
+# tasks file for batch_rollback
+- include: invalidobjects.yml
+- include: batch_rollback.yml

@@ -1,0 +1,21 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  become_user: oretail
+  become_method: sudo
+  tasks:
+    - name: Checking the DB connection and schema availability
+      shell: |
+         source /home/oretail/.profile
+         echo "exit" | sqlplus -L {{ schema_cred }} | grep "Connected to:" > /dev/null
+         if [ $? -eq 0 ];then
+            echo "DB Connected Successfully...."
+         else
+            echo "There is some issue to connect to DB.."
+         fi
+      register: schema_out
+      failed_when: "'issue' in schema_out.stdout"
+      args:
+        chdir: /home/oretail
+    - debug: var=schema_out.stdout_lines

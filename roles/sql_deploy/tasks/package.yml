@@ -1,0 +1,56 @@
+---
+ - name: Check if Staging directory exists
+   stat:
+    path: "{{ Staging }}"
+   register: stage
+   tags: deploy
+ 
+ - name: If exists 
+   debug:
+     msg: "staging directory already existed"
+   when: stage.stat.exists
+   tags: deploy
+ 
+ - name: If not exists
+   file:
+     path: "{{ Staging }}"
+     state: directory
+     mode: 0755
+   when: stage.stat.exists == false
+   tags: deploy
+
+ - name: "Remove existing file"
+   shell: rm -rf *.*
+   args:
+     chdir: "{{ Staging }}"
+   tags: deploy
+
+ - name: download package into
+   shell: wget -O {{ artifactID }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
+   args:
+     chdir: "{{ Staging }}"
+   tags: deploy
+
+# - name: unarchive zip file
+#   command: unzip oracle-db.zip "{{ Staging }}"
+#   args:
+#     chdir: /tmp
+ - name: Extract DB objects
+   unarchive:
+     src: "{{ Staging }}/{{ artifactID }}.{{ classifier }}"
+     dest: "{{ Staging }}"
+     remote_src: yes
+   tags: deploy
+  
+ - name: Copy deploy script to home directory
+   template: src=sql_deploy.sh dest=/home/oretail mode=777
+   tags: deploy
+
+ - name: Copy Rollback script to home directory
+   template: src=sql_rollback.sh dest=/home/oretail mode=777
+   tags: deploy
+   
+ - name: Copy  deploy_list.txt to home directory
+   template: src=deploy_list.txt dest=/home/oretail mode=755
+   tags: deploy
+

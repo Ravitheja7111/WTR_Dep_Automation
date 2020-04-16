@@ -1,0 +1,8 @@
+---
+ - hosts: all
+   gather_facts: no
+   roles:
+        - db_patch_deploy
+   become: yes
+   become_user: "{{ appuser }}"
+   become_method: sudo

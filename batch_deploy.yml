@@ -1,0 +1,8 @@
+---
+ - hosts: all
+   gather_facts: no
+   roles:
+     - batch_deploy
+   become: yes
+   become_user: oretail
+   become_method: sudo

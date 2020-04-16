@@ -1,0 +1,8 @@
+---
+ - hosts: all
+   gather_facts: no
+   roles:
+     - forms_rollback
+   become: yes
+   become_user: rmsapp
+   become_method: sudo

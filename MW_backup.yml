@@ -1,0 +1,20 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Create MUA backup directory
+      shell: "{{ item }}"
+      with_items:
+           - rm -rf /staging/deploys/Monthly_Release/MW_bkp/`date '+%Y-%m-%d'`/*.tar
+           - mkdir -p /staging/deploys/Monthly_Release/MW_bkp/`date '+%Y-%m-%d'`
+
+    - name: Take Middleware dir backup before MUA/ORUM deployment
+      shell: "{{ item }}"
+      with_items:
+           - tar -pcvf /staging/deploys/Monthly_Release/MW_bkp/`date '+%Y-%m-%d'`/middleware.tar Middleware
+           - chmod -R 777 /staging/deploys/Monthly_Release/MW_bkp
+      args:
+        chdir: /u01/app/{{ appuser }}/Oracle
+      register: mw_bkp
+    - debug: 
+        var: mw_bkp.stdout_lines

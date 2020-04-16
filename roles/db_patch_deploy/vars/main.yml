@@ -1,0 +1,14 @@
+---
+# vars file for db_patch_deploy
+basedir: "/{{ appdir }}/app/{{ appuser }}/{{ batchdir }}/staging"
+#monthdir: "{{ basedir }}/{{ month }}"
+patchdir: "{{ basedir }}/{{ patch_num }}"
+retail_home: "/{{ appdir }}/app/{{ appuser }}/{{ batchdir }}/orpatch/bin"
+repositoryID: 'JLP-Pioneer-Releases'
+groupID: 'com.jlp.oracleretail'
+artifactID: 'patches'
+version: '1.0.0'
+classifier: 'zip'
+staging_base: "/home/{{ appuser }}/JL_Automation_Staging/db_patch"
+month: ''
+patch_num: ''

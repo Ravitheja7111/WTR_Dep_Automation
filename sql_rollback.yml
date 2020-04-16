@@ -1,0 +1,9 @@
+---
+- hosts: all 
+  gather_facts: no
+  roles:
+    - sql_rollback
+  become: yes
+  become_user: oretail
+  become_method: sudo
+ 

@@ -1,0 +1,39 @@
+---
+ - name: create backup directory
+   shell: mkdir -p "{{ staging_base }}"/Forms_bkp_`date '+%Y-%m-%d'`
+
+ - name: Taking backup before deployment
+   shell: |
+      if [ -f "forms.txt" ];then
+      for i in `cat forms.txt`
+      do
+      file=`echo $i`
+      find /u01/app/rmsapp/rmsforms/base/forms/src -iname $i -exec cp {} "{{ staging_base }}"/Forms_bkp_`date '+%Y-%m-%d'` \;
+      done
+      fi
+   args:
+     chdir: "{{ form_file_path }}"
+   register: findresult
+   
+ - debug: var=findresult.stdout_lines
+ 
+ 
+ - name: Taking backup before deployment
+   shell: |
+      if [ -f "forms.txt" ];then
+      for i in `cat forms.txt`
+      do
+      file=`echo $i`
+      find /u01/app/retail_home/RMS_FORMS/base/forms/src -iname $i -exec cp {} "{{ staging_base }}"/Forms_bkp_`date '+%Y-%m-%d'` \;
+      done
+      fi
+   args:
+     chdir: "{{ form_file_path }}"
+   register: findresult
+   tags: sys5_env
+   
+ - debug:
+     var: findresult.stdout_lines
+   tags: sys5_env
+
+  

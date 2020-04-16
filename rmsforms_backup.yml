@@ -1,0 +1,23 @@
+---
+ - hosts: all
+   gather_facts: no
+   tasks:
+     - name: create rmsforms backup directory
+       shell: "{{ item }}"
+       with_items:
+            - rm -rf /staging/deploys/Monthly_Release/rmsforms/`date '+%Y-%m-%d'`/*.tar
+            - mkdir -p /staging/deploys/Monthly_Release/rmsforms/`date '+%Y-%m-%d'`
+     - name: Take rmsforms dir backup before forms compilation
+       shell: "{{ item }}"
+       with_items:
+            - tar -pcvf /staging/deploys/Monthly_Release/rmsforms/`date '+%Y-%m-%d'`/rmsforms.tar rmsforms
+            - chmod -R 777 /staging/deploys/Monthly_Release/rmsforms
+       args:
+         chdir: /u01/app/rmsapp
+       register: rmsforms
+     - debug: 
+         var: rmsforms.stdout_lines
+   
+   become: yes
+   become_user: rmsapp
+   become_method: sudo

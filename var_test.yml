@@ -1,0 +1,13 @@
+---
+ - hosts: DEV_ORACLE
+   gather_facts: no
+   become: yes
+   become_user: weblogic
+   become_method: sudo
+   tasks:
+    - name: ver test thru jenkins
+      command: "{{ item }}"
+      with_items:
+                - touch "{{ filename }}"
+      args:
+        chdir: /home/weblogic

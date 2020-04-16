@@ -1,0 +1,8 @@
+---
+# tasks file for batch_deploy
+- include: package.yml
+- include: invalid_objects.yml
+#- include: rmsbatch_backup.yml
+- include: deploy.yml
+
+

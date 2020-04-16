@@ -1,0 +1,40 @@
+---
+ - name: Copying Batches to respective dir on the target server
+   shell: |
+      source /home/oretail/.profile
+      if [ -f "{{ batch_file_path }}/batches.txt" ];then
+      for i in `cat {{ batch_file_path }}/batches.txt`
+      do
+      file=`echo $i`
+      file_ext=`echo $i | cut -d "." -f 2`
+          file_wo_ext=`echo $i | cut -d "." -f 1`
+      if [ $file_ext == 'sh' ] || [ $file_ext == 'ksh' ];then
+                cd /u02/app/oretail/RMS_BATCH/oracle/proc/bin
+                cp -R "{{ batch_file_path }}/$i" .
+                chmod 777 $i
+                dos2unix $i
+        elif [ $file_ext == 'mk' ];then
+                    cd /u02/app/oretail/RMS_BATCH/oracle/proc/src
+                    cp -R "{{ batch_file_path }}/$i" .
+                    chmod 777 $i
+                    dos2unix $i
+             else [ $file_ext == 'pc' ]
+                      cd /u02/app/oretail/RMS_BATCH/oracle/proc/src
+                      rm -f $file_wo_ext.c $file_wo_ext.lis $file_wo_ext.o $file_wo_ext
+                      cp -R "{{ batch_file_path }}/$i" .
+                      chmod 777 $i
+                      dos2unix $i
+                      make -f rms.mk $file_wo_ext
+                      cp $file_wo_ext ../bin
+                      cd ../bin
+                      chmod 777 $file_wo_ext
+      fi
+      done
+      fi
+   args:
+     chdir: "{{ batch_file_path }}"
+   #environment:
+     #TERM: vt100
+   register: batresult
+   
+ - debug: var=batresult

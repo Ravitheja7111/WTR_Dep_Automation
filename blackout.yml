@@ -1,26 +1,22 @@
 ---
- - hosts: OAT-NODE1
+ - hosts: all
    gather_facts: no
    become: yes
-   become_user: oracle
+   become_user: emcli
    become_method: sudo
-   tasks:
-    
-    - name: Start Blackouts on OEM
+   tasks:    
+    - name: Start Blackout:{{ Blackout_Name }}  on OEM
       shell: "{{ item }}"
       with_items:
-                - ./emctl status agent
-                #- ./emctl start blackout {{ Blackout_Name }} {{ blackout_targets['content'] | b64decode }}
-                - ./emctl start blackout {{ Blackout_Name }} {{ Target_Name }}
-              # - ./emctl status blackout {{ Target_Name }}:{{ Target_Type }}
+           - ./emcli create_blackout -name={{ Blackout_Name }} -add_targets={{ Target_List }} -schedule="duration:1:30" -reason="Testing"
       args:
-        chdir: /coroem01/agent_inst/bin
+        chdir: /home/emcli/emclipak
       tags: startBlackout
 
-    - name: Stop Blackouts on OEM
+    - name: Stop Blackout:{{ Blackout_Name }}  on OEM
       command: "{{ item }}"
       with_items:
-                - ./emctl stop blackout {{ Blackout_Name }}
+           - ./emcli stop_blackout -name={{ Blackout_Name }}
       args:
-        chdir: /coroem01/agent_inst/bin
+        chdir: /home/emcli/emclipak
       tags: stopBlackout

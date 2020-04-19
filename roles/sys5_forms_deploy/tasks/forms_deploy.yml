@@ -1,8 +1,8 @@
 ---
  - name: Copy script to home path
-   template: src=forms_compilation.sh  dest=/home/rmsapp mode=777
+   template: src=sys5_forms_compilation.sh  dest=/home/rmsapp mode=777
  - name: compile and deploy forms
-   shell: sh /home/rmsapp/forms_compilation.sh
+   shell: sh /home/rmsapp/sys5_forms_compilation.sh
    register: compile_result
  - debug: var=compile_result.stdout_lines
  

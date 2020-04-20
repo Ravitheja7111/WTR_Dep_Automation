@@ -1,9 +1,12 @@
 create_table_jl_deal_alert_config.sql~RMS
 create_table_jl_gather_table_stat_config.sql~RMS
+jl_cv_rpm_price_event_audit.sql~RMS
 alter_sequence_deal_sequence.sql~RMS
 jl_send_mail_with_attachment.sql~RMS
 jl_dealitem_maint.sql~RMS
 jl_general_system_alert.pls~RMS
 jl_general_system_alert.plb~RMS
+jl_selling_retail_audit_report.pkb~RMS
 insert_jl_deal_alert_config.sql~RMS
 jl_gather_table_stat_config_insert_onetime.sql~RMS
+UPDATE_INSERT_Thread_Numbers_5617_5722.sql~RMS

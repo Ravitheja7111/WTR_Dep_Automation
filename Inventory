@@ -1,3 +1,5 @@
+[RIB_BO]
+upojscai02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 # RMS DB servers in all environments
 [RMSDB_Objects]
 upojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer

@@ -2,7 +2,7 @@
  - hosts: RIB_BO
    gather_facts: no
    become: yes
-   become_user: emcli
+   become_user: oracle
    become_method: sudo
    tasks:    
     - name: Start Blackout:{{ Blackout_Name }}  on OEM

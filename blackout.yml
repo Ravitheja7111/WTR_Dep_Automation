@@ -1,5 +1,5 @@
 ---
- - hosts: all
+ - hosts: RIB_BO
    gather_facts: no
    become: yes
    become_user: emcli

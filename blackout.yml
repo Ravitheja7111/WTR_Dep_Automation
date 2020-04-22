@@ -8,9 +8,9 @@
     - name: Start Blackout:{{ Blackout_Name }}  on OEM
       shell: "{{ item }}"
       with_items:
-           #- ./emcli status
+           - ./emcli status
            #- ./emcli create_blackout -name={{ Blackout_Name }} -add_targets={{ Target_List }} -schedule="duration:1:30" -reason="Testing"
-           - ./emcli get_targets -noheader
+           #- ./emcli get_targets -noheader
       args:
         chdir: /home/emcli/emclipak
       tags: startBlackout

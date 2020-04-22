@@ -1,8 +1,8 @@
 ---
- - hosts: RIB_BO
+ - hosts: all
    gather_facts: no
    become: yes
-   become_user: oracle
+   become_user: emcli
    become_method: sudo
    tasks:    
     - name: Start Blackout:{{ Blackout_Name }}  on OEM
@@ -10,7 +10,7 @@
       with_items:
            - ./emcli create_blackout -name={{ Blackout_Name }} -add_targets={{ Target_List }} -schedule="duration:1:30" -reason="Testing"
       args:
-        chdir: /home/oracle/emcli1
+        chdir: /home/emcli/emclipak
       tags: startBlackout
 
     - name: Stop Blackout:{{ Blackout_Name }}  on OEM

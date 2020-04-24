@@ -19,14 +19,18 @@
         chdir: /home/emcli/emclipak
       register: add_BO
       tags: startBlackout
-    - debug: var=add_BO.stdout_lines
+    - debug: 
+        var: add_BO
+      tags: startBlackout
 
     - name: Stop Blackout:{{ Blackout_Name }}  on OEM
-      command: "{{ item }}"
+      shell: "{{ item }}"
       with_items:
            - ./emcli stop_blackout -name="{{ Blackout_Name }}"
       args:
         chdir: /home/emcli/emclipak
       register: remove_BO
       tags: stopBlackout
-    - debug: var=remove_BO.stdout_lines
+    - debug: 
+        var: remove_BO
+      tags: stopBlackout

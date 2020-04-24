@@ -4,6 +4,11 @@
    become: yes
    become_user: emcli
    become_method: sudo
+   
+   environment:
+        JAVA_HOME: /home/emcli/jdk1.6.0_95
+        PATH: /usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/emcli/jdk1.6.0_95/bin
+        
    tasks:    
     - name: Start Blackout:{{ Blackout_Name }}  on OEM
       shell: "{{ item }}"
@@ -11,9 +16,9 @@
            - ./emcli status
            - ./emcli create_blackout -name={{ Blackout_Name }} -add_targets={{ Target_List }} -schedule="duration:1:30" -reason="Testing"
            #- ./emcli get_targets -noheader
-      environment:
-        JAVA_HOME: /home/emcli/jdk1.6.0_95
-        PATH: /usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/emcli/jdk1.6.0_95/bin
+      #environment:
+        #JAVA_HOME: /home/emcli/jdk1.6.0_95
+        #PATH: /usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/emcli/jdk1.6.0_95/bin
       args:
         chdir: /home/emcli/emclipak
       tags: startBlackout
@@ -22,9 +27,9 @@
       command: "{{ item }}"
       with_items:
            - ./emcli stop_blackout -name={{ Blackout_Name }}
-      environment:
-        JAVA_HOME: /home/emcli/jdk1.6.0_95
-        PATH: /usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/emcli/jdk1.6.0_95/bin
+      #environment:
+        #JAVA_HOME: /home/emcli/jdk1.6.0_95
+        #PATH: /usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/emcli/jdk1.6.0_95/bin
       args:
         chdir: /home/emcli/emclipak
       tags: stopBlackout

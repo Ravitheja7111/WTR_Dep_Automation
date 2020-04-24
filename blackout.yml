@@ -13,23 +13,20 @@
     - name: Start Blackout:{{ Blackout_Name }}  on OEM
       shell: "{{ item }}"
       with_items:
-           - ./emcli status
+           #- ./emcli status
            - ./emcli create_blackout -name={{ Blackout_Name }} -add_targets={{ Target_List }} -schedule="duration:1:30" -reason="Testing"
-           #- ./emcli get_targets -noheader
-      #environment:
-        #JAVA_HOME: /home/emcli/jdk1.6.0_95
-        #PATH: /usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/emcli/jdk1.6.0_95/bin
       args:
         chdir: /home/emcli/emclipak
+      register: add_BO
       tags: startBlackout
+    - debug: var=add_BO.stdout_lines
 
     - name: Stop Blackout:{{ Blackout_Name }}  on OEM
       command: "{{ item }}"
       with_items:
            - ./emcli stop_blackout -name={{ Blackout_Name }}
-      #environment:
-        #JAVA_HOME: /home/emcli/jdk1.6.0_95
-        #PATH: /usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/emcli/jdk1.6.0_95/bin
       args:
         chdir: /home/emcli/emclipak
+      register: remove_BO
       tags: stopBlackout
+    - debug: var=remove_BO.stdout_lines

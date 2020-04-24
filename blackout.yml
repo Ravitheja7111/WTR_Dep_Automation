@@ -14,7 +14,7 @@
       shell: "{{ item }}"
       with_items:
            #- ./emcli status
-           - ./emcli create_blackout -name={{ Blackout_Name }} -add_targets={{ Target_List }} -schedule="duration:1:30" -reason="Testing"
+           - ./emcli create_blackout -name="{{ Blackout_Name }}" -add_targets="{{ Target_List }}" -schedule="duration:1:30" -reason="Testing"
       args:
         chdir: /home/emcli/emclipak
       register: add_BO
@@ -24,7 +24,7 @@
     - name: Stop Blackout:{{ Blackout_Name }}  on OEM
       command: "{{ item }}"
       with_items:
-           - ./emcli stop_blackout -name={{ Blackout_Name }}
+           - ./emcli stop_blackout -name="{{ Blackout_Name }}"
       args:
         chdir: /home/emcli/emclipak
       register: remove_BO

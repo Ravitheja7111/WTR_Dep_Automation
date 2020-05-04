@@ -4,5 +4,5 @@
    roles:
       - RIB_TOPIC_Verify
    become: yes
-   become_user: ribapp
+   become_user: oretail
    become_method: sudo

@@ -14,7 +14,7 @@
    register: copyfile
    
  - name: connect to sql db
-   shell: source /home/ribapp/.profile && sqlplus $UP @{{ destDir }}/main.sql
+   shell: source /home/oretail/.profile && sqlplus $UP @{{ destDir }}/main.sql
    
  - name: Send e-mail to a bunch of users, attaching files
    mail:
@@ -27,4 +27,4 @@
      - monosij.maitra@johnlewis.co.uk
      - gayathri.modi@johnlewis.co.uk
      - suman.ghorui@johnlewis.co.uk
-     attach: /home/ribapp/pre_check_scripts/table_count.log
+     attach: /home/oretail/pre_check_scripts/table_count.log

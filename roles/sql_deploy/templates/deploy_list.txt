@@ -1,3 +1,2 @@
-alter_table_jl_supplier_rebate_intf_st_h.sql~RMS
-alter_table_jl_supplier_rebate_intf_status.sql~RMS
-jl_suprebatestausext.sql~RMS
+jl_upd_bip_alert_config_report_id8.sql~RMS
+

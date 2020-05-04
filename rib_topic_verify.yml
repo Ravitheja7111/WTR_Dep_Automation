@@ -2,7 +2,7 @@
  - hosts: all
    gather_facts: no
    roles:
-      - precheck
+      - RIB_TOPIC_Verify
    become: yes
-   become_user: oretail
+   become_user: ribapp
    become_method: sudo

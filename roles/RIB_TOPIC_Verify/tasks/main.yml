@@ -8,19 +8,13 @@
    when: createdir is success
    register: copyfile
 
-   
- - name: Copy sql files to staging directory
-   template: src=MFQUEUE_CHECK.sql dest={{ destDir }}/MFQUEUE_CHECK.sql mode=755
-   when: createdir is success
-   register: copyfile
-   
  - name: Copy sql files to staging directory
    template: src=RIB_TOPIC_CHECK.sql dest={{ destDir }}/RIB_TOPIC_CHECK.sql mode=755
    when: createdir is success
    register: copyfile
    
  - name: connect to sql db
-   shell: source /home/oretail/.profile && sqlplus $UP @{{ destDir }}/main.sql
+   shell: source /home/ribapp/.profile && sqlplus $UP @{{ destDir }}/main.sql
    
  - name: Send e-mail to a bunch of users, attaching files
    mail:
@@ -33,5 +27,4 @@
      - monosij.maitra@johnlewis.co.uk
      - gayathri.modi@johnlewis.co.uk
      - suman.ghorui@johnlewis.co.uk
-     attach: /home/oretail/pre_check_scripts/table_count.log
-
+     attach: /home/ribapp/pre_check_scripts/table_count.log

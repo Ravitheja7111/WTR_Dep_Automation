@@ -1,2 +1,2 @@
-jl_upd_bip_alert_config_report_id8.sql~RMS
+update_table_jl_sup_rebate_mail_dtl.sql~RMS
 

@@ -5,6 +5,7 @@
       for i in `cat {{ Staging }}/templates.txt`
       do
       file=`echo $i`
+      echo $file
       #chmod 755 $file
       cp {{ Staging }}/$file $file_bkp
       cp {{ Staging }}/$file .

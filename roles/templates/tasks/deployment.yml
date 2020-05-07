@@ -8,7 +8,7 @@
       echo $file
       echo $i
       #chmod 755 $file
-      cp {{ Staging }}/$file $file_bkp
+      cp {{ Staging }}/$file "$file_bkp"
       cp {{ Staging }}/$file .
       done
       fi

@@ -8,8 +8,8 @@
       echo $file
       echo $i
       #chmod 755 $file
-      cp {{ Staging }}/$file "${file}_bkp"
-      cp {{ Staging }}/$file .
+      cp {{ Staging }}/$file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR/"${file}_bkp"
+      cp {{ Staging }}/$file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
       done
       fi
    args:

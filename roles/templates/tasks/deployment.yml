@@ -9,7 +9,7 @@
       echo $i
       #chmod 755 $file
       cp {{ Staging }}/$file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR/"${file}_bkp"
-      cp -f {{ Staging }}/$file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
+      cp -f --no-preserve=mode,ownership {{ Staging }}/$file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
       done
       fi
    args:

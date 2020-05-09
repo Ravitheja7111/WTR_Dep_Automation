@@ -2,7 +2,7 @@
 - hosts: all 
   gather_facts: no
   roles:
-    - ords_sql_deploy 
+    - rep_sql_deploy 
   become: yes
   become_user: oretail
   become_method: sudo

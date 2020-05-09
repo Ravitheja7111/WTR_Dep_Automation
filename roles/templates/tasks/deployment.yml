@@ -1,8 +1,8 @@
 ---
  - name: Copying tempalte files to destination dir on the target server
    shell: |
-      if [ -f "templates.txt" ];then
-      for i in `cat templates.txt`
+      if [ -f "{{ Staging }}/templates.txt" ];then
+      for i in `cat {{ Staging }}/templates.txt`
       do
       file=`echo $i`
       chmod 755 $file
@@ -10,7 +10,7 @@
       done
       fi
    args:
-     chdir: "{{ Staging }}"
+     chdir: /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
    register: templateresult
    
  - debug: var=templateresult.stdout_lines

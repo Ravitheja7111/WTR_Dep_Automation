@@ -1,0 +1,23 @@
+---
+ - hosts: all
+   gather_facts: no
+   tasks:
+     - name: create RMS_BATCH backup directory
+       shell: "{{ item }}"
+       with_items:
+            - rm -rf /staging/deploys/Monthly_Release/RPM_BATCH/`date '+%Y-%m-%d'`/*.tar
+            - mkdir -p /staging/deploys/Monthly_Release/RPM_BATCH/`date '+%Y-%m-%d'`
+     - name: Take RPM_BATCH dir backup before RPM_BATCH execution
+       shell: "{{ item }}"
+       with_items:
+            - tar -pcvf /staging/deploys/Monthly_Release/RPM_BATCH/`date '+%Y-%m-%d'`/{{ Application }}.tar rpmbat
+            - chmod -R 777 /staging/deploys/Monthly_Release/RPM_BATCH
+       args:
+         chdir: /u01/app/rpmapp
+       register: rpmbatch_bkp
+     - debug: 
+         var: rpmbatch_bkp.stdout_lines
+
+   become: yes
+   become_user: rpmapp
+   become_method: sudo

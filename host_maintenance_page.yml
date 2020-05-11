@@ -3,8 +3,11 @@
    gather_facts: no
    tasks:
      - name: Hosting Maintenance Page
-       script: 
-         cmd: /usr/local/bin/OHS_PRE-BATCH_Restart.sh
+       shell: sh OHS_PRE-BATCH_Restart.sh
+       args:
+         chdir: /usr/local/bin
+       register: deploy_result
+     - debug: var=deploy_result.stdout_lines
    become: yes
    become_user: "{{ appuser }}"
    become_method: sudo

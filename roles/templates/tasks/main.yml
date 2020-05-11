@@ -1,4 +1,4 @@
 ---
 - include: package.yml
-#- include: deployment.yml
+- include: deployment.yml
 

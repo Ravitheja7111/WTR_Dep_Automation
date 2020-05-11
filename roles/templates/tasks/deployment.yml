@@ -13,7 +13,7 @@
       done
       fi
    args:
-     chdir: {{ msupdir }}
+     chdir: "{{ msupdir }}"
    register: templateresult
    
  - debug: var=templateresult.stdout_lines

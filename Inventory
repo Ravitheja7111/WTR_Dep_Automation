@@ -139,6 +139,18 @@ ukojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansi
 ulojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 ulojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 
+[DEALSAPP]
+udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+upojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+upojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+ukojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
+ukojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
+ulojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
+ulojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
+
 # RIB APP servers in all environments
 [RIBAPP_EAR]
 upojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer

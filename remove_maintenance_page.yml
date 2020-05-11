@@ -2,8 +2,8 @@
  - hosts: all
    gather_facts: no
    tasks:
-     - name: Hosting Maintenance Page
-       shell: sh OHS_PRE-BATCH_Restart.sh
+     - name: Remove Maintenance Page
+       shell: sh OHS_POST-BATCH_Restart.sh
        args:
          chdir: /usr/local/bin
        register: deploy_result

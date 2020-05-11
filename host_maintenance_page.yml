@@ -4,6 +4,7 @@
    tasks:
      - name: Hosting Maintenance Page
        script: /usr/local/bin/OHS_PRE-BATCH_Restart.sh
+       remote_src: yes
    become: yes
    become_user: "{{ appuser }}"
    become_method: sudo

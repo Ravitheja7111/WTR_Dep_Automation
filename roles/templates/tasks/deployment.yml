@@ -5,12 +5,13 @@
       for i in `cat {{ Staging }}/templates.txt`
       do
       file=`echo $i`
-      chmod 755 $file
-      cp -f $file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
+      #chmod 755 $file
+      cp $file "${file}_`date +%Y-%m-%d`"
+      cp -f {{ Staging }}/$file {{ msupdir }}
       done
       fi
    args:
-     chdir: /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
+     chdir: "{{ msupdir }}"
    register: templateresult
    
  - debug: var=templateresult.stdout_lines

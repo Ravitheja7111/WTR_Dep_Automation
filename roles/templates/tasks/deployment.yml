@@ -8,12 +8,12 @@
       echo $file
       echo $i
       #chmod 755 $file
-      cp /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR/$file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR/"${file}_`date +%Y-%m-%d`"
-      cp -f {{ Staging }}/$file /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
+      cp {{ msupdir }}/$file {{ msupdir }}/"${file}_`date +%Y-%m-%d`"
+      cp -f {{ Staging }}/$file {{ msupdir }}
       done
       fi
    args:
-     chdir: /u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR
+     chdir: {{ msupdir }}
    register: templateresult
    
  - debug: var=templateresult.stdout_lines

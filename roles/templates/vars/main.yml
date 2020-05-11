@@ -1,5 +1,6 @@
 ---
 Staging: '/home/oretail/JL_Automation_Staging/template_files'
+msupdir: '/u02/app/oretail/RMS_BATCH/JLCUSTOM/MSUP_DIR'
 repositoryID: 'JLP-Pioneer-Snapshots'
 groupID: 'com.jlp.oracleretail'
 artifactID: 'rms'

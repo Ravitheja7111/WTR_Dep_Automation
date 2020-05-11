@@ -1,2 +1,2 @@
-update_table_jl_sup_rebate_mail_dtl.sql~RMS
-
+jl_msup_search_qry.sql~RMS
+jl_msup_search_qry_multi.sql~RMS

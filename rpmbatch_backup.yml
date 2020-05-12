@@ -10,8 +10,8 @@
      - name: Take RPM_BATCH dir backup before RPM_BATCH execution
        shell: "{{ item }}"
        with_items:
-            - tar -pcvf /staging/deploys/Monthly_Release/RPM_BATCH/`date '+%Y-%m-%d'`/{{ Application }}.tar rpmbat
-            - chmod -R 777 /staging/deploys/Monthly_Release/RPM_BATCH/`date '+%Y-%m-%d'`/{{ Application }}.tar
+            - tar -pcf /staging/deploys/Monthly_Release/RPM_BATCH/`date '+%Y-%m-%d'`/{{ Environment }}_{{ Application }}.tar rpmbat
+            - chmod -R 777 /staging/deploys/Monthly_Release/RPM_BATCH/`date '+%Y-%m-%d'`/{{ Environment }}_{{ Application }}.tar
        args:
          chdir: /u01/app/rpmapp
        register: rpmbatch_bkp

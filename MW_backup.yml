@@ -11,8 +11,8 @@
      - name: Take Middleware dir backup before MUA/ORUM deployment
        shell: "{{ item }}"
        with_items:
-            - tar -pcvf /staging/deploys/Monthly_Release/MW_bkp/`date '+%Y-%m-%d'`/MW_{{ Application }}.tar Middleware
-            - chmod -R 777 /staging/deploys/Monthly_Release/MW_bkp/`date '+%Y-%m-%d'`/MW_{{ Application }}.tar
+            - tar -pcf /staging/deploys/Monthly_Release/MW_bkp/`date '+%Y-%m-%d'`/{{ Environment }}_MW_{{ Application }}.tar Middleware
+            - chmod -R 777 /staging/deploys/Monthly_Release/MW_bkp/`date '+%Y-%m-%d'`/{{ Environment }}_MW_{{ Application }}.tar
        args:
          chdir: /u01/app/{{ appuser }}/Oracle
        register: mw_bkp

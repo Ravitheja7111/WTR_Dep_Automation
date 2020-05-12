@@ -11,7 +11,7 @@
        shell: "{{ item }}"
        with_items:
             - tar --exclude='RMS_BATCH/JLCUSTOM' --exclude='RMS_BATCH/data/staging' --exclude='RMS_BATCH/data/RREPORT_DIR' --exclude='RMS_BATCH/data/MSUP_DIR' -pcvf /staging/deploys/Monthly_Release/RMS_BATCH/`date '+%Y-%m-%d'`/{{ Application }}.tar RMS_BATCH
-            - chmod -R 777 /staging/deploys/Monthly_Release/RMS_BATCH
+            - chmod -R 777 /staging/deploys/Monthly_Release/RMS_BATCH/`date '+%Y-%m-%d'`/{{ Application }}.tar
        args:
          chdir: /u02/app/oretail
        register: rmsbatch_bkp

@@ -5,7 +5,7 @@
      - name: create rmsforms backup directory
        shell: "{{ item }}"
        with_items:
-            - rm -rf /staging/deploys/Monthly_Release/rmsforms/`date '+%Y-%m-%d'`/*.tar
+            #- rm -rf /staging/deploys/Monthly_Release/rmsforms/`date '+%Y-%m-%d'`/*.tar
             - mkdir -p /staging/deploys/Monthly_Release/rmsforms/`date '+%Y-%m-%d'`
      - name: Take rmsforms dir backup before forms compilation
        shell: "{{ item }}"

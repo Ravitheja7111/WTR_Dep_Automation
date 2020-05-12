@@ -19,5 +19,5 @@
      - debug: 
          var: mw_bkp.stdout_lines
    become: yes
-   become_user: rpmapp
+   become_user: "{{ appuser }}"
    become_method: sudo

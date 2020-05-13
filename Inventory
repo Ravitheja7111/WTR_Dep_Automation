@@ -1,9 +1,9 @@
-[RPM_BKP_ND1]
+[BKP_ND1]
 upojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ulojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 
-[RPM_BKP_ND2]
+[BKP_ND2]
 upojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ulojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'

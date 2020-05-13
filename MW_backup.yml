@@ -14,7 +14,7 @@
             - tar -pcf /staging/deploys/Monthly_Release/MW_bkp/`date '+%Y-%m-%d'`/{{ Environment }}_MW_{{ Application }}.tar Middleware
             - chmod -R 777 /staging/deploys/Monthly_Release/MW_bkp/`date '+%Y-%m-%d'`/{{ Environment }}_MW_{{ Application }}.tar
        async: 1800
-       poll: 300
+       poll: 150
        args:
          chdir: /u01/app/{{ appuser }}/Oracle
        register: mw_bkp

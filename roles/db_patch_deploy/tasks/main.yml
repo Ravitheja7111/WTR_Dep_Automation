@@ -30,7 +30,7 @@
     register: result
     tags: "{{ application }}"
   
-  - name: Apply "{{ application }}" patch from level 1st directory
+  - name: Apply "{{ application }}" patch from 1st level directory
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
     args: 
       chdir: "{{ retail_home }}"
@@ -41,7 +41,7 @@
       var: orpatch_1st.stdout_lines
     tags: "{{ application }}"
    
-  - name: Apply "{{ application }}" patch from level 2nd directory
+  - name: Apply "{{ application }}" patch from 2nd level directory
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
     args: 
       chdir: "{{ retail_home }}"

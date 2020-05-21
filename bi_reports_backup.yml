@@ -16,7 +16,7 @@
        args:
          chdir: /staging/BIP_Staging_Report/repository/Reports
        register: reports_bkp
-	   tags: PERF
+       tags: PERF
 	   
 	 - name: Take BI_Reports dir backup before BI_Reports execution on live env
        shell: "{{ item }}"
@@ -26,7 +26,7 @@
        args:
          chdir: /BIP_staging/repository/Reports
        register: reports_bkp
-	   tags: [ PREPRD, PRD ]
+       tags: [ PREPRD, PRD ]
 	   
      - debug: 
          var: reports_bkp.stdout_lines

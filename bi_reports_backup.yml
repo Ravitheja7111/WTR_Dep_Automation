@@ -1,0 +1,36 @@
+---
+ - hosts: all
+   gather_facts: no
+   tasks:
+     - name: create BI_Reports backup directory
+       shell: "{{ item }}"
+       with_items:
+            #- rm -rf /staging/deploys/Monthly_Release/RMS_BATCH/`date '+%Y-%m-%d'`/*.tar
+            - mkdir -p /staging/deploys/Monthly_Release/BI_Reports_{{ Environment }}/`date '+%Y-%m-%d'`
+	   tags: [ PERF, PREPRD, PRD ]
+     - name: Take BI_Reports dir backup before BI_Reports execution on PERF env
+       shell: "{{ item }}"
+       with_items:
+            - tar -pcf /staging/deploys/Monthly_Release/BI_Reports_{{ Environment }}/`date '+%Y-%m-%d'`/{{ Environment }}_{{ Application }}.tar Guest
+            - chmod -R 777 /staging/deploys/Monthly_Release/BI_Reports_{{ Environment }}/`date '+%Y-%m-%d'`/{{ Environment }}_{{ Application }}.tar
+       args:
+         chdir: /staging/BIP_Staging_Report/repository/Reports
+       register: reports_bkp
+	   tags: PERF
+	   
+	 - name: Take BI_Reports dir backup before BI_Reports execution on live env
+       shell: "{{ item }}"
+       with_items:
+            - tar -pcf /staging/deploys/Monthly_Release/BI_Reports_{{ Environment }}/`date '+%Y-%m-%d'`/{{ Environment }}_{{ Application }}.tar Guest
+            - chmod -R 777 /staging/deploys/Monthly_Release/BI_Reports_{{ Environment }}/`date '+%Y-%m-%d'`/{{ Environment }}_{{ Application }}.tar
+       args:
+         chdir: /BIP_staging/repository/Reports
+       register: reports_bkp
+	   tags: [ PREPRD, PRD ]
+	   
+     - debug: 
+         var: reports_bkp.stdout_lines
+
+   become: yes
+   become_user: repapp
+   become_method: sudo

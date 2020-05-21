@@ -89,7 +89,7 @@ ulojscdi02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansi
 #upojscdt02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 
 [REPDB_Objects]
-usojscdr01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer					
+#usojscdr01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer					
 upojscdr01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscdr01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ulojscdr01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'

@@ -26,7 +26,6 @@
          chdir: /BIP_staging/repository/Reports
        register: reports_bkp
        tags: [ PREPRD, PRD ]
-	   
      - debug: 
          var: reports_bkp.stdout_lines
 

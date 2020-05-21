@@ -7,7 +7,7 @@
        with_items:
             #- rm -rf /staging/deploys/Monthly_Release/RMS_BATCH/`date '+%Y-%m-%d'`/*.tar
             - mkdir -p /staging/deploys/Monthly_Release/BI_Reports_{{ Environment }}/`date '+%Y-%m-%d'`
-	   tags: [ PERF, PREPRD, PRD ]
+       tags: [ PERF, PREPRD, PRD ]
      - name: Take BI_Reports dir backup before BI_Reports execution on PERF env
        shell: "{{ item }}"
        with_items:

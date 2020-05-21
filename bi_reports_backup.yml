@@ -17,8 +17,7 @@
          chdir: /staging/BIP_Staging_Report/repository/Reports
        register: reports_bkp
        tags: PERF
-	   
-	 - name: Take BI_Reports dir backup before BI_Reports execution on live env
+     - name: Take BI_Reports dir backup before BI_Reports execution on live env
        shell: "{{ item }}"
        with_items:
             - tar -pcf /staging/deploys/Monthly_Release/BI_Reports_{{ Environment }}/`date '+%Y-%m-%d'`/{{ Environment }}_{{ Application }}.tar Guest

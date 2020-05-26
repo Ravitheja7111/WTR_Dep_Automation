@@ -27,7 +27,7 @@
     - name: Stop Blackout:{{ Blackout_Name }}  on OEM
       shell: "{{ item }}"
       with_items:
-      	   - ./emcli logout
+           - ./emcli logout
            - ./emcli login -username="{{ username }}" -password="{{ password }}"
            - ./emcli stop_blackout -name="{{ Blackout_Name }}"
       args:

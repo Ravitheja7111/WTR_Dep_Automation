@@ -13,6 +13,7 @@
     - name: Start Blackout:{{ Blackout_Name }}  on OEM
       shell: "{{ item }}"
       with_items:
+           - ./emcli logout
            - ./emcli login -username="{{ username }}" -password="{{ password }}"
            - ./emcli create_blackout -name="{{ Blackout_Name }}" -add_targets="{{ Target_List }}" -schedule="duration:{{ Hours }}:{{ Mins }}" -reason="{{ Reason }}"
       args:
@@ -26,6 +27,7 @@
     - name: Stop Blackout:{{ Blackout_Name }}  on OEM
       shell: "{{ item }}"
       with_items:
+      	   - ./emcli logout
            - ./emcli login -username="{{ username }}" -password="{{ password }}"
            - ./emcli stop_blackout -name="{{ Blackout_Name }}"
       args:

@@ -24,7 +24,7 @@ def undeployApplication(deploymentName, deploymentTarget):
     try:
         print('stopping and undeploying ..' + deploymentName)
         stopApplication(deploymentName, targets=deploymentTarget)
-        undeploy(deploymentName, targets=deploymentTarget, timeout=600000)
+        undeploy(deploymentName, targets=deploymentTarget, timeout=420000)
     except:
         print('Error during the stop and undeployment of ' + deploymentName)
         exit()
@@ -33,7 +33,7 @@ def undeployApplication(deploymentName, deploymentTarget):
 def deployApplication(deploymentName, deploymentTarget, deploymentFile):
     try:
         print('Deploying the application ' + deploymentName)
-        deploy(deploymentName, deploymentFile, targets=deploymentTarget, remote='true', upload='true', timeout=600000)
+        deploy(deploymentName, deploymentFile, targets=deploymentTarget, remote='true', upload='true', timeout=420000)
         startApplication(deploymentName)
     except:
         print('Error during the deployment of ' + deploymentName)

@@ -15,7 +15,7 @@
             #- chmod -R 777 /staging/deploys/Monthly_Release/MW_bkp_{{ Environment }}/`date '+%Y-%m-%d'`/{{ Environment }}_MW_{{ appuser }}_{{ Application }}.tar
             - chmod -R 777 /staging/deploys/Monthly_Release/MW_bkp_{{ Environment }}
        async: 1800
-       poll: 120
+       poll: 60
        args:
          chdir: /u01/app/{{ appuser }}/Oracle
        register: mw_bkp

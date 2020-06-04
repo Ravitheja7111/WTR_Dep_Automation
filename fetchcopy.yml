@@ -1,0 +1,16 @@
+---
+ - hosts: all
+   gather_facts: no
+   tasks:
+     - name: Fetch the file from the node-1 to ansible control machine
+	   run_once: yes
+       fetch: src=/home/oretail/1.sql dest=buffer/ flat=yes
+       when: "{{ ansible_hostname == 'upojscdm01' }}"
+	   
+	 - name: Copy the file from ansible control machine to node-2
+       copy: src=buffer/1.sql dest=/home/oretail/
+       when: "{{ ansible_hostname == 'upojscdm02' }}"
+
+   become: yes
+   become_user: oretail
+   become_method: sudo

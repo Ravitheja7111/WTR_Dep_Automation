@@ -309,6 +309,11 @@ upojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
 ulojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
 
+[MSUP_BLACKOUT]
+upojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+ukojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
+ulojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
+
 [RIB_BLACKOUT_PRI]
 upojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 ukojscai01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'

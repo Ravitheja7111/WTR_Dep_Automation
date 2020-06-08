@@ -298,6 +298,27 @@ PERF
 PREPRD
 PRD
 
+#The below groups are only for apply patches 
+[RMS_PATCH_ND1]
+upojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+ukojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
+ulojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
+
+[RPM_PATCH_ND1]
+upojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+ukojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
+ulojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
+
+[RMS_PATCH_ND2]
+upojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+ukojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
+ulojscdm02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
+
+[RPM_PATCH_ND2]
+upojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+ukojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@udojscut01.johnlewis.co.uk"'
+ulojscap02.johnlewis.co.uk ansible_connection=ssh  ansible_ssh_user=ansible ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ansible@ulojscjm01.johnlewis.co.uk"'
+
 # The below groups are only for adding blackouts on specific nodes
 [RMS_BLACKOUT]
 upojscaa01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer

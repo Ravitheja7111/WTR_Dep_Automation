@@ -61,3 +61,23 @@
   - debug: 
       var: orpatch_status.stdout_lines
     tags: "{{ application }}"
+    
+  - name: Create RMS_BATCH tar and keep it in staging path
+    shell: "{{ item }}"
+    with_items:
+         - mkdir -p /staging/deploys/Monthly_Release/RMS_PATCH_DIR
+         - tar --exclude='RMS_BATCH/JLCUSTOM' --exclude='RMS_BATCH/data/staging' --exclude='RMS_BATCH/data/RREPORT_DIR' --exclude='RMS_BATCH/data/MSUP_DIR' -pcf /staging/deploys/Monthly_Release/RMS_PATCH_DIR/{{ Environment }}_RMS_PATCH_DIR.tar {{ backupdir }}
+         - chmod -R 777 /staging/deploys/Monthly_Release/RMS_PATCH_DIR
+    args:
+      chdir: /u02/app/oretail
+    tags: RMS_PATCH_ND1
+    
+  - name: Create RPMBAT tar and keep it in staging path
+    shell: "{{ item }}"
+    with_items:
+         - mkdir -p /staging/deploys/Monthly_Release/RPM_PATCH_DIR
+         - tar -pcf /staging/deploys/Monthly_Release/RPM_PATCH_DIR/{{ Environment }}_RPM_PATCH_DIR.tar {{ backupdir }}
+         - chmod -R 777 /staging/deploys/Monthly_Release/RPM_PATCH_DIR
+    args:
+      chdir: /u01/app/rpmapp
+    tags: RPM_PATCH_ND1

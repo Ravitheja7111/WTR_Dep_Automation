@@ -1,0 +1,29 @@
+---
+ - hosts: all
+   gather_facts: no
+   tasks:
+     - name: Copy RMS BATCH from staging path to node2 
+       shell: "{{ item }}"
+       with_items:
+            - cp -R /staging/deploys/Monthly_Release/RMS_PATCH_DIR/{{ Environment }}_RMS_PATCH_DIR.tar .
+            - tar -pxf {{ Environment }}_RMS_PATCH_DIR.tar
+       args:
+         chdir: /tmp
+       tags: RMS_PATCH_ND2
+     - name: Copy RPM BATCH from staging path to node2 
+       shell: "{{ item }}"
+       with_items:
+            - cp -R /staging/deploys/Monthly_Release/RPM_PATCH_DIR/{{ Environment }}_RPM_PATCH_DIR.tar .
+            - tar -pxf {{ Environment }}_RPM_PATCH_DIR.tar
+       args:
+         chdir: /tmp
+       tags: RPM_PATCH_ND2
+     - name: List the installed patches in "{{ application }}" and its status
+       shell: source /home/{{ appuser }}/batch.profile && /{{ appdir }}/app/{{ appuser }}/{{ batchdir }}/orpatch/bin/orpatch lsinventory
+       args:
+         chdir: /{{ appdir }}/app/{{ appuser }}/{{ batchdir }}/orpatch/bin
+       tags: [ RMS_PATCH_ND2, RPM_PATCH_ND2 ]
+
+   become: yes
+   become_user: "{{ appuser }}"
+   become_method: sudo

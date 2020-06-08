@@ -5,7 +5,6 @@
       state: directory
       mode: 0777
     register: createdir
-    tags: "{{ application }}"
 
   - name: download package
     shell: wget -O {{ artifactID }}-{{ version }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
@@ -13,7 +12,6 @@
       chdir: /tmp
     when: createdir is success
     register: patchpkg
-    tags: "{{ application }}"
 
   - name: unzip the file
     unarchive:
@@ -22,13 +20,11 @@
       remote_src: yes
       mode: 0777
     when: patchpkg is success
-    tags: "{{ application }}"
 
   - name: check if manifest.csv file exists
     stat: 
       path: "{{ patchdir }}/manifest.csv"
     register: result
-    tags: "{{ application }}"
   
   - name: Apply "{{ application }}" patch from 1st level directory
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
@@ -36,10 +32,8 @@
       chdir: "{{ retail_home }}"
     register: orpatch_1st
     when: result.stat.exists == true
-    tags: "{{ application }}"
   - debug: 
       var: orpatch_1st.stdout_lines
-    tags: "{{ application }}"
    
   - name: Apply "{{ application }}" patch from 2nd level directory
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
@@ -47,20 +41,16 @@
       chdir: "{{ retail_home }}"
     register: orpatch_2nd
     when: result.stat.exists == false
-    tags: "{{ application }}"
   - debug: 
       var: orpatch_2nd.stdout_lines
-    tags: "{{ application }}"
   
   - name: List the installed patches in "{{ application }}" and its status
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch lsinventory
     args:
       chdir: "{{ retail_home }}"
     register: orpatch_status
-    tags: "{{ application }}"
   - debug: 
       var: orpatch_status.stdout_lines
-    tags: "{{ application }}"
     
   - name: Create RMS_BATCH tar and keep it in staging path
     shell: "{{ item }}"
@@ -70,6 +60,7 @@
          - chmod -R 777 /staging/deploys/Monthly_Release/RMS_PATCH_DIR
     args:
       chdir: /u02/app/oretail
+    when: orpatch_1st is success or orpatch_2nd is success
     tags: RMS_PATCH_ND1
     
   - name: Create RPMBAT tar and keep it in staging path
@@ -80,4 +71,5 @@
          - chmod -R 777 /staging/deploys/Monthly_Release/RPM_PATCH_DIR
     args:
       chdir: /u01/app/rpmapp
+    when: orpatch_1st is success or orpatch_2nd is success
     tags: RPM_PATCH_ND1

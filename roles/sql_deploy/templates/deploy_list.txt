@@ -1,2 +1,3 @@
-backout_cod_5855.sql~RMS
-jl_upd_bip_alert_config_report_id1_rollback.sql~RMS
+jl_send_mail_with_attachment.sql~RMS
+jl_deals_notify_user.sql~RMS
+JL_MSUP_SEL_PROMO_SEARCH.sql~RMS

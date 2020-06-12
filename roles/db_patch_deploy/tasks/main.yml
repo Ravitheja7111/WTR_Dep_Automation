@@ -5,6 +5,7 @@
       state: directory
       mode: 0777
     register: createdir
+    tags: "{{ Application }}"
 
   - name: download package
     shell: wget -O {{ artifactID }}-{{ version }}.{{ classifier }} http://wtr-watm-artefactrepo.johnlewis.co.uk:8081/nexus/service/local/artifact/maven/redirect?r={{ repositoryID }}\&g={{ groupID }}\&a={{ artifactID }}\&v={{ version }}\&p={{ classifier }}
@@ -12,6 +13,7 @@
       chdir: /tmp
     when: createdir is success
     register: patchpkg
+    tags: "{{ Application }}"
 
   - name: unzip the file
     unarchive:
@@ -20,37 +22,45 @@
       remote_src: yes
       mode: 0777
     when: patchpkg is success
+    tags: "{{ Application }}"
 
   - name: check if manifest.csv file exists
     stat: 
       path: "{{ patchdir }}/manifest.csv"
     register: result
+    tags: "{{ Application }}"
   
-  - name: Apply "{{ application }}" patch from 1st level directory
+  - name: Apply "{{ Application }}" patch from 1st level directory
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}
     args: 
       chdir: "{{ retail_home }}"
     register: orpatch_1st
     when: result.stat.exists == true
+    tags: "{{ Application }}"
   - debug: 
       var: orpatch_1st.stdout_lines
+    tags: "{{ Application }}"
    
-  - name: Apply "{{ application }}" patch from 2nd level directory
+  - name: Apply "{{ Application }}" patch from 2nd level directory
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch apply -s {{ patchdir }}/{{ patch_num }}
     args: 
       chdir: "{{ retail_home }}"
     register: orpatch_2nd
     when: result.stat.exists == false
+    tags: "{{ Application }}"
   - debug: 
       var: orpatch_2nd.stdout_lines
+    tags: "{{ Application }}"
   
-  - name: List the installed patches in "{{ application }}" and its status
+  - name: List the installed patches in "{{ Application }}" and its status
     shell: source /home/{{ appuser }}/batch.profile && {{ retail_home }}/orpatch lsinventory
     args:
       chdir: "{{ retail_home }}"
     register: orpatch_status
+    tags: "{{ Application }}"
   - debug: 
       var: orpatch_status.stdout_lines
+    tags: "{{ Application }}"
     
   - name: Create RMS_BATCH tar and keep it in staging path
     shell: "{{ item }}"

@@ -16,6 +16,7 @@ export TERM
 ORACLE_PATH=/u01/app/retail_home/RMS_FORMS/base/forms/src
 cd $ORACLE_PATH
 echo "UP is $UP"
+echo "TNS_ADMIN is $TNS_ADMIN"
 echo "All variables have been exported successfully"
 
 log_name=""$db_name"_$(date +"%Y-%m-%d-%T")"

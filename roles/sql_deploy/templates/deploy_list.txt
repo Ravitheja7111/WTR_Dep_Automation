@@ -1,8 +1,3 @@
-create_table_jl_dept_email_config.sql~RMS
-insert_table_jl_dept_email_config.sql~RMS
-update_table_jl_deal_mail_config.sql~RMS
-jl_send_mail_with_attachment.sql~RMS
-jl_deals_notify_user.sql~RMS
-jl_upd_bip_alert_config_report_id1.sql~RMS
-JL_MSUP_SEL_PROMO_SEARCH.sql~RMS
-DELETE_RECORDS_SQL.pkb~RMS
+alter_table_jl_supplier_rebate_interface.sql~INTERFACES_STAGING
+alter_table_jl_supplier_rebate_intrfc_h.sql~INTERFACES_STAGING
+jl_suprebateextract.sql~RMS

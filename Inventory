@@ -300,6 +300,18 @@ PREPRD
 PRD
 
 #The below groups are only for apply patches 
+[RMS_PATCH]
+udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+
+[RPM_PATCH]
+udojscam01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+usojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+utojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+umojscap01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
+
 [RMS_PATCH_ND1]
 udojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer
 usojscdm01.johnlewis.co.uk ansible_connection=ssh  ansible_user=ansiblepioneer

@@ -1,3 +1,2 @@
-alter_table_jl_supplier_rebate_interface.sql~INTERFACES_STAGING
-alter_table_jl_supplier_rebate_intrfc_h.sql~INTERFACES_STAGING
-jl_suprebateextract.sql~RMS
+UPDATE_JL_MSUP_CONFIG.sql~RMS
+jl_msup_upload.pkb~RMS

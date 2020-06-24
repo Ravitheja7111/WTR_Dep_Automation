@@ -1,2 +1,1 @@
-UPDATE_JL_MSUP_CONFIG.sql~RMS
-jl_msup_upload.pkb~RMS
+JL_OPS_ITEM_UPDATE_SQL.pkb~JLOPSREP

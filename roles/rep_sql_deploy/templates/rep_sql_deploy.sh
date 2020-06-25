@@ -15,10 +15,10 @@ while IFS= read -r line; do
     echo "file_name:$file_name"
     schema=${line#*~}
     echo "schema:$schema"
-    if [ "$schema" == "ORDS" ];then
-	   con_string="{{ ords_schema }}"
+    if [ "$schema" == "JLOPSREP" ];then
+	   con_string="{{ opsrep_schema }}"
 	   else
-  		con_string="{{ ops_schema }}"
+  		con_string="{{ jscrds_schema }}"
     fi
     echo $file_name
     echo $con_string

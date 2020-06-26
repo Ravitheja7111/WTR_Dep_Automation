@@ -10,7 +10,6 @@
             - chmod -R 777 /staging/deploys/Monthly_Release/RMS_PATCH_DIR
        args:
          chdir: /u02/app/oretail
-       when: orpatch_1st is success or orpatch_2nd is success
        tags: RMS_PATCH_ND1
     
      - name: Create RPMBAT tar and keep it in staging path
@@ -21,7 +20,6 @@
             - chmod -R 777 /staging/deploys/Monthly_Release/RPM_PATCH_DIR
        args:
          chdir: /u01/app/rpmapp
-       when: orpatch_1st is success or orpatch_2nd is success
        tags: RPM_PATCH_ND1
 
    become: yes

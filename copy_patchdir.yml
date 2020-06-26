@@ -7,6 +7,7 @@
        with_items:
             - cp -R /staging/deploys/Monthly_Release/RMS_PATCH_DIR/{{ Environment }}_RMS_PATCH_DIR.tar .
             - tar -pxf {{ Environment }}_RMS_PATCH_DIR.tar
+            - rm -rf {{ Environment }}_RMS_PATCH_DIR.tar
        args:
          chdir: /u02/app/oretail
        tags: RMS_PATCH_ND2
@@ -15,6 +16,7 @@
        with_items:
             - cp -R /staging/deploys/Monthly_Release/RPM_PATCH_DIR/{{ Environment }}_RPM_PATCH_DIR.tar .
             - tar -pxf {{ Environment }}_RPM_PATCH_DIR.tar
+            - rm -rf {{ Environment }}_RPM_PATCH_DIR.tar
        args:
          chdir: /u01/app/rpmapp
        tags: RPM_PATCH_ND2

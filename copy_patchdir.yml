@@ -8,7 +8,7 @@
             - cp -R /staging/deploys/Monthly_Release/RMS_PATCH_DIR/{{ Environment }}_RMS_PATCH_DIR.tar .
             - tar -pxf {{ Environment }}_RMS_PATCH_DIR.tar
        args:
-         chdir: /tmp
+         chdir: /u02/app/oretail
        tags: RMS_PATCH_ND2
      - name: Copy RPM BATCH from staging path to node2 
        shell: "{{ item }}"
@@ -16,7 +16,7 @@
             - cp -R /staging/deploys/Monthly_Release/RPM_PATCH_DIR/{{ Environment }}_RPM_PATCH_DIR.tar .
             - tar -pxf {{ Environment }}_RPM_PATCH_DIR.tar
        args:
-         chdir: /tmp
+         chdir: /u01/app/rpmapp
        tags: RPM_PATCH_ND2
      - name: List the installed patches in "{{ application }}" and its status
        shell: source /home/{{ appuser }}/batch.profile && /{{ appdir }}/app/{{ appuser }}/{{ batchdir }}/orpatch/bin/orpatch lsinventory

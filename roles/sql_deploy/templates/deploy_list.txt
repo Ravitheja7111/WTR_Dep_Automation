@@ -1,1 +1,1 @@
-JL_OPS_ITEM_UPDATE_SQL.pkb~JLOPSREP
+update_table_jl_deal_mail_config.sql~RMS

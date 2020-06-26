@@ -1,5 +1,5 @@
 ---
- - name: Connecting to sql DB and executing ords_sql_deploy.sh file.
+ - name: Connecting to sql DB and executing rep_sql_deploy.sh file.
    shell: sh rep_sql_deploy.sh
    args:
      chdir: /home/oretail

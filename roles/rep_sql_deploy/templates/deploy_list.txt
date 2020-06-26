@@ -1,3 +1,1 @@
-alter_table_jl_supplier_rebate_interface.sql~RMS
-alter_table_jl_supplier_rebate_intrfc_h.sql~RMS
-jl_supplierebate.sql~RMS
+JL_OPS_ITEM_UPDATE_SQL.pkb~JLOPSREP

@@ -1,1 +1,2 @@
-JL_OPS_ITEM_UPDATE_SQL.pkb~JLOPSREP
+automation_test.sql~JLOPSREP
+automation_test.sql~JSCRDS

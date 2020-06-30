@@ -1,5 +1,5 @@
 #!/bin/sh
-#source /home/oretail/.profile
+source /home/oretail/.profile
 #source /home/oretail/batch.profile
 VAR=`cat /home/oretail/deploy_list.txt`
 echo "var:$VAR"

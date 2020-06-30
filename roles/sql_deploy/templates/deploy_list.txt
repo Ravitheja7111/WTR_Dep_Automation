@@ -1,1 +1,2 @@
-update_table_jl_deal_mail_config.sql~RMS
+automation_test.sql~JLOPSREP
+automation_test.sql~JSCRDS

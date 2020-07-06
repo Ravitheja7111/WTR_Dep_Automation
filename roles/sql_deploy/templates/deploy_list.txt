@@ -1,1 +1,11 @@
+update_table_jl_deal_mail_config.sql~RMS
+COD_6359_new_code_config.sql~RMS
+CRE_TAB_JL_EMERGENCY_CLR_RESET_REP.sql~RMS
+CRE_TAB_jl_rpm_wa_mail_config_LIVE.sql~RMS
+jl_rpm_auto_workaround_utils.pks~RMS
+jl_rpm_auto_workaround_utils.pkb~RMS
+COD-6587_Create_role_jl_dara_readonly.sql~RMS
+COD-6587_Insert_RSM_per_related_table_for_jl_dara_readonly.sql~RMS
+COD-6587_insert_RsmUserRole.sql~RMS
+UPDATE_JL_MSUP_CONFIG.sql~RMS
 jl_msup_upload.pkb~RMS

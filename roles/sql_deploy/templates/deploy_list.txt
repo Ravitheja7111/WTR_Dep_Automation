@@ -1,13 +1,3 @@
-code_head_detail_insert_script_for_receipt.sql~RMS
-jl_create_loc_list_for_rct.sql~RMS
-rct_deal_loc_list.sql~RMS
-create_table_jl_deal_exclusive_list.sql~RMS
-create_table_jl_deal_inclusive_list.sql~RMS
-create_table_jl_rct_deal_queue.sql~RMS
-create_view_v_location_receipt.sql~RMS
-alter_table_jl_deal_attributes.sql~RMS
-create_view_jl_view_w_deal_to_st_count.sql~RMS
-Insert_into_code_detail.sql~RMS
 jl_view_deal_to_cl_count.sql~RMS
 jl_view_deal_to_st_count.sql~RMS
 jl_view_dealsummary_count_create_ddl.sql~RMS

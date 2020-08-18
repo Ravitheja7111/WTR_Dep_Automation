@@ -1,5 +1,5 @@
-jl_backout_interfaces_staging_rtv.sql~INTERFACES_STAGING
-jl_backout_rms_batches_rtv.sql~RMS
-bckout_jl_deal_component.sql~RMS
-Backout_COD_6159.sql~RMS
-Backout_cod_6455.sql~RMS
+jl_order_receipt_inrf.pks~RMS
+jl_order_receipt_inrf.pkb~RMS
+jl_action_daily_purge.plb~RMS
+jl_msup_search_qry.sql~RMS
+jl_msup_search_qry_multi.sql~RMS

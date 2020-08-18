@@ -1,5 +1,12 @@
+alter_table_jl_deal_component.sql~RMS
+create_table_jl_rtv_stage.sql~INTERFACES_STAGING
 jl_order_receipt_inrf.pks~RMS
 jl_order_receipt_inrf.pkb~RMS
+jl_alter_jl_deal_attributes.sql~RMS
+create_table_jl_rtv_audit.sql~RMS
 jl_action_daily_purge.plb~RMS
 jl_msup_search_qry.sql~RMS
 jl_msup_search_qry_multi.sql~RMS
+Insert_COD_6159_ADF_link.sql~RMS
+JL_MSUP_RIN_STOCK_SEARCH.sql~RMS
+cod_6455.sql~RMS

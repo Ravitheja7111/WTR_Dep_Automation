@@ -1,11 +1,3 @@
 JL_NEXT_INVOICE_DATE_RCPT.sql~RMS
-jl_insert_restart_jlrctdealincstg.sql~RMS
-jl_insert_restart_jlrctdealincpre.sql~RMS
 jl_dealitem_maint.sql~RMS
-COD_5533_Add_All_Item_level.sql~RMS
-jl_msup_search_qry.sql~RMS
-jl_msup_search_qry_multi.sql~RMS
-COD_6769_Add_User_ID_Tbl.sql~RMS
-COD_6769_Update_report_queries.sql~RMS
-jl_bip_alert_sql.pkb~RMS
 jl_rms_msup_season_validate.pkb~RMS

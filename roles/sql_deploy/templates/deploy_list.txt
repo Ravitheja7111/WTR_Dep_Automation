@@ -1,3 +1,1 @@
-rollback_interfaces_staging_oct_1_release.sql~INTERFACES_STAGING
-RollBack_service_rebate.sql~RMS
-backout_dbcs_cod-6815.sql~RMS
+jl_suprebateextract.sql~RMS

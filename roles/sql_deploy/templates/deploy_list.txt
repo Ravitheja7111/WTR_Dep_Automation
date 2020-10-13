@@ -1,1 +1,5 @@
+alter_jl_supplier_rebate_attributes.sql~RMS
+alter_table_jl_supplier_rebate_interface.sql ~INTERFACES_STAGING
+alter_table_jl_supplier_rebate_intrfc_h.sql~INTERFACES_STAGING
 jl_suprebateextract.sql~RMS
+alter_jl_deal_attributes_cod-6815.sql~RMS

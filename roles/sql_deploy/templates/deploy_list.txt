@@ -1,4 +1,5 @@
 get_potential_income.sql~RMS
+cv_jl_deal_itemloc.sql~RMS
 create_table_jl_llppc_email_config.sql~RMS
 insert_jl_llppc_email_config.sql~RMS
 jl_general_system_alert.pls~RMS

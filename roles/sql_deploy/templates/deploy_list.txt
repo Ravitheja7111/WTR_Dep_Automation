@@ -1,9 +1,1 @@
-get_potential_income.sql~RMS
-cv_jl_deal_itemloc.sql~RMS
-create_table_jl_llppc_email_config.sql~RMS
-insert_jl_llppc_email_config.sql~RMS
-jl_general_system_alert.pls~RMS
-jl_general_system_alert.plb~RMS
-table_creation_script_COD6228.sql~INTERFACE_STAGING
-JL_CHILDLESS_PARENT_PRG_SQL.pks~RMS
-JL_CHILDLESS_PARENT_PRG_SQL.pkb~RMS
+

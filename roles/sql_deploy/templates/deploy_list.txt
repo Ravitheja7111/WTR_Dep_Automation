@@ -1,5 +1,4 @@
-jl_bip_alert_sql.pks~RMS
-jl_bip_alert_sql.pkb~RMS
-jl_upd_bip_alert_config_report_id8.sql~RMS
-jl_msup_search_qry.sql~RMS
-jl_msup_search_qry_multi.sql~RMS
+jl_upd_bip_alert_config_report_id1_rollback.sql~RMS
+jl_upd_bip_alert_config_report_id9_rollback_6987.sql~RMS
+drop_pkg_cod6923.sql~RMS
+backout_COD_6779.sql~RMS

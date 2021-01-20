@@ -1,12 +1,1 @@
-jl_msup_search_qry.sql~RMS
-jl_msup_search_qry_multi.sql~RMS
-insert_dpe_hist_purge_retention.sql~RMS
-jl_dpe_hist_purge.pks~RMS
-jl_dpe_hist_purge.pkb~RMS
-JL_ORUM_PURGE.pks~RMS
-JL_ORUM_PURGE.pkb~RMS
-jl_upd_bip_alert_config_report_id1.sql~RMS
-jl_bip_alert_sql.pks~RMS
-jl_bip_alert_sql.pkb~RMS
-jl_upd_bip_alert_config_report_id8.sql~RMS
-jl_upd_bip_alert_config_report_id9.sql~RMS
+COD_7077_ID_6_Update.sql~RMS

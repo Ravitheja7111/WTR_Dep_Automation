@@ -1,4 +1,3 @@
-COD_7066_Update_report_queries.sql~RMS
 create_table_jl_deal_arch_gen_dtl.sql~RMS
 jl_ins_deal_arch.sql~RMS
 insert_jl_deal_arch_gen_dtl.sql~RMS

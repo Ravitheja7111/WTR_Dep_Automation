@@ -1,4 +1,5 @@
-jl_ins_dara_prg_intf_stg.sql~RMS
-jl_upd_dara_prg.sql~RMS
-Create_func_jl_del_dara_tab_func.sql~RMS
+COD_7066_backout.sql~RMS
+bk_out_jl_ins_deal_arch.sql~RMS
+backout_jl_upd_dara_prg.sql~RMS
+bck_jl_ins_dara_prg_intf_stg.sql~RMS
 DELETE_RECORDS_SQL.pkb~RMS

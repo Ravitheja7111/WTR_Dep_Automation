@@ -1,5 +1,10 @@
-COD_7066_backout.sql~RMS
-bk_out_jl_ins_deal_arch.sql~RMS
-backout_jl_upd_dara_prg.sql~RMS
-bck_jl_ins_dara_prg_intf_stg.sql~RMS
+COD_7066_Update_report_queries.sql~RMS
+create_archive_table_deal.sql~RMS
+create_table_jl_deal_arch_gen_dtl.sql~RMS
+jl_ins_deal_arch.sql~RMS
+insert_jl_deal_arch_gen_dtl.sql~RMS
+create_func_jl_deal_arch_func.sql~RMS
+jl_ins_dara_prg_intf_stg.sql~RMS
+jl_upd_dara_prg.sql~RMS
+Create_func_jl_del_dara_tab_func.sql~RMS
 DELETE_RECORDS_SQL.pkb~RMS

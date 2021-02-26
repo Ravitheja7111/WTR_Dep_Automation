@@ -23,7 +23,7 @@
      port: 25
      subject: Verify RIB topics & MF Queues
      body: Hello, This is an alert to verify the RIB topics and MF Queues status, Please find the attachment and take necessary action..
-     from: gayathri.modi@johnlewis.co.uk
+     from: lava.kumar@johnlewis.co.uk
      to:
      - monosij.maitra@johnlewis.co.uk
      - gayathri.modi@johnlewis.co.uk

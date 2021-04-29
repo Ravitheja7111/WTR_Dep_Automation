@@ -1,4 +1,1 @@
-CREATE_TABLE_JL_MONTH_DATA_HIST.SQL~RMS
-JL_MONTH_DATA_PROCESS_SQL.pls~RMS
-JL_MONTH_DATA_PROCESS_SQL.plb~RMS
-jl_msup_process_upd.pkb~RMS
+jl_month_data_process.ksh

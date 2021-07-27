@@ -1,5 +1,6 @@
 jl_suprebateextract.sql~RMS
 jl_msup_process_upd.pkb~RMS
-COD-7135_ROOLBACK_JL_RMS_MSUP_BARCODE_VALIDATE.sql~RMS
+jl_rms_msup_barcode_validate.pkb~RMS
 jl_cv_its_half_year_calc.sql~RMS
 jl_cv_rpm_price_event_audit.sql~RMS
+TRAN_DATA_HISTORY_INDEX_DDL.SQL~RMS

@@ -1,2 +1,1 @@
-jl_item_supp_cfa_intf.sql~RMS
-ec_table_isp_aiudr.sql~RMS
+jlitemmaintenance.fmb

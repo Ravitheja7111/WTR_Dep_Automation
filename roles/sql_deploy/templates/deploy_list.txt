@@ -1,4 +1,2 @@
-jl_bt_new_attrib.sql~RMS
-grant_SUPP_ITEM_ATTRIB_SQL.sql~RMS
-JL_GET_PRIMARY_SUPP_IND.pls~INTERFACES_STAGING
-ec_table_isp_aiudr.sql~RMS
+jlitemmaintenance.fmb
+jlitemsupp.fmb

@@ -1,4 +1,4 @@
-Drop_index_RPM_ZONE_LOCS_TBL_I1.sql~RMS
-RPM_ZONE_LOCS_TBL_STATS.SQL~RMS
-RPM_ZONE_LOCS_TBL_I1.sql~RMS
-RPM_PROMO_SEARCH_SQL.pkb~RMS
+jlitemsupp.fmb
+jl_dlyprg_post.ksh
+jl_dlyprg_unprocess_notify.sql~RMS
+COD-6945_RPM_BULK_CC_ACTIONS_SQL.pls~RMS

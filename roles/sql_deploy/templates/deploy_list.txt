@@ -1,4 +1,1 @@
 jlitemsupp.fmb
-jl_dlyprg_post.ksh
-jl_dlyprg_unprocess_notify.sql~RMS
-COD-6945_RPM_BULK_CC_ACTIONS_SQL.pls~RMS

@@ -1,3 +1,2 @@
-jl_dpe_pre_check_table.sql~RMS
 jl_dpe_pre_check_spec.sql~RMS
 jl_dpe_pre_check.sql~RMS

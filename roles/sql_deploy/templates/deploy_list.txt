@@ -1,2 +1,5 @@
-jlbarcodegen.fmb
-jlitemsupp.fmb
+COD-7288_insert_rtk_errors.sql~RMS
+COD-7288_insert_nav_element.sql~RMS
+COD-7288_code_detail_delete.sql~RMS
+jl_item_supp_cfa_intf.sql~RMS
+jl_get_supp_cfas_rec_type.sql~INTERFACES_STAGING

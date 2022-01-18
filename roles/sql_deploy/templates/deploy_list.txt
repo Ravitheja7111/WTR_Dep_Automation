@@ -1,1 +1,5 @@
-jlitemsupp.fmb
+COD-7369_code_detail_insert.sql~RMS
+COD-7369_alter_jl_item_supplier_cfa_ext.sql~INTERFACE_STAGING
+COD-7369_insert_rtk_errors.sql~RMS
+jl_item_supp_cfa_intf.sql~RMS
+COD-7369-GMW-496_insert_rtk_errors.sql~RMS

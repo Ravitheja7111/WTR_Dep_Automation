@@ -1,4 +1,1 @@
-salesprocess.ksh
-jl_branch_data_removal.ksh
-jl_dlyprg_post.ksh
-jl_dlyprg_pre.ksh
+JL_ITEM_RETIRE_RECLASS_SQL_7304.sql~RMS

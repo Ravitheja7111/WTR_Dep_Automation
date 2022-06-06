@@ -1,1 +1,1 @@
-4_COD-5472_jl_sup_rebate_alrt_mail_Config_dml.sql~RMS
+jl_supp_rebates_send_mail.ksh

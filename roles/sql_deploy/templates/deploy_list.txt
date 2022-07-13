@@ -1,4 +1,3 @@
-COD-7147_create_jl_wr_pos_mods_bkup_table.sql~RMS
 jl_wr_pre_check_sql.pks~RMS
 jl_wr_pre_check_sql.pkb~RMS
 insert_JL_BIP_ALERT_CONFIG_id_11.sql~RMS

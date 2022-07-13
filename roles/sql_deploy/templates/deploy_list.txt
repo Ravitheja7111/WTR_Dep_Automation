@@ -1,1 +1,2 @@
-JL_WR_ORA_ESB_PRICE_EXTRCT_PKG_BODY.sql~INTERFACES_STAGING
+batch_jlwrrpmprcextrct.ksh
+jl_wr_rpm_extrct_hist_move.ksh

@@ -1,6 +1,3 @@
-create_jl_view_nearly_there_report.sql~RMS
-COD_6428_ALTER_TABLE_ADD_RECORD.sql~RMS
-Create_func_jl_deal_nearly_there_rpt.sql~RMS
 Gather_stat_table_Alter.sql~RMS
 rpmprimzoneupdatesqlb.pls~RMS
 Update_cod_7484.pkb~RMS

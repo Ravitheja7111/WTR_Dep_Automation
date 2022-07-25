@@ -1,5 +1,1 @@
-Gather_stat_table_Alter.sql~RMS
-rpmprimzoneupdatesqlb.pls~RMS
-Update_cod_7484.pkb~RMS
-Update_cod_7484.sql~RMS
-JL_Deal_SKU_Upload_Limit.sql~RMS
+jl_gather_stat.ksh

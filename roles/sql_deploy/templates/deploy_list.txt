@@ -1,2 +1,6 @@
-Update_cod_7484.sql~RMS
-Update_cod_7484.pkb~RMS
+COD_6428_Backout.sql~RMS
+Backout_rpmprimzoneupdatesqlb.pls~RMS
+Update_cod_7484_rollback.pkb~RMS
+Update_cod_7484_rollback.sql~RMS
+JL_Deal_SKU_Upload_Limit_rollback.sql~RMS
+Gather_stat_table_Alter_Rollback.sql~RMS

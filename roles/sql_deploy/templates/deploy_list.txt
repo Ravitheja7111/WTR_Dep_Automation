@@ -1,5 +1,3 @@
-Backout_rpmprimzoneupdatesqlb.pls~RMS
-Update_cod_7484_rollback.pkb~RMS
-Update_cod_7484_rollback.sql~RMS
-JL_Deal_SKU_Upload_Limit_rollback.sql~RMS
-Gather_stat_table_Alter_Rollback.sql~RMS
+create_jl_view_nearly_there_report.sql~RMS
+COD_6428_ALTER_TABLE_ADD_RECORD.sql~RMS
+Create_func_jl_deal_nearly_there_rpt.sql~RMS

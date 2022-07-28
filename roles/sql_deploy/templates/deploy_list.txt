@@ -1,6 +1,2 @@
-create_jl_view_nearly_there_report.sql~RMS
-COD_6428_ALTER_TABLE_ADD_RECORD.sql~RMS
-Gather_stat_table_Alter.sql~RMS
-rpmprimzoneupdatesqlb.pls~RMS
-Update_cod_7484.sql~RMS
-Update_cod_7484.pkb~RMS
+jl_deal_nearly_there_rpt_send_mail.ksh
+jl_gather_stat.ksh

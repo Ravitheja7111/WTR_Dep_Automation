@@ -1,5 +1,4 @@
 JL_WR_ORA_ESB_PRICE_EXTRCT_PKG_BODY.sql~INTERFACES_STAGING
-JL_WR_ORA_ESB_PRICE_EXTRCT_PKG_SPEC.sql~INTERFACES_STAGING
 COD-7147_create_jl_wr_promo_check_bkp_table.sql~RMS
 COD-7147_create_jl_wr_pos_mods_bkup_table.sql~RMS
 jl_wr_pre_check_sql.pks~RMS

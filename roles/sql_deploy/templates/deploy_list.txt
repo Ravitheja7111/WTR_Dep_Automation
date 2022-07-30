@@ -1,4 +1,2 @@
-jl_wr_pre_check_sql.pks~RMS
-jl_wr_pre_check_sql.pkb~RMS
-insert_JL_BIP_ALERT_CONFIG_id_11.sql~RMS
-insert_JL_BIP_ALERT_CONFIG_id_12.sql~RMS
+batch_jlwrrpmprcextrct.ksh
+jl_wr_rpm_extrct_hist_move.ksh

@@ -1,2 +1,1 @@
-batch_jlwrrpmprcextrct.ksh
-jl_wr_rpm_extrct_hist_move.ksh
+rmssub_supplierb.pls~RMS

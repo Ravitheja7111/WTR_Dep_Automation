@@ -1,1 +1,2 @@
-jl_dpe_count_totalvolume.ksh
+DBOBJECTS/VIEWS/jl_dpe_new_mview.sql~RMS
+DBOBJECTS/FUNCTIONS/jl_dpe_total_volume.sql~RMS

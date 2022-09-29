@@ -1,2 +1,2 @@
-DBOBJECTS/VIEWS/jl_dpe_new_mview.sql~RMS
-DBOBJECTS/FUNCTIONS/jl_dpe_total_volume.sql~RMS
+jl_dpe_new_mview.sql~RMS
+jl_dpe_total_volume.sql~RMS

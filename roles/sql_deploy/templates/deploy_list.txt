@@ -1,5 +1,3 @@
-COD-7535_create_tab.sql~RMS
-COD-7535_insert_onetime.sql~RMS
 JL_RPM_DLY_PRC_COUNT.sql~RMS
 COD_7491_INSERT.sql~RMS
 Insert_JL_SUP_REBATE_ALRT_MAIL_CONFIG.sql~RMS

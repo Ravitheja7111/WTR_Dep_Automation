@@ -1,5 +1,3 @@
-COD_7524_backout.sql~RMS
-COD_7534_backout.sql~RMS
 JL_ARCH_PRG_FUNC_BACKOUT.sql~RMS
 COD_7376_Backout.sql~RMS
 COD-7535_rollback.sql~RMS

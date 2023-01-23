@@ -1,5 +1,7 @@
-jl_dlyprcextrctcount.ksh
-jl_supp_margin_rebate_rpt.ksh
-jl_dly_cal_deal_rpt_send_mail.ksh
-jl_bkp_tbl_cre.ksh
-jl_bkp_tbl_drop.ksh
+COD_7524_backout.sql~RMS
+COD_7534_backout.sql~RMS
+JL_ARCH_PRG_FUNC_BACKOUT.sql~RMS
+COD_7376_Backout.sql~RMS
+COD-7535_rollback.sql~RMS
+COD_7491_Rollback.sql~RMS
+jl_backup_table_create_rollback.sql~RMS

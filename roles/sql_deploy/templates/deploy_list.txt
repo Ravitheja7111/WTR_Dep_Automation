@@ -1,4 +1,2 @@
-Create_Func_JL_DAILY_CALCULATED_DEAL_RPT.sql~RMS
-jl_create_table.sql~RMS
 jl_backup_table_create_func.sql~RMS
 jl_backup_table_drop_func.sql~RMS

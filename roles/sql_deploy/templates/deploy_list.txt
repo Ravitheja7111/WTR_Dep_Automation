@@ -1,5 +1,2 @@
-JL_ARCH_PRG_FUNC_BACKOUT.sql~RMS
-COD_7376_Backout.sql~RMS
-COD-7535_rollback.sql~RMS
 COD_7491_Rollback.sql~RMS
 jl_backup_table_create_rollback.sql~RMS

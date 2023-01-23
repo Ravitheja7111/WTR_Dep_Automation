@@ -1,2 +1,15 @@
-COD_7491_Rollback.sql~RMS
-jl_backup_table_create_rollback.sql~RMS
+COD-7535_create_tab.sql~RMS
+COD-7535_insert_onetime.sql~RMS
+JL_RPM_DLY_PRC_COUNT.sql~RMS
+COD_7491_INSERT.sql~RMS
+Insert_JL_SUP_REBATE_ALRT_MAIL_CONFIG.sql~RMS
+CREATE_VIEW_JL_VIEW_SUPP_MARGIN_REBATE_RPT.sql~RMS
+CREATE_FUNC_START_DATE_YTD.sql~RMS
+CREATE_FUNC_JL_SUPP_MARGIN_REBATE_RPT.sql~RMS
+CREATE_TABLE_Jl_arch_Prg_dtl_cnt.sql~RMS
+jl_arch_prg_func.sql~RMS
+COD_7376_Insert_Record.sql~RMS
+Create_Func_JL_DAILY_CALCULATED_DEAL_RPT.sql~RMS
+jl_create_table.sql~RMS
+jl_backup_table_create_func.sql~RMS
+jl_backup_table_drop_func.sql~RMS

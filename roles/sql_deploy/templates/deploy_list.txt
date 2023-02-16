@@ -1,5 +1,5 @@
-jl_dlyprcextrctcount.ksh
-jl_supp_margin_rebate_rpt.ksh
-jl_dly_cal_deal_rpt_send_mail.ksh
-jl_bkp_tbl_cre.ksh
-jl_bkp_tbl_drop.ksh
+PRB0066987_INSERT.sql~RMS
+create_view_jl_view_supplier_dept_vat.sql~RMS
+jl_ec_table_dlyprg_air.sql~RMS
+JL_EC_TABLE_JIEMDC_AIR.sql
+COD-7464_jl_price_reports_sql.pkb~RMS

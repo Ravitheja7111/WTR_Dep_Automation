@@ -1,3 +1,1 @@
-jl_ec_table_dlyprg_air.sql~RMS
-JL_EC_TABLE_JIEMDC_AIR.sql
 COD-7464_jl_price_reports_sql.pkb~RMS

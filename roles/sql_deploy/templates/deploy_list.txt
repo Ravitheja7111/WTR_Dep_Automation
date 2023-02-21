@@ -1,1 +1,4 @@
+create_view_jl_view_supplier_dept_vat.sql~RMS
+jl_ec_table_dlyprg_air.sql~RMS
+JL_EC_TABLE_JIEMDC_AIR.sql~RMS
 COD-7464_jl_price_reports_sql.pkb~RMS

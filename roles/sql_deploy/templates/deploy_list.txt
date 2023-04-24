@@ -1,2 +1,2 @@
-jl_rpa_adh_full_extract.ksh
-jl_rpa_adh_delta_extract.ksh
+DBOBJECTS/DBCS/COD_7550_ALTER_rollback.sql~RMS
+DBOBJECTS/DBCS/COD_7544_rollback.sql

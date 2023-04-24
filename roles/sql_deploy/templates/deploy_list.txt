@@ -1,2 +1,2 @@
-DBOBJECTS/DBCS/COD_7550_ALTER_rollback.sql~RMS
-DBOBJECTS/DBCS/COD_7544_rollback.sql
+COD_7550_ALTER_rollback.sql~RMS
+COD_7544_rollback.sql~RMS

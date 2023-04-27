@@ -1,2 +1,3 @@
-jl_rpa_adh_full_extract.ksh
-jl_rpa_adh_delta_extract.ksh
+COD_7550_ALTER_TAB.sql~RMS
+JL_RPAREP_ADHOC.pks~RMS
+JL_RPAREP_ADHOC.pkb~RMS

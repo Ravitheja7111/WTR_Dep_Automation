@@ -1,5 +1,3 @@
-DEAL_THRESHOLD_AU_Create_Table.sql~RMS
-JL_DEAL_COMPONENT_AU_Create_Table.sql~RMS
 DEAL_DETAIL_AU_Trigger.sql~RMS
 DEAL_HEAD_AU_Trigger.sql~RMS
 DEAL_ITEM_LOC_EXPLODE_Trigger.sql~RMS

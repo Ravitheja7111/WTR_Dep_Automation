@@ -1,3 +1,2 @@
-DEAL_ITEM_LOC_EXPLODE_Trigger.sql~RMS
-DEAL_THRESHOLD_AU_Trigger.sql~RMS
-JL_DEAL_COMPONENT_AU_Trigger.sql~RMS
+jl_rpmfutretl_purge.pkb~RMS
+COD-7003_rollback.sql~RMS

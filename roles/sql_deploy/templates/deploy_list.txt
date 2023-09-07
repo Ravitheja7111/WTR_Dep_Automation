@@ -1,3 +1,4 @@
-jlitemfind.fmb
-jlitemmaintenance.fmb
-jlitemsupp.fmb
+COD-7571.sql~RMS
+jl_deals_notify_user.sql~RMS
+COD_7442_INSERT.sql~RMS
+jl_suprebatetdmarx.sql~RMS

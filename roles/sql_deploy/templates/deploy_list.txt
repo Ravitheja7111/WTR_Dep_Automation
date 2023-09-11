@@ -1,4 +1,4 @@
+COD-7571.sql~RMS
 jl_deals_notify_user.sql~RMS
-COD-7571_backout.sql~RMS
-COD_7442_Rollback.sql~RMS
+COD_7442_INSERT.sql~RMS
 jl_suprebatetdmarx.sql~RMS

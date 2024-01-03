@@ -1,4 +1,3 @@
-COD-7571.sql~RMS
-jl_deals_notify_user.sql~RMS
-COD_7442_INSERT.sql~RMS
-jl_suprebatetdmarx.sql~RMS
+jl_drm_process_rebate.ksh
+jl_drm_process_deal_soa.ksh
+jl_drm_process_rct_deals.ksh

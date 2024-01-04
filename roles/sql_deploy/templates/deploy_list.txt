@@ -1,3 +1,6 @@
-jl_drm_process_rebate.ksh
-jl_drm_process_deal_soa.ksh
-jl_drm_process_rct_deals.ksh
+JL_DRM_SEQUENCES.sql~RMS
+JL_DRM_TABLES.sql~RMS
+JL_DRM_VIEWS.sql~RMS
+JL_DRM_PKS.sql~RMS
+JL_DRM_PKB.sql~RMS
+JL_DRM_TABLE_DATA.sql~RMS
